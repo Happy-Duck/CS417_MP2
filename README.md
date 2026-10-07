@@ -17,12 +17,12 @@
 7. Wrap your scripts in `namespace <name>` so two people can both have classes with the same name. For example, I would put my scripts in `namespace Rishi { }`.
 8. Create an empty object at the top of your scene hierarchy that is the parent of everything in your area (e.g. `RishiSceneRoot`). Spawn stuff under and relative to it, so when we merge into one scene we don't have a mess.
 9. Put any surface that things can be placed on on the `canPlaceOn` layer. Don't put the placeable objects themselves on that layer.
-10. Since resources are case sensitive strings, lets use PascalCase singular nouns for consistency, also mention in discord when you add a material
+10. Resource names are case sensitive strings, so let's use PascalCase singular nouns for consistency (e.g. `Egg`, `Corn`, `CornSyrup`), and mention in Discord when you add a new resource.
 
 ## Shared systems (`Assets/Shared`)
-- `GridManager`: one per scene. Cell size is 0.5 units and cell (0, 0) is at the world origin, so everyone's areas line up. Has `Snap`, `WorldToCell`, `CellToWorld`, and occupancy tracking. You usually don't call the occupancy functions yourself, use `GridOccupant` instead.
-- `GridOccupant`: put this on anything that snaps to the grid. Set its Size in cells (odd sizes line up best, e.g. (1, 1) is 0.5 x 0.5 units, (3, 3) is 1.5 x 1.5). Anything placed in the scene by hand snaps to the grid and claims its cells on Start, and frees them when destroyed. Has `TryPlaceAt` and `RemoveFromGrid` for moving things.
-- `GridPlaceable`: lets the player pick something up and drop it onto the grid. Automatically adds an XR Grab Interactable and a GridOccupant. Optional resource cost, charged the first time it's placed. Set Placeable Surface Layers to `canPlaceOn`.
+- `GridManager`: one per scene. Cell size is 0.5 units and cell (0, 0) is centered on the world origin, so everyone's areas line up. Has `Snap` (for 1x1 things), `SnapFootprint` (for bigger things), `WorldToCell`, `CellToWorld`, and occupancy tracking. You usually don't call the occupancy functions yourself, use `GridOccupant` instead.
+- `GridOccupant`: put this on anything that snaps to the grid. Set its Size in cells (e.g. (1, 1) is 0.5 x 0.5 units, (2, 3) is 1 x 1.5). Anything placed in the scene by hand snaps to the grid and claims its cells on Start, and frees them when destroyed. Has `TryPlaceAt` and `RemoveFromGrid` for moving things, and `StartCell` for the lowest x, lowest z cell it covers.
+- `GridPlaceable`: lets the player pick something up and drop it onto the grid. Automatically adds an XR Grab Interactable and a GridOccupant. Optional resource cost, charged the first time it's placed. Placeable Surface Layers defaults to `canPlaceOn`. Only square objects can be rotated (in 90 degree steps), non-square ones always face +Z.
 - `GridSupplyShelf`: an endless supply of one `GridPlaceable`. Keeps one on display and restocks after it's grabbed.
 - `GridSpawner`: spawns a prefab with a `GridOccupant` at the nearest grid position, for things spawned via script. `Spawn On Start` spawns that many at random spots when the game starts. Call `SpawnAt(position)` or `SpawnRandom(count)` from your own scripts.
 - `ResourceManager`: one per scene. Resource names are case sensitive strings. Has `Add`, `Get`, `CanAfford`, `TrySpend`, and an `OnResourceChanged` event (subscribe in `Start`, not `Awake` or `OnEnable`).
@@ -37,10 +37,10 @@ if (ResourceManager.Instance.TrySpend("Corn", 2)) {
 ```
 
 ## Making something that attaches to the grid
-1. Make an empty root object and put the model under it so the model's bottom sits at the root's origin.
-2. Add a collider of some sort
+1. Make an empty root object and put the model under it so the model's bottom center sits at the root's origin. If the pivot is off center the model will be offset from the cells it claims, and if it's not at the bottom it'll sink into or float above the floor.
+2. Add a collider of some sort.
 3. Add `GridOccupant` (if it just sits there) or `GridPlaceable` (if the player can move it), and set the Size.
 4. Save it as a prefab in `Assets/<name>/Prefabs/`.
 
 ## Layers
-- User Layer 6: `canPlaceOn`: floors and surfaces that grid objects can be placed on.
+- User Layer 6: `canPlaceOn`: floors and surfaces that grid objects can be placed on. Keep it on layer 6 specifically, since `GridPlaceable` defaults to that layer number.
