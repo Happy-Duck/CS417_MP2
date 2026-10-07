@@ -17,6 +17,7 @@
 7. Wrap your scripts in `namespace <name>` so two people can both have classes with the same name. For example, I would put my scripts in `namespace Rishi { }`.
 8. Create an empty object at the top of your scene hierarchy that is the parent of everything in your area (e.g. `RishiSceneRoot`). Spawn stuff under and relative to it, so when we merge into one scene we don't have a mess.
 9. Put any surface that things can be placed on on the `canPlaceOn` layer. Don't put the placeable objects themselves on that layer.
+10. Since resources are case sensitive strings, lets use PascalCase singular nouns for consistency, also mention in discord when you add a material
 
 ## Shared systems (`Assets/Shared`)
 - `GridManager`: one per scene. Cell size is 0.5 units and cell (0, 0) is at the world origin, so everyone's areas line up. Has `Snap`, `WorldToCell`, `CellToWorld`, and occupancy tracking. You usually don't call the occupancy functions yourself, use `GridOccupant` instead.
