@@ -5,7 +5,7 @@
 - Rishi: Egg and chicken farm
 - Sharyq: Waffle House
 - Aster: Meth lab
-- Alyssa: TBD, possibly dairy farm
+- Alyssa: Greenhouse with fruit for toppings
 
 ## Basic rules
 1. Make sure you put all your files in `Assets/<name>/`.
