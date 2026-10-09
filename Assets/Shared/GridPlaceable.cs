@@ -32,6 +32,14 @@ namespace Shared {
 		// fires the first time this is grabbed off a shelf (GridSupplyShelf uses it to restock)
 		public event Action<GridPlaceable> TakenFromShelf;
 
+		// optional hooks for sound effects, particles, etc (nothing needs to subscribe)
+		// PickedUp: every time the player grabs it
+		// Placed: it snapped onto the grid after being let go (not when it just goes back to where it was)
+		// Purchased: the first time its placed after being taken from a shelf (paid for, if it had a cost)
+		public event Action<GridPlaceable> PickedUp;
+		public event Action<GridPlaceable> Placed;
+		public event Action<GridPlaceable> Purchased;
+
 		private XRGrabInteractable grab;
 		private GridOccupant occupant;
 		private Rigidbody body;
@@ -79,6 +87,8 @@ namespace Shared {
 		}
 
 		private void OnGrabbed(SelectEnterEventArgs args) {
+			if (PickedUp != null) PickedUp.Invoke(this);
+
 			if (isShelfStock) {
 				isShelfStock = false;
 				if (TakenFromShelf != null) TakenFromShelf.Invoke(this);
@@ -120,6 +130,7 @@ namespace Shared {
 			if (!grid.IsAreaFree(start, occupant.Size)) return false;
 
 			// 3. pay for it the first time its placed (after the free check, so the player never pays for a failed placement)
+			bool wasPaidFor = isPaidFor;
 			if (!isPaidFor) {
 				if (!string.IsNullOrEmpty(costResource)) {
 					if (ResourceManager.Instance == null || !ResourceManager.Instance.TrySpend(costResource, costAmount)) return false;
@@ -129,7 +140,11 @@ namespace Shared {
 
 			// 4. stand it upright and snap it into place
 			SetRotation(SnappedRotation());
-			return occupant.TryPlaceAt(hit.point);
+			if (!occupant.TryPlaceAt(hit.point)) return false;
+
+			if (Placed != null) Placed.Invoke(this);
+			if (!wasPaidFor && Purchased != null) Purchased.Invoke(this);
+			return true;
 		}
 
 		// square things can face any of the 4 directions, non-square things always face +Z so their footprint still matches
