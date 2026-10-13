@@ -547,6 +547,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Alyssa.SoilBed
   plant: {fileID: 0}
+  plantOffset: {x: 0, y: 0.35, z: 0}
 --- !u!65 &1579140554268653562
 BoxCollider:
   m_ObjectHideFlags: 0

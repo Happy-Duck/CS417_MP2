@@ -1,22 +1,60 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Alyssa
 {
     public class Plant : Statted
     {
-        public Transform visual;
+        public GameObject[] stages;          // 0 = seedling ... last = fully grown
+        public Transform visual;             // only used if Stages is empty
         public float growthPerSec = 3f;
+        public Transform[] fruitPoints;      // optional, empty children of the root
+        public GameObject fruitPrefab;       // optional, grabbable fruit
+
+        [Header("Dryness tint")]
+        public bool tintWhenDry = true;      // untick to turn the tint off completely
+        public Color dryTint = new Color(0.7f, 0.6f, 0.4f);   // brownish when thirsty
+
+        static readonly int BaseColorId = Shader.PropertyToID("_BaseColor");
+        static readonly int ColorId = Shader.PropertyToID("_Color");
+
         Renderer[] rends;
+        Color[] originalColors;
+        int[] colorIds;
+        MaterialPropertyBlock mpb;
+
+        readonly List<GameObject> fruits = new();
+        readonly List<Transform> homes = new();
+        bool hasFruit;
+        int shownStage = -1;
 
         void Awake()
         {
-            if (visual == null) visual = transform;      // fallback so it never crashes
-            rends = GetComponentsInChildren<Renderer>(); // cached once
+            if (visual == null) visual = transform;
+            mpb = new MaterialPropertyBlock();
+            CacheOriginalColors();
             if (stats.Count == 0)
             {
-                stats.Add(new Stat { name = "Thirst", value = 70, ratePerSec = -1f });  // slower drain
+                stats.Add(new Stat { name = "Thirst", value = 70, ratePerSec = -1f });
                 stats.Add(new Stat { name = "Growth", value = 0 });
                 stats.Add(new Stat { name = "Ripeness", value = 0 });
+            }
+        }
+
+        // remember each renderer's real material color so tinting multiplies it instead of replacing it
+        void CacheOriginalColors()
+        {
+            rends = GetComponentsInChildren<Renderer>(true);   // includes inactive stages
+            originalColors = new Color[rends.Length];
+            colorIds = new int[rends.Length];
+            for (int i = 0; i < rends.Length; i++)
+            {
+                originalColors[i] = Color.white;
+                colorIds[i] = BaseColorId;
+                var mat = rends[i].sharedMaterial;
+                if (mat == null) continue;
+                if (mat.HasProperty(BaseColorId)) { colorIds[i] = BaseColorId; originalColors[i] = mat.GetColor(BaseColorId); }
+                else if (mat.HasProperty(ColorId)) { colorIds[i] = ColorId; originalColors[i] = mat.GetColor(ColorId); }
             }
         }
 
@@ -24,15 +62,74 @@ namespace Alyssa
         {
             base.Update();
             var thirst = Get("Thirst"); var growth = Get("Growth");
-            if (thirst.value > 0)
+
+            if (thirst.value > 0 && !hasFruit)
                 growth.value = Mathf.Clamp(growth.value + growthPerSec * Time.deltaTime, 0, 100);
-            if (growth.value >= 100) Get("Ripeness").value = 100;
+            Get("Ripeness").value = growth.value >= 100 ? 100 : 0;
 
-            visual.localScale = Vector3.one * Mathf.Lerp(0.2f, 1f, growth.value / 100f);
-            Color c = Color.Lerp(Color.gray, Color.white, thirst.value / 100f);
-            foreach (var r in rends) r.material.color = c;
+            ShowStage(growth.value);
+            ApplyTint(thirst.value / 100f);
+            UpdateFruit(growth);
 
-            if (thirst.value <= 0) Destroy(gameObject);   // Death
+            if (thirst.value <= 0) Destroy(gameObject);         // Death
+        }
+
+        void ShowStage(float g)
+        {
+            if (stages == null || stages.Length == 0)
+            {          // fallback: scale
+                visual.localScale = Vector3.one * Mathf.Lerp(0.2f, 1f, g / 100f);
+                return;
+            }
+            int idx = Mathf.Min(stages.Length - 1, (int)(g / 100f * stages.Length));
+            if (idx == shownStage) return;
+            shownStage = idx;
+            for (int i = 0; i < stages.Length; i++) stages[i].SetActive(i == idx);
+        }
+
+        void ApplyTint(float wetness)
+        {
+            if (!tintWhenDry) return;
+            // fully wet = original look, dry = dryTint multiplied on top
+            Color tint = Color.Lerp(dryTint, Color.white, Mathf.Clamp01(wetness * 1.5f));
+            for (int i = 0; i < rends.Length; i++)
+            {
+                if (rends[i] == null) continue;
+                rends[i].GetPropertyBlock(mpb);
+                mpb.SetColor(colorIds[i], originalColors[i] * tint);
+                rends[i].SetPropertyBlock(mpb);
+            }
+        }
+
+        void UpdateFruit(Stat growth)
+        {
+            if (fruitPrefab == null || fruitPoints == null || fruitPoints.Length == 0) return;
+
+            if (!hasFruit && growth.value >= 100)
+            {
+                foreach (var p in fruitPoints)
+                {
+                    fruits.Add(Instantiate(fruitPrefab, p.position, p.rotation));  // unparented so grabbing is clean
+                    homes.Add(p);
+                }
+                hasFruit = true;
+            }
+            if (!hasFruit) return;
+
+            // a fruit counts as picked once it's destroyed or carried away from its spot
+            for (int i = fruits.Count - 1; i >= 0; i--)
+            {
+                if (fruits[i] == null ||
+                    Vector3.Distance(fruits[i].transform.position, homes[i].position) > 0.2f)
+                {
+                    fruits.RemoveAt(i); homes.RemoveAt(i);
+                }
+            }
+            if (fruits.Count == 0)
+            {            // all picked: regrow
+                hasFruit = false;
+                growth.value = 60;
+            }
         }
 
         public void Water(float amount) =>

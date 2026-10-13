@@ -9,14 +9,21 @@ namespace Alyssa
     {
         public Plant plantPrefab;
         public string seedResource = "StrawberrySeed";
+        bool used;
 
         void OnTriggerEnter(Collider other)
-        {   // put a Trigger collider on this packet
+        {
+            if (used) return;
             var bed = other.GetComponentInParent<SoilBed>();
             if (bed == null || bed.plant != null) return;
-            if (!ResourceManager.Instance.CanAfford(seedResource, 1)) return;
+            if (ResourceManager.Instance == null ||
+                !ResourceManager.Instance.CanAfford(seedResource, 1)) return;
             if (bed.TryPlant(plantPrefab))
+            {
+                used = true;
                 ResourceManager.Instance.TrySpend(seedResource, 1);
+                Destroy(gameObject);
+            }
         }
     }
 }
