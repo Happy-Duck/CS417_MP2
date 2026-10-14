@@ -6,7 +6,7 @@ namespace Rishi {
 
 		[SerializeField] string inputResource;
 		[SerializeField] int inputAmount = 1;
-		[SerializeField] string outputResource = "Dollar";
+		[SerializeField] string outputResource = "Coin";
 		[SerializeField] int outputAmount = 1;
 
 		// spawned things add their own resource (chickens do)

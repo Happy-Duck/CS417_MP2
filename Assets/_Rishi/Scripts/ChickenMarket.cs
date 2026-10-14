@@ -7,7 +7,7 @@ namespace Rishi {
 	// trigger, needs a kinematic rigidbody
 	public class ChickenMarket : MonoBehaviour {
 
-		[SerializeField] string payResource = "Dollar";
+		[SerializeField] string payResource = "Coin";
 		[SerializeField] int payAmount = 30;
 
 		[SerializeField] AudioClip buySound;
