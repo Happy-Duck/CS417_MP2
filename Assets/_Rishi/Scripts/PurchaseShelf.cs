@@ -10,7 +10,7 @@ namespace Rishi {
 		[SerializeField] private Transform spawnParent;
 		[SerializeField] private float restockDelay = 1f;
 
-		[SerializeField] private string costResource = "Coin";
+		[SerializeField] private string costResource = "Dollar";
 		[SerializeField] private int costAmount = 0;
 
 		[SerializeField] private string bonusResource = "";
