@@ -119,6 +119,56 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &68859181
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 68859182}
+  - component: {fileID: 68859183}
+  m_Layer: 0
+  m_Name: WeedSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &68859182
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68859181}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 127242402}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &68859183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68859181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d5af1ca3d384a44cbc01fd38c4cd1c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Alyssa.WeedSpawner
+  weedPrefab: {fileID: 159404921169085716, guid: 315b6c38f5e0dc8428e5f16033ff0072, type: 3}
+  spawnParent: {fileID: 127242402}
+  initialCount: 3
+  startDelay: 1
+  intermittent: 1
+  intervalRange: {x: 20, y: 45}
 --- !u!1 &127242401
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,6 +209,7 @@ Transform:
   - {fileID: 543450652955679404}
   - {fileID: 1984482429}
   - {fileID: 706726379}
+  - {fileID: 68859182}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &140347608
@@ -17604,6 +17655,7 @@ GameObject:
   - component: {fileID: 8895079584019907374}
   - component: {fileID: 8895079584019907373}
   - component: {fileID: 8895079584019907372}
+  - component: {fileID: 8895079584019907376}
   m_Layer: 0
   m_Name: Watering Can
   m_TagString: Untagged
@@ -17835,6 +17887,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8895079584019907371}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8895079584019907376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8895079584019619595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c212dd85d5f1f043a4b188e9aa138d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Alyssa.StatLabel
+  target: {fileID: 0}
+  offset: {x: 0, y: 0.7, z: 0}
+  characterSize: 1
 --- !u!33 &8895079584020710157
 MeshFilter:
   m_ObjectHideFlags: 0

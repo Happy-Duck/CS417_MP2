@@ -254,6 +254,7 @@ GameObject:
   - component: {fileID: 2907665209193399116}
   - component: {fileID: 7618106128447178915}
   - component: {fileID: 3972246998744666706}
+  - component: {fileID: 2481311913368470055}
   m_Layer: 0
   m_Name: PeachPlant
   m_TagString: Untagged
@@ -308,6 +309,7 @@ MonoBehaviour:
   - {fileID: 3008593261020421173}
   - {fileID: 9179891467518378446}
   fruitPrefab: {fileID: 7059051132118613490, guid: 9b8e4977e8f91304295cad61a7b50335, type: 3}
+  signatureStat: 
   tintWhenDry: 1
   dryTint: {r: 0.7, g: 0.6, b: 0.4, a: 1}
 --- !u!136 &3972246998744666706
@@ -333,6 +335,21 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &2481311913368470055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926308250766541447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c212dd85d5f1f043a4b188e9aa138d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Alyssa.StatLabel
+  target: {fileID: 0}
+  offset: {x: 0, y: 0.7, z: 0}
+  characterSize: 0.02
 --- !u!1 &2116289570666531456
 GameObject:
   m_ObjectHideFlags: 0

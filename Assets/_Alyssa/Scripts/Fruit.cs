@@ -14,8 +14,12 @@ namespace Alyssa
             rb.isKinematic = true;
             rb.useGravity = false;
             var grab = GetComponent<XRGrabInteractable>();
-            grab.throwOnDetach = false;                 // fixes the warning
-            grab.selectEntered.AddListener(_ => rb.useGravity = true);
+            grab.throwOnDetach = false;
+            grab.selectEntered.AddListener(_ =>
+            {
+                rb.useGravity = true;
+                transform.SetParent(null, true);  // picked: leave the plant
+            });
         }
     }
 }

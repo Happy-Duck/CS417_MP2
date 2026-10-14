@@ -10,6 +10,7 @@ namespace Alyssa
         public float growthPerSec = 3f;
         public Transform[] fruitPoints;      // optional, empty children of the root
         public GameObject fruitPrefab;       // optional, grabbable fruit
+        public string signatureStat = "";      // e.g. "Sweetness"
 
         [Header("Dryness tint")]
         public bool tintWhenDry = true;      // untick to turn the tint off completely
@@ -33,12 +34,14 @@ namespace Alyssa
             if (visual == null) visual = transform;
             mpb = new MaterialPropertyBlock();
             CacheOriginalColors();
-            if (stats.Count == 0)
-            {
-                stats.Add(new Stat { name = "Thirst", value = 70, ratePerSec = -1f });
-                stats.Add(new Stat { name = "Growth", value = 0 });
-                stats.Add(new Stat { name = "Ripeness", value = 0 });
-            }
+            EnsureStat("Thirst", 70, -1f);
+            EnsureStat("Growth", 0, 0f);
+            EnsureStat("Ripeness", 0, 0f);
+        }
+
+        void EnsureStat(string n, float v, float rate)
+        {
+            if (Get(n) == null) stats.Add(new Stat { name = n, value = v, ratePerSec = rate });
         }
 
         // remember each renderer's real material color so tinting multiplies it instead of replacing it
@@ -114,24 +117,19 @@ namespace Alyssa
 
             if (!hasFruit && growth.value >= 100)
             {
+                var sig = string.IsNullOrEmpty(signatureStat) ? null : Get(signatureStat);
+                float fruitScale = sig == null ? 1f : Mathf.Lerp(0.7f, 1.3f, sig.value / 100f);
                 foreach (var p in fruitPoints)
                 {
-                    fruits.Add(Instantiate(fruitPrefab, p.position, p.rotation));
+                    var f = Instantiate(fruitPrefab, p.position, p.rotation, p);
+                    f.transform.localScale *= fruitScale;      // signature stat changes fruit size
+                    fruits.Add(f);
                     homes.Add(p);
                 }
+
                 hasFruit = true;
             }
             if (!hasFruit) return;
-
-            // keep unpicked fruit attached to its spot (e.g. if the bed was moved)
-            for (int i = 0; i < fruits.Count; i++)
-            {
-                if (fruits[i] == null) continue;
-                var rb = fruits[i].GetComponent<Rigidbody>();
-                if (rb != null && rb.isKinematic &&
-                    Vector3.Distance(fruits[i].transform.position, homes[i].position) < 0.2f)
-                    fruits[i].transform.position = homes[i].position;
-            }
 
             // a fruit counts as picked once it's destroyed or carried away from its spot
             for (int i = fruits.Count - 1; i >= 0; i--)
