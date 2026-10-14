@@ -58,6 +58,13 @@ namespace Alyssa
             }
         }
 
+        void OnDestroy()
+        {
+            // fruit still tracked here was never picked, so remove it with the plant
+            foreach (var f in fruits)
+                if (f != null) Destroy(f);
+        }
+
         protected override void Update()
         {
             base.Update();
@@ -109,12 +116,22 @@ namespace Alyssa
             {
                 foreach (var p in fruitPoints)
                 {
-                    fruits.Add(Instantiate(fruitPrefab, p.position, p.rotation));  // unparented so grabbing is clean
+                    fruits.Add(Instantiate(fruitPrefab, p.position, p.rotation));
                     homes.Add(p);
                 }
                 hasFruit = true;
             }
             if (!hasFruit) return;
+
+            // keep unpicked fruit attached to its spot (e.g. if the bed was moved)
+            for (int i = 0; i < fruits.Count; i++)
+            {
+                if (fruits[i] == null) continue;
+                var rb = fruits[i].GetComponent<Rigidbody>();
+                if (rb != null && rb.isKinematic &&
+                    Vector3.Distance(fruits[i].transform.position, homes[i].position) < 0.2f)
+                    fruits[i].transform.position = homes[i].position;
+            }
 
             // a fruit counts as picked once it's destroyed or carried away from its spot
             for (int i = fruits.Count - 1; i >= 0; i--)
@@ -126,7 +143,7 @@ namespace Alyssa
                 }
             }
             if (fruits.Count == 0)
-            {            // all picked: regrow
+            {
                 hasFruit = false;
                 growth.value = 60;
             }

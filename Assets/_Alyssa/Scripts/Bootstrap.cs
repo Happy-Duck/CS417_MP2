@@ -8,7 +8,6 @@ namespace Alyssa
         void Start()
         {   // Start, not Awake, so ResourceManager is ready
             ResourceManager.Instance.Add("Compost", 10);
-            ResourceManager.Instance.Add("StrawberrySeed", 10);
         }
     }
 }
