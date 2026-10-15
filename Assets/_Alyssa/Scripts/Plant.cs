@@ -8,12 +8,12 @@ namespace Alyssa
         public GameObject[] stages;          // 0 = seedling ... last = fully grown
         public Transform visual;             // only used if Stages is empty
         public float growthPerSec = 3f;
-        public Transform[] fruitPoints;      // optional, empty children of the root
-        public GameObject fruitPrefab;       // optional, grabbable fruit
-        public string signatureStat = "";      // e.g. "Sweetness"
+        public Transform[] fruitPoints;    
+        public GameObject fruitPrefab;      
+        public string signatureStat = "";     
 
         [Header("Dryness tint")]
-        public bool tintWhenDry = true;      // untick to turn the tint off completely
+        public bool tintWhenDry = true;      
         public Color dryTint = new Color(0.7f, 0.6f, 0.4f);   // brownish when thirsty
 
         static readonly int BaseColorId = Shader.PropertyToID("_BaseColor");

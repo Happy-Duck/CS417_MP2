@@ -255,6 +255,7 @@ GameObject:
   - component: {fileID: 7618106128447178915}
   - component: {fileID: 3972246998744666706}
   - component: {fileID: 1919800975843736466}
+  - component: {fileID: 7643428756385198705}
   m_Layer: 0
   m_Name: ApplePlant
   m_TagString: Untagged
@@ -350,6 +351,25 @@ MonoBehaviour:
   target: {fileID: 0}
   offset: {x: 0, y: 0.7, z: 0}
   characterSize: 0.02
+--- !u!114 &7643428756385198705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926308250766541447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a97aeaab7b1d90b49bf1febb3758ff76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Alyssa.TutorialPopup
+  message: 'Water plants or
+
+    they dry out and die.'
+  id: Plant
+  showDistance: 1.5
+  offset: {x: 0, y: 0.6, z: 0}
+  characterSize: 0.012
 --- !u!1 &2116289570666531456
 GameObject:
   m_ObjectHideFlags: 0

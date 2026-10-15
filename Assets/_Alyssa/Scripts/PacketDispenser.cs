@@ -11,7 +11,7 @@ namespace Alyssa
         public GameObject packetPrefab;      // the StrawberrySeedPacket prefab
         public Transform displayPoint;       // where the packet sits; uses this object if empty
         public Transform spawnParent;        // Alyssa_Scene_Root
-        public string seedResource = "StrawberrySeed";
+        public string seedResource = "StrawberrySeed"; // default
         public int seedsPerPacket = 1;
         public float restockDelay = 1f;
 
@@ -27,7 +27,7 @@ namespace Alyssa
             UnityAction<SelectEnterEventArgs> onGrab = null;
             onGrab = _ => {
                 grab.selectEntered.RemoveListener(onGrab);
-                // free for now; later swap this line for ResourceManager.Instance.TrySpend(currency, price)
+                // later implement price
                 ResourceManager.Instance.Add(seedResource, seedsPerPacket);
                 Invoke(nameof(Restock), restockDelay);
             };

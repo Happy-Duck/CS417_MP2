@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6839759482014692713}
   - component: {fileID: 8907919190593230672}
   - component: {fileID: 4679567191125995483}
+  - component: {fileID: 7478919104831354453}
   m_Layer: 0
   m_Name: Weed
   m_TagString: Untagged
@@ -259,6 +260,25 @@ MonoBehaviour:
   target: {fileID: 0}
   offset: {x: 0, y: 0.5, z: 0}
   characterSize: 0.02
+--- !u!114 &7478919104831354453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159404921169085716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a97aeaab7b1d90b49bf1febb3758ff76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Alyssa.TutorialPopup
+  message: 'Weeds block beds
+
+    Pull them out'
+  id: 
+  showDistance: 1.5
+  offset: {x: 0, y: 0.6, z: 0}
+  characterSize: 0.012
 --- !u!1 &2375586788089597825
 GameObject:
   m_ObjectHideFlags: 0

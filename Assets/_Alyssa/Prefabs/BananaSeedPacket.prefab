@@ -192,6 +192,7 @@ GameObject:
   - component: {fileID: 3132965937499660303}
   - component: {fileID: 2967977240770106107}
   - component: {fileID: 3364544057188601791}
+  - component: {fileID: 7814988933181988869}
   m_Layer: 0
   m_Name: BananaSeedPacket
   m_TagString: Untagged
@@ -389,6 +390,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Alyssa.SeedPacket
   plantPrefab: {fileID: 7618106128447178915, guid: 5241d5074a1ff0e4a92ca87a91d5cfae, type: 3}
   seedResource: BananaSeed
+--- !u!114 &7814988933181988869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3559877579486299646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a97aeaab7b1d90b49bf1febb3758ff76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Alyssa.TutorialPopup
+  message: 'Touch this to a bed
+
+    to plant it'
+  id: Seed
+  triggerMode: 1
+  showDistance: 1.5
+  hideAfterSeconds: 6
+  offset: {x: 0, y: 0.4, z: 0}
+  characterSize: 0.012
+  onlyWhenPlaced: 0
 --- !u!1 &4938136620471994230
 GameObject:
   m_ObjectHideFlags: 0

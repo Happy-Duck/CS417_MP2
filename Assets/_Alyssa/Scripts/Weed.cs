@@ -23,7 +23,7 @@ namespace Alyssa
         {
             Pulled = true;
             Get("Spread").ratePerSec = 0;         // stops growing once picked
-            transform.SetParent(null, true);      // no longer follows or dies with the bed
+            transform.SetParent(null, true);      
         }
 
         protected override void Update()
