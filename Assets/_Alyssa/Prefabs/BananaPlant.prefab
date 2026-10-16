@@ -310,7 +310,7 @@ MonoBehaviour:
   - {fileID: 3008593261020421173}
   - {fileID: 9179891467518378446}
   fruitPrefab: {fileID: 7059051132118613490, guid: edbc11f45de6a92439e24b65a9c2ebeb, type: 3}
-  signatureStat: 
+  signatureStat: Ripening
   tintWhenDry: 1
   dryTint: {r: 0.7, g: 0.6, b: 0.4, a: 1}
 --- !u!136 &3972246998744666706
@@ -367,9 +367,12 @@ MonoBehaviour:
 
     they dry out and die.'
   id: Plant
+  triggerMode: 0
   showDistance: 1.5
+  hideAfterSeconds: 6
   offset: {x: 0, y: 0.6, z: 0}
   characterSize: 0.012
+  onlyWhenPlaced: 0
 --- !u!1 &2116289570666531456
 GameObject:
   m_ObjectHideFlags: 0
