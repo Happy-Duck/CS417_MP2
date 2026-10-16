@@ -10,8 +10,9 @@ namespace Sharyq {
     public class InitializeWaffleHouseResources : MonoBehaviour {
         
         void Start() {
-            ResourceManager.Instance.Add("Waffle", 0);
             ResourceManager.Instance.Add("Dollar", 1000);
+            ResourceManager.Instance.Add("Waffle", 0);
+            ResourceManager.Instance.Add("Leftover", 0);
         }
     }
 }
