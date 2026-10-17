@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6383431876234372623}
   - component: {fileID: 480611355930536370}
   - component: {fileID: 8729888582367803796}
+  - component: {fileID: 8093708090642727352}
   m_Layer: 0
   m_Name: BatterDetectionZone
   m_TagString: Untagged
@@ -102,6 +103,18 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+--- !u!114 &8093708090642727352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438443914850469661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07266483833cb07458fbd798d30c643e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DetectInArea
 --- !u!1 &4734435476980234249
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,6 +130,8 @@ GameObject:
   - component: {fileID: 7524478772195432062}
   - component: {fileID: 4075369299728206009}
   - component: {fileID: 1185406481131448195}
+  - component: {fileID: 6427037149268126050}
+  - component: {fileID: 7227441700236457935}
   m_Layer: 0
   m_Name: Stove
   m_TagString: Untagged
@@ -141,6 +156,7 @@ Transform:
   - {fileID: 6383431876234372623}
   - {fileID: 1059902434703369919}
   - {fileID: 69728050072471183}
+  - {fileID: 1101521148297516717}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &4587502120608799379
@@ -366,9 +382,99 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df594f9fefe61ae4c9f6a6f1822b7d9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Sharyq.StoveCooking
+  StartCooking:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6427037149268126050}
+        m_TargetAssemblyTypeName: Sharyq.ResourceProducingStat, Assembly-CSharp
+        m_MethodName: StartProduction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   batterDetection: {fileID: 8729888582367803796}
   batterPreview: {fileID: 431878317145111557}
   waffleCooking: {fileID: 845667268175273013}
+  instanceLocation: {fileID: 1101521148297516717}
+--- !u!114 &6427037149268126050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4734435476980234249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f762f173aae450d43af3b4b4aea118ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Sharyq.ResourceProducingStat
+  finishedCooking:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1185406481131448195}
+        m_TargetAssemblyTypeName: Sharyq.StoveCooking, Assembly-CSharp
+        m_MethodName: FinishCooking
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  timeTillDone: 5
+  increaseRate: 1
+  currentTime: 0
+--- !u!114 &7227441700236457935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4734435476980234249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e9dfaae4c30557488dbccdbfcbecc3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OutlineOnHover
+  outlineMaterial: {fileID: 2100000, guid: 728ab9721e9b57d458b6dd81ce8eb8b4, type: 2}
+--- !u!1 &5041688828160558355
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1101521148297516717}
+  m_Layer: 0
+  m_Name: InstanceSpot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1101521148297516717
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5041688828160558355}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.018, y: 1.043, z: -0.018}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8872728176791444259}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5493164852849288720
 PrefabInstance:
   m_ObjectHideFlags: 0

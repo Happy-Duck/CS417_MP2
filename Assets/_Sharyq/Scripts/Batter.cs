@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 namespace Sharyq
 {
@@ -7,7 +8,12 @@ namespace Sharyq
     /// </summary>
     public class Batter : MonoBehaviour
     {
-        
+        [SerializeField] private GameObject wafflePrefab;
+        public WaffleStat CreateWaffle(Transform instanceLocation)
+        {
+            var waffle = Instantiate(wafflePrefab, instanceLocation.position, instanceLocation.rotation);
+            return waffle.GetComponent<WaffleStat>();
+        }
     }
 }
 
