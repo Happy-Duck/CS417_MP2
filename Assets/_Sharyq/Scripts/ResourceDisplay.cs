@@ -1,7 +1,9 @@
+using System;
 using Shared;
 using System.Collections.Generic;
 using System.Text;
 using TMPro;
+using Unity.Tutorials.Editor;
 using UnityEngine;
 
 namespace Sharyq {
@@ -11,14 +13,18 @@ namespace Sharyq {
     /// Using Events provided
     /// </summary>
     public class ResourceDisplay : MonoBehaviour {
+        
+        [Serializable]
+        private struct ResourceEntry {
+            public string resourceKey;
+            public string displayName;
+        }
 
         [SerializeField]
         private TMP_Text resourceText;
         [SerializeField]
-        private List<string> displayedResources = new List<string>();
-        [SerializeField]
-        private List<string> resourceName = new List<string>();
-
+        private List<ResourceEntry> displayedResources = new List<ResourceEntry>();
+        
         private StringBuilder builder = new StringBuilder();
 
         private void Start() {
@@ -43,9 +49,9 @@ namespace Sharyq {
             builder.Clear();
             builder.Append("Current Stock");
 
-            if (displayedResources.Count > 0 && displayedResources.Count == resourceName.Count) {
-                for (int i = 0; i < displayedResources.Count; i++) {
-                    AddLineWithDisplayName(resourceName[i], ResourceManager.Instance.Get(displayedResources[i]));
+            if (displayedResources.Count > 0) {
+                foreach(ResourceEntry resource in displayedResources) {
+                    AddLineWithDisplayName(resource, ResourceManager.Instance.Get(resource.resourceKey));
                 }
             } else {
                 Debug.LogWarning("Resource Name not Provided on " + gameObject.name);
@@ -53,15 +59,22 @@ namespace Sharyq {
 
             resourceText.text = builder.ToString();
         }
-        
+
         /// <summary>
         /// Custom Formatting for certain reosurce Icons
         /// </summary>
-        /// <param name="name">Display Title for it</param>
+        /// <param name="resource">Resource in system and wanted display name</param>
         /// <param name="amount"> Amount</param>
-        private void AddLineWithDisplayName(string name, int amount) {
+        private void AddLineWithDisplayName(ResourceEntry resource, int amount) {
             if (builder.Length > 0) builder.Append("\n");
-            builder.Append(name);
+            if (resource.displayName.IsNullOrEmpty())
+            {
+                builder.Append(resource.resourceKey + "s: ");
+            }
+            else
+            {
+                builder.Append(resource.displayName);
+            }
             builder.Append(amount);
         }
 
