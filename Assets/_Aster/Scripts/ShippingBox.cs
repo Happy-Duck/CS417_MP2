@@ -36,12 +36,13 @@ namespace Aster
             }
             if (bar != null) bar.Set(Mathf.Min(shipped, goalForBar), goalForBar);
             if (sold > 0) onShipped?.Invoke(); else onNothingToShip?.Invoke();
+            
+            shipped += sold;
             if (shipped >= goalForBar)
             {
-                price += 5 * (shipped-goalForBar);
+                price += 5 * (shipped - goalForBar);
                 goalForBar += 5;
             }
-            shipped += sold;
             Refresh();
         }
         void Refresh()
