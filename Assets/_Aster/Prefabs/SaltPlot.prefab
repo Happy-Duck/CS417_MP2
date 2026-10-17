@@ -504,7 +504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shared.GridPlaceable
   costResource: GOLD
-  costAmount: 15
+  costAmount: 10
   placeableSurfaceLayers:
     serializedVersion: 2
     m_Bits: 64

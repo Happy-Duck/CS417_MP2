@@ -1,6 +1,8 @@
 using Aster;
 using Shared;
 using System.Collections.Generic;
+using TMPro;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,8 +12,10 @@ namespace Aster
     public class ShippingBox : MonoBehaviour
     {
         public List<Recipe> sellRecipes = new List<Recipe>();
-        public int shipped;               
-        public int goalForBar = 10;
+        public TMP_Text statusText;
+        public int shipped = 0;
+        public int price = 10;
+        public int goalForBar = 5;
         public StatBar bar;
         public UnityEvent onShipped, onNothingToShip;
 
@@ -27,12 +31,22 @@ namespace Aster
                 {
                     r.SpendFromResources();
                     rm.Add(r.output, r.outputAmount);
-                    shipped++;
                     sold++;
                 }
             }
             if (bar != null) bar.Set(Mathf.Min(shipped, goalForBar), goalForBar);
             if (sold > 0) onShipped?.Invoke(); else onNothingToShip?.Invoke();
+            if (shipped >= goalForBar)
+            {
+                price += 5 * (shipped-goalForBar);
+                goalForBar += 5;
+            }
+            shipped += sold;
+            Refresh();
+        }
+        void Refresh()
+        {
+            statusText.text = "METH Sell Price: " + price + " Gold\n\nGoal: " + goalForBar + " METH\n\nAmount of METH Sold: " + shipped;
         }
     }
 }

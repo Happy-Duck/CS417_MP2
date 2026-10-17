@@ -356,7 +356,7 @@ MonoBehaviour:
   durability: 15
   maxDurability: 15
   bar: {fileID: 4492286126255941171}
-  killY: -5
+  killY: -20
 --- !u!65 &5018602163738716563
 BoxCollider:
   m_ObjectHideFlags: 0
