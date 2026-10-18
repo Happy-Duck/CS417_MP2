@@ -11,7 +11,7 @@ namespace Sharyq {
         
         void Start() {
             ResourceManager.Instance.Add("Dollar", 1000);
-            ResourceManager.Instance.Add("Waffle", 0);
+            ResourceManager.Instance.Add("Waffle", 10);
             ResourceManager.Instance.Add("Leftover", 0);
         }
     }

@@ -78,7 +78,6 @@ namespace Sharyq
 
         public void ActivateStoveMovement()
         {
-            Debug.Log("Activating stove movement");
             _currentInteractable.enabled = true;
             batterDetection.enabled = true;
         }

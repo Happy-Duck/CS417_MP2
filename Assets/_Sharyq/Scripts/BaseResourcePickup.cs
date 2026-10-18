@@ -11,7 +11,7 @@ namespace Sharyq
     {
         public UnityEvent onResourcePickup;
         [SerializeField]
-        private string resource;
+        protected string resource;
 
         private XRBaseInteractable _interactable;
 
