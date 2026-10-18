@@ -2392,7 +2392,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 599435653}
   costResource: GOLD
   cost: 10
-  giveFreeOnStart: 1
+  giveFreeOnStart: 0
   onlyOneAtATime: 1
   onBought:
     m_PersistentCalls:
