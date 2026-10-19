@@ -19,6 +19,8 @@ namespace Sharyq
             { IngredientType.Egg, IngredientType.Wheat };
         [SerializeField] private float mixDuration = 3f;
         [SerializeField] private int batterPerMix = 1;
+        [SerializeField] private float progress = 0f;
+        public float Progress => progress;
 
         private IngredientPopup popup;
         private ResourceNotifier finishedPopup;
@@ -81,17 +83,32 @@ namespace Sharyq
             Destroy(ingredient.gameObject);
 
             if (added.Count >= requiredIngredients.Length)
-                StartCoroutine(MixRoutine());
+                StartMixing();
         }
 
-        private IEnumerator MixRoutine()
+        private void Update()
+        {
+            if (!IsMixing) return;
+
+            // Euler step: d(progress)/dt = 1 / mixDuration
+            float rate = mixDuration > 0f ? 1f / mixDuration : float.PositiveInfinity;
+            progress += rate * Time.deltaTime;
+
+            if (progress >= 1f)
+                FinishMixing();
+        }
+
+        private void StartMixing()
         {
             IsMixing = true;
+            progress = 0f;
             SetInteractionEnabled(false);
             onMixingStarted?.Invoke();
+        }
 
-            yield return new WaitForSeconds(mixDuration);
-
+        private void FinishMixing()
+        {
+            progress = 1f;
             added.Clear();
             IsMixing = false;
             SetInteractionEnabled(true);
@@ -101,6 +118,8 @@ namespace Sharyq
 
             if (finishedPopup != null)
                 finishedPopup.AddedResource("Batter", batterPerMix);
+
+            progress = 0f;
         }
 
         private void SetInteractionEnabled(bool value)

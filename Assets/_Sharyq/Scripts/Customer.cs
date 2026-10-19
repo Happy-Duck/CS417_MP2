@@ -8,8 +8,11 @@ namespace Sharyq
 {
     public class Customer : MonoBehaviour
     {
+        //Fullness Stat
+        [SerializeField] private float fullness = 0f;
         [SerializeField] private GameObject tipPrefab;
         [SerializeField] private GameObject leftoverPrefab;
+        [SerializeField] private GameObject notifPrefab;
         
         private NavMeshAgent _agent;
         private Seat _seat;
@@ -20,9 +23,12 @@ namespace Sharyq
         public float kindnessLevel;
         public float richnessLevel;
         public float speedLevel;
+        
+        public float Fullness => fullness;
 
         public void Awake()
         {
+            
             // Init Stats related to how fast they eat,
             // and how likely they will give
             // Leftovers and tip
@@ -53,15 +59,14 @@ namespace Sharyq
             transform.rotation = _seat.transform.rotation;
             
             // Eating Logic
-            yield return new WaitForSeconds(10f * speedLevel);
+            yield return FillRoutine();
             
             // tipping
             // tipping
-            Vector3? tipPos = null;
+            Vector3 tipPos = _seat.GetRandomTablePoint();
             if (Random.value < kindnessLevel)
             {
-                tipPos = _seat.GetRandomTablePoint();
-                var tip = Instantiate(tipPrefab, tipPos.Value, RandomYaw());
+                var tip = Instantiate(tipPrefab, tipPos, RandomYaw());
                 var tipStat = tip.GetComponent<TipStat>();
                 if (tipStat != null)
                     tipStat.TipAmount = (int)Math.Round(100 * richnessLevel);
@@ -74,6 +79,8 @@ namespace Sharyq
             }
             
             //Leave my establishment so i can serve more people lmao
+            var notif = Instantiate(notifPrefab, tipPos, Quaternion.identity).GetComponent<FinishedNotifier>();
+            notif.TriggerNotification();
             _seat.Release();
             _seat = null;
             _agent.updateRotation = true;
@@ -81,6 +88,28 @@ namespace Sharyq
             yield return WalkTo(_exitPoint.position);
             Destroy(gameObject);
 
+        }
+        
+        private IEnumerator FillRoutine()
+        {
+            float duration = 10f * speedLevel;
+            fullness = 0f;
+
+            if (duration <= 0f)
+            {
+                fullness = 1f;
+                yield break;
+            }
+
+            float t = 0f;
+            while (t < duration)
+            {
+                t += Time.deltaTime;
+                fullness = Mathf.Clamp01(t / duration);
+                yield return null;
+            }
+
+            fullness = 1f;
         }
         
         private static Quaternion RandomYaw() =>
