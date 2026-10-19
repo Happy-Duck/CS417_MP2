@@ -4957,7 +4957,7 @@ MonoBehaviour:
   onResourcePickup:
     m_PersistentCalls:
       m_Calls: []
-  resource: Leftover
+  resource: Burnt Waffle
   finishedPopupPrefab: {fileID: 1557378499866557932, guid: 39644129965637e45a18ac0e141ddcdd, type: 3}
 --- !u!65 &6544636499025667861
 BoxCollider:
