@@ -153,7 +153,7 @@ GameObject:
   - component: {fileID: 5178699511070090787}
   - component: {fileID: 1557378499866557932}
   m_Layer: 0
-  m_Name: ResourceAddedNotif
+  m_Name: ResourceNotif
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -291,3 +291,7 @@ MonoBehaviour:
   fadeIn: 0.2
   hold: 1.5
   fadeOut: 0.5
+  deleteOnFinish: 1
+  faceOnLoad: 1
+  faceOnEachAdd: 1
+  keepUpright: 1

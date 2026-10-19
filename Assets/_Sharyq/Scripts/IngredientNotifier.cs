@@ -42,6 +42,8 @@ namespace Sharyq
             yield return new WaitForSeconds(hold);
             yield return Fade(1f, 0f, fadeOut);
             routine = null;
+            
+            ClearList();
         }
 
         IEnumerator Fade(float from, float to, float duration)

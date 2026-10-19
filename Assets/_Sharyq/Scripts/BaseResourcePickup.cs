@@ -15,7 +15,7 @@ namespace Sharyq
 
         private XRBaseInteractable _interactable;
         [SerializeField]
-        protected GeneralResourceAddedNotifier finishedPopupPrefab;
+        protected ResourceNotifier finishedPopupPrefab;
         protected Vector3 popupOffset = new Vector3(0f, 0.3f, 0f);
 
         protected virtual void Awake()

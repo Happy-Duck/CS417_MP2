@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using Shared;
 using UnityEngine.Events;
+using UnityEngine.Playables;
 using UnityEngine.UI;
 
 namespace Sharyq
@@ -14,6 +15,11 @@ namespace Sharyq
         [SerializeField] private string buyResource;
         [SerializeField] private int buyAmount = 10;
         [SerializeField] private CustomerSpawner spawner;
+        [SerializeField] private GameObject notifier;
+        [SerializeField] private Transform sellNotifLocation;
+        [SerializeField] private Transform buyNotifLocation;
+        
+        [SerializeField] private AudioClip paySound;
         
         private Button _sellButton;
         
@@ -52,6 +58,11 @@ namespace Sharyq
             {
                 rm.Add(buyResource, buyAmount);
                 spawner.TrySpawnCustomer();
+                var notif =  Instantiate(notifier, sellNotifLocation.position, sellNotifLocation.rotation).GetComponent<ResourceNotifier>();
+                var notif2 =  Instantiate(notifier, buyNotifLocation.position, buyNotifLocation.rotation).GetComponent<ResourceNotifier>();
+                notif.RemoveResource(sellResource, sellAmount);
+                notif2.AddedResource(buyResource, buyAmount);
+                AudioSource.PlayClipAtPoint(paySound, transform.position);
                 ItemSoldEvent.Invoke();
             }
         }

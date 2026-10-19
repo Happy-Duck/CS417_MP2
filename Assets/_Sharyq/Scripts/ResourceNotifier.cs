@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Sharyq
 {
-    public class GeneralResourceAddedNotifier : MonoBehaviour
+    public class ResourceNotifier : MonoBehaviour
     {
         [SerializeField] TMP_Text label;
         [SerializeField] CanvasGroup group;
@@ -14,17 +14,42 @@ namespace Sharyq
         [SerializeField] float fadeOut = 0.5f;
         [SerializeField] bool deleteOnFinish = true;
 
+        [Header("Facing")]
+        [SerializeField] bool faceOnLoad = true;
+        [SerializeField] bool faceOnEachAdd = true;
+        [SerializeField] bool keepUpright = true;
+
         readonly StringBuilder sb = new();
         Coroutine routine;
+        Transform _cam;
 
         void Awake()
         {
             group.alpha = 0;
         }
 
+        void Start()
+        {
+            if (faceOnLoad)
+                FacePlayer();
+        }
+
         public void AddedResource(string ingredientName, int amount)
         {
+            if (faceOnEachAdd)
+                FacePlayer();
             sb.AppendLine($"Gained {amount} {ingredientName}");
+            label.text = sb.ToString().TrimEnd();
+
+            if (routine != null) StopCoroutine(routine);
+            routine = StartCoroutine(Run());
+        }
+        
+        public void RemoveResource(string ingredientName, int amount)
+        {
+            if (faceOnEachAdd)
+                FacePlayer();
+            sb.AppendLine($"Payed {amount} {ingredientName}s");
             label.text = sb.ToString().TrimEnd();
 
             if (routine != null) StopCoroutine(routine);
@@ -37,13 +62,32 @@ namespace Sharyq
             label.text = "";
         }
 
+        void FacePlayer()
+        {
+            if (_cam == null)
+            {
+                var main = Camera.main;
+                if (main == null) return;
+                _cam = main.transform;
+            }
+
+            // World-space canvases render facing +Z, so point +Z away from the camera
+            Vector3 dir = transform.position - _cam.position;
+            if (keepUpright)
+                dir.y = 0f;
+
+            if (dir.sqrMagnitude < 0.0001f) return;
+
+            transform.rotation = Quaternion.LookRotation(dir, Vector3.up);
+        }
+
         IEnumerator Run()
         {
             yield return Fade(group.alpha, 1f, fadeIn);
             yield return new WaitForSeconds(hold);
             yield return Fade(1f, 0f, fadeOut);
             routine = null;
-            
+
             if (deleteOnFinish)
                 Destroy(gameObject);
         }

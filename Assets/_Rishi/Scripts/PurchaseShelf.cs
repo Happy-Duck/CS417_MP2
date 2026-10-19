@@ -1,10 +1,12 @@
 using Shared;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 namespace Rishi {
 	public class PurchaseShelf : MonoBehaviour {
+		public UnityEvent<string, int> onPurchase;
 		[SerializeField] private GameObject itemPrefab;
 		[SerializeField] private Transform displayPoint;
 		[SerializeField] private Transform spawnParent;
@@ -60,6 +62,7 @@ namespace Rishi {
 			if (bonusResource != "") ResourceManager.Instance.Add(bonusResource, bonusAmount);
 			AudioSource.PlayClipAtPoint(paySound, transform.position);
 			Invoke(nameof(Restock), restockDelay);
+			onPurchase.Invoke(costResource, costAmount);
 		}
 
 		private bool TryPay() {
