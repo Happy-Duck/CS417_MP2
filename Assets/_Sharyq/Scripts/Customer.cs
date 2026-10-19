@@ -17,6 +17,7 @@ namespace Sharyq
         private NavMeshAgent _agent;
         private Seat _seat;
         private Transform _exitPoint;
+        private Animator _animator;
         
         [Header("Customer Stats")]
         public float hungerLevel;
@@ -41,6 +42,7 @@ namespace Sharyq
             _agent = GetComponent<NavMeshAgent>();
             _agent.obstacleAvoidanceType = ObstacleAvoidanceType.NoObstacleAvoidance;
             _agent.stoppingDistance = 0.3f;
+            _animator= GetComponent<Animator>();
         }
 
         public void Init(Seat seat, Transform exitPoint)
@@ -132,6 +134,9 @@ namespace Sharyq
         {
             _agent.SetDestination(destination);
             
+            _animator.SetBool("IsRunning", true);
+            Debug.Log("IsRunning = " + _animator.GetBool("IsRunning"));
+            
             while (_agent.pathPending) yield return null;
  
             while (_agent.remainingDistance > _agent.stoppingDistance + 0.05f)
@@ -139,6 +144,7 @@ namespace Sharyq
                 if (_agent.pathStatus == NavMeshPathStatus.PathInvalid) yield break;
                 yield return null;
             }
+            _animator.SetBool("IsRunning", false);
         }
         
         private void OnDestroy()
