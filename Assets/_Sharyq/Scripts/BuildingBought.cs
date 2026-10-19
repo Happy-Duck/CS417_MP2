@@ -17,7 +17,7 @@ namespace Sharyq
                 prefab.RemoveResource(costResource, costAmount);
             }
             
-            if (payNotifPrefab != null)
+            if (paySound != null)
                 AudioSource.PlayClipAtPoint(paySound, transform.position);
         }
     }
