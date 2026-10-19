@@ -88,6 +88,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8133137377513267571, guid: 6ff28334669ec0e439bf4926b90e4521, type: 3}
+      propertyPath: finishedPopupPrefab
+      value: 
+      objectReference: {fileID: 1557378499866557932, guid: 39644129965637e45a18ac0e141ddcdd, type: 3}
     - target: {fileID: 8734954079271250703, guid: 6ff28334669ec0e439bf4926b90e4521, type: 3}
       propertyPath: m_LODs.Array.data[0].renderers.Array.data[0].renderer
       value: 
@@ -106,6 +110,7 @@ PrefabInstance:
     - {fileID: 4653345715627237271, guid: 6ff28334669ec0e439bf4926b90e4521, type: 3}
     - {fileID: 7735531190233278755, guid: 6ff28334669ec0e439bf4926b90e4521, type: 3}
     - {fileID: 2289558700202783222, guid: 6ff28334669ec0e439bf4926b90e4521, type: 3}
+    - {fileID: 4310405175986729313, guid: 6ff28334669ec0e439bf4926b90e4521, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 312650596453269644, guid: 6ff28334669ec0e439bf4926b90e4521, type: 3}
       insertIndex: -1

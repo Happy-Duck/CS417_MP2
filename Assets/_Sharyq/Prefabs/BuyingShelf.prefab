@@ -50,7 +50,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6041319983396038216}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 533a732f3826d074899f8b739e5e87c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shared.GridPurchaseShelf
-  itemPrefab: {fileID: 0}
-  displayPoint: {fileID: 0}
+  itemPrefab: {fileID: 4075369299728206009, guid: fe60da209d535cd4a891ea19159ef4c7, type: 3}
+  displayPoint: {fileID: 8433379801290561272}
   spawnParent: {fileID: 0}
   restockDelay: 1

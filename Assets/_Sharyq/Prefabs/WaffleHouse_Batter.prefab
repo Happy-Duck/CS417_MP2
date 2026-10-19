@@ -91,12 +91,6 @@ PrefabInstance:
       addedObject: {fileID: 1497292007964307555}
     - targetCorrespondingSourceObject: {fileID: 3439611114420210703, guid: 2221062d665833a4cb3fad3c42851e20, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 696836474121297539}
-    - targetCorrespondingSourceObject: {fileID: 3439611114420210703, guid: 2221062d665833a4cb3fad3c42851e20, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7311596934492674824}
-    - targetCorrespondingSourceObject: {fileID: 3439611114420210703, guid: 2221062d665833a4cb3fad3c42851e20, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 5268545654189571539}
     - targetCorrespondingSourceObject: {fileID: 3439611114420210703, guid: 2221062d665833a4cb3fad3c42851e20, type: 3}
       insertIndex: -1
@@ -285,39 +279,6 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
---- !u!114 &696836474121297539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6943661097626880655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 818c1ee7a2dcb2c4c8621f52d3d6c6c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Shared.GridOccupant
-  size: {x: 1, y: 1}
-  registerOnStart: 1
---- !u!114 &7311596934492674824
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6943661097626880655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 378e210f3a05bc74d888fdfc068db404, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Shared.GridPlaceable
-  costResource: Dollar
-  costAmount: 1
-  placeableSurfaceLayers:
-    serializedVersion: 2
-    m_Bits: 64
-  maxDropHeight: 3
-  rayStartHeight: 0.5
 --- !u!114 &5268545654189571539
 MonoBehaviour:
   m_ObjectHideFlags: 0

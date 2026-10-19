@@ -56,17 +56,21 @@ namespace Sharyq
             yield return new WaitForSeconds(10f * speedLevel);
             
             // tipping
+            // tipping
+            Vector3? tipPos = null;
             if (Random.value < kindnessLevel)
             {
-                var tip = Instantiate(tipPrefab, _seat.tipDropPoint);
+                tipPos = _seat.GetRandomTablePoint();
+                var tip = Instantiate(tipPrefab, tipPos.Value, RandomYaw());
                 var tipStat = tip.GetComponent<TipStat>();
                 if (tipStat != null)
-                    tipStat.TipAmount = (int) Math.Round(100 * richnessLevel);
+                    tipStat.TipAmount = (int)Math.Round(100 * richnessLevel);
             }
-            
+
             if (Random.value < hungerLevel)
             {
-                var leftover = Instantiate(leftoverPrefab, _seat.leftOverDropPoint);
+                Vector3 leftoverPos = GetPointAwayFrom(tipPos, 0.15f);
+                Instantiate(leftoverPrefab, leftoverPos, RandomYaw());
             }
             
             //Leave my establishment so i can serve more people lmao
@@ -77,6 +81,22 @@ namespace Sharyq
             yield return WalkTo(_exitPoint.position);
             Destroy(gameObject);
 
+        }
+        
+        private static Quaternion RandomYaw() =>
+            Quaternion.Euler(0f, Random.Range(0f, 360f), 0f);
+        
+        private Vector3 GetPointAwayFrom(Vector3? other, float minDistance, int attempts = 10)
+        {
+            Vector3 point = _seat.GetRandomTablePoint();
+            if (other == null) return point;
+
+            for (int i = 0; i < attempts; i++)
+            {
+                if (Vector3.Distance(point, other.Value) >= minDistance) break;
+                point = _seat.GetRandomTablePoint();
+            }
+            return point;
         }
 
         private IEnumerator WalkTo(Vector3 destination)

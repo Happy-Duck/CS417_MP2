@@ -28,6 +28,11 @@ namespace Sharyq
             
             ResourceManager.Instance.Add(resource, tipAmount);
             onResourcePickup.Invoke();
+            var popup = Instantiate(
+                finishedPopupPrefab,
+                transform.position + popupOffset,
+                Quaternion.identity);
+            popup.AddedResource(resource, tipAmount);
             Destroy(gameObject);
         }
     }

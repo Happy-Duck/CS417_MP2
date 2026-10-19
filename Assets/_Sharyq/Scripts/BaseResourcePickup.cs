@@ -14,6 +14,9 @@ namespace Sharyq
         protected string resource;
 
         private XRBaseInteractable _interactable;
+        [SerializeField]
+        protected GeneralResourceAddedNotifier finishedPopupPrefab;
+        protected Vector3 popupOffset = new Vector3(0f, 0.3f, 0f);
 
         protected virtual void Awake()
         {
@@ -44,6 +47,11 @@ namespace Sharyq
                 return;
             
             ResourceManager.Instance.Add(resource, 1);
+            var popup = Instantiate(
+                finishedPopupPrefab,
+                transform.position + popupOffset,
+                Quaternion.identity);
+            popup.AddedResource(resource, 1);
             onResourcePickup.Invoke();
             Destroy(gameObject);
         }

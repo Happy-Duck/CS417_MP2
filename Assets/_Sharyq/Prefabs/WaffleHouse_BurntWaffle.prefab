@@ -4954,7 +4954,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a24e8cf8fc096c43b168bef7c769ffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BaseResourcePickup
+  onResourcePickup:
+    m_PersistentCalls:
+      m_Calls: []
   resource: Leftover
+  finishedPopupPrefab: {fileID: 1557378499866557932, guid: 39644129965637e45a18ac0e141ddcdd, type: 3}
 --- !u!65 &6544636499025667861
 BoxCollider:
   m_ObjectHideFlags: 0
