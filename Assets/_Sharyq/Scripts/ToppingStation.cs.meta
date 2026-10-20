@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: b79711c5acf9848468d008959170c144
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - socket: {instanceID: 0}
+  - notif: {fileID: 4525312439224029424, guid: 39644129965637e45a18ac0e141ddcdd, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

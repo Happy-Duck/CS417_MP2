@@ -19,6 +19,9 @@ namespace Shared {
 		// optional cost, leave the resource name empty for free
 		[SerializeField] private string costResource = "";
 		[SerializeField] private int costAmount = 0;
+		
+		public string CostResource => costResource;
+		public int CostAmount => costAmount;
 
 		// set this to only have the layers you want to place stuff on
 		// 64 (2^6) is layer 6 (canPlaceOn), look into layer masks if curious, its basically a bitstring

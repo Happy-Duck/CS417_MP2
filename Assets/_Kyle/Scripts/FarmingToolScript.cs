@@ -2,7 +2,6 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
-using Unity.GraphToolkit.Editor;
 
 namespace Kyle
 {
