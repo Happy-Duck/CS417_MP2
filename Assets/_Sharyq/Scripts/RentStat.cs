@@ -9,11 +9,13 @@ namespace Sharyq
         [Header("Rent Settings")]
         [SerializeField] private int rentAmount;
         [SerializeField] private float timeTillRentIsDue = 120f;
+        [SerializeField]
+        private bool debug = false;
         private float _currentTime = 0f;
 
         public int RentAmount => rentAmount;
         public float TimeRemaining => Mathf.Max(0f, timeTillRentIsDue - _currentTime);
-
+        
         private void Update()
         {
             _currentTime += Time.deltaTime;
@@ -27,6 +29,7 @@ namespace Sharyq
         private void GameOver()
         {
             Debug.Log("Game Over: rent was not paid in time.");
+            if (debug) return;
 
         #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;

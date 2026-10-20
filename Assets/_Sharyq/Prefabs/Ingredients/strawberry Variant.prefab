@@ -296,4 +296,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec892656faed8d45bea96ee0777f6a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Sharyq.Ingredient
-  type: 9
+  type: 6

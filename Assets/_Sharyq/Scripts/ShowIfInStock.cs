@@ -1,4 +1,3 @@
-using Mono.Cecil;
 using Shared;
 using UnityEngine;
 using Rishi;
@@ -10,17 +9,17 @@ namespace Sharyq
     {
         [SerializeField] private string neededResource;
         private PurchaseShelf _gridPurchaseShelf;
-        [SerializeField] private bool enabled = false;
+        [SerializeField] private bool scriptEnabled = false;
         private void Start()
         {
-            if (!enabled) return;
+            if (!scriptEnabled) return;
             _gridPurchaseShelf = GetComponent<PurchaseShelf>();
             _gridPurchaseShelf.enabled = false;
         }
         
         private void Update()
         {
-            if (!enabled) return;
+            if (!scriptEnabled) return;
             if (!_gridPurchaseShelf.enabled)
             {
                 if (ResourceManager.Instance.Get(neededResource) != 0)

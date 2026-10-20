@@ -13,7 +13,6 @@ namespace Sharyq
             if (payNotifPrefab != null)
             {
                 var prefab = Instantiate(payNotifPrefab, location.position, location.rotation).GetComponent<ResourceNotifier>();
-                Debug.Log(prefab);
                 prefab.RemoveResource(costResource, costAmount);
             }
             

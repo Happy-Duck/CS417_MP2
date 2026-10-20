@@ -3,7 +3,6 @@ using Shared;
 using System.Collections.Generic;
 using System.Text;
 using TMPro;
-using Unity.Tutorials.Editor;
 using UnityEngine;
 
 namespace Sharyq {
@@ -67,7 +66,7 @@ namespace Sharyq {
         /// <param name="amount"> Amount</param>
         private void AddLineWithDisplayName(ResourceEntry resource, int amount) {
             if (builder.Length > 0) builder.Append("\n");
-            if (resource.displayName.IsNullOrEmpty())
+            if (resource.displayName == null || resource.displayName == String.Empty)
             {
                 builder.Append(resource.resourceKey + "s: ");
             }
