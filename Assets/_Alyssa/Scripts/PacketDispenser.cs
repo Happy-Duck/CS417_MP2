@@ -14,6 +14,8 @@ namespace Alyssa
         public string seedResource = "StrawberrySeed"; // default
         public int seedsPerPacket = 1;
         public float restockDelay = 1f;
+        public string currency = "";   
+        public int price = 1;
 
         void Start() { Restock(); }
 
@@ -27,7 +29,17 @@ namespace Alyssa
             UnityAction<SelectEnterEventArgs> onGrab = null;
             onGrab = _ => {
                 grab.selectEntered.RemoveListener(onGrab);
-                // later implement price
+                if (!string.IsNullOrEmpty(currency))
+                {
+                    if (!ResourceManager.Instance.CanAfford(currency, price))
+                    {
+                        Feedback.Hint("seeds-broke", "Not enough " + currency + ". Earn more from other sources.", packet.transform.position);
+                        Destroy(packet);
+                        Invoke(nameof(Restock), restockDelay);
+                        return;
+                    }
+                    ResourceManager.Instance.TrySpend(currency, price);
+                }
                 ResourceManager.Instance.Add(seedResource, seedsPerPacket);
                 Invoke(nameof(Restock), restockDelay);
             };
