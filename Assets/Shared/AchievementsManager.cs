@@ -22,7 +22,7 @@ namespace Shared
         /// understand or modify achievements, you can
         /// </summary>
         [Serializable]
-        public struct Achievement
+        public class Achievement
         {
             [SerializeField] private string name;
             [SerializeField] private string description;
@@ -138,6 +138,7 @@ namespace Shared
                 Debug.LogWarning("Achievement " + achievementName + " not found");
                 return;
             }
+            if (achievement.Achieved) return;
             achievement.AchievementAcquired();
             onAchieved.Invoke(achievement.Name, achievement.Description);
         }
@@ -151,14 +152,8 @@ namespace Shared
         /// <returns>successfully got</returns>
         public bool TryGetAchievementByName(string achievementName, out Achievement achievement)
         {
-            if (achievements.Exists(x => x.Name == achievementName))
-            {
-                achievement = achievements.Find(x => x.Name == achievementName);
-                return true;
-            }
-
-            achievement = default;
-            return false;
+            achievement = achievements.Find(x => x.Name == achievementName);
+            return achievement != null;
         }
     }
 }
