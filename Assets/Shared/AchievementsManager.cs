@@ -24,13 +24,15 @@ namespace Shared
         [Serializable]
         public struct Achievement
         {
-            public string name;
-            public string description;
-            public List<string> requiredAchievementsNames;
-            
-            private bool _achieved;
+            [SerializeField] private string name;
+            [SerializeField] private string description;
+            [SerializeField] private List<string> requiredAchievementsNames;
+            [SerializeField] private bool achieved;
 
-            public bool Achieved => _achieved;
+            public string Name => name;
+            public string Description => description;
+            public IReadOnlyList<string> RequiredAchievementsNames => requiredAchievementsNames;
+            public bool Achieved => achieved;
 
             /// <summary>
             /// Default Constructor, taking in name, description, and a list of required achievement names
@@ -44,7 +46,7 @@ namespace Shared
                 this.name = name;
                 this.description = description;
                 this.requiredAchievementsNames = requiredAchievementsNames;
-                _achieved = false;
+                achieved = false;
             }
             
             /// <summary>
@@ -69,7 +71,7 @@ namespace Shared
                 }
                 //Comment out later
                 Debug.Log($"Achievement {name} has been acquired");
-                _achieved = true;
+                achieved = true;
             }
         }
         
@@ -137,7 +139,7 @@ namespace Shared
                 return;
             }
             achievement.AchievementAcquired();
-            onAchieved.Invoke(achievement.name, achievement.description);
+            onAchieved.Invoke(achievement.Name, achievement.Description);
         }
         
         /// <summary>
@@ -149,9 +151,9 @@ namespace Shared
         /// <returns>successfully got</returns>
         public bool TryGetAchievementByName(string achievementName, out Achievement achievement)
         {
-            if (achievements.Exists(x => x.name == achievementName))
+            if (achievements.Exists(x => x.Name == achievementName))
             {
-                achievement = achievements.Find(x => x.name == achievementName);
+                achievement = achievements.Find(x => x.Name == achievementName);
                 return true;
             }
 
