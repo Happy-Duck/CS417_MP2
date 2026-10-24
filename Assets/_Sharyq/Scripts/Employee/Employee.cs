@@ -1,6 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using Shared;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 namespace Sharyq
 {
@@ -9,13 +12,31 @@ namespace Sharyq
         [SerializeField] private float range = 2.5f;
         [SerializeField] private float actionInterval = 1f;
         [SerializeField] private LayerMask stationMask = ~0;
+        
+        private GridPlaceable _placeable;
 
         private readonly List<IAutomatable> _stations = new();
         private Coroutine _loop;
-        
-        public void OnPlaced()
+
+        public void Awake()
+        {
+            _placeable = GetComponent<GridPlaceable>();
+            _placeable.Placed += OnPlaced;
+            _placeable.PickedUp += OnPickup;
+        }
+
+        private void OnPlaced(GridPlaceable placeable)
         {
             if (_loop == null) _loop = StartCoroutine(WorkLoop());
+        }
+
+        private void OnPickup(GridPlaceable placeable)
+        {
+            if (_loop != null)
+            {
+                StopCoroutine(_loop);
+                _loop = null;
+            }
         }
 
         private IEnumerator WorkLoop()

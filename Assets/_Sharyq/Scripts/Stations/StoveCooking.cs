@@ -16,6 +16,8 @@ namespace Sharyq
         private GameObject batterPreview;
         [SerializeField]
         private GameObject waffleCooking;
+        [SerializeField] 
+        private GameObject batterPrefab;
         [SerializeField]
         private Transform instanceLocation;
         private Batter _currentBatter;
@@ -91,7 +93,7 @@ namespace Sharyq
         {
             if (_readyWaffle != null)
             {
-                Destroy(_readyWaffle.gameObject);
+                _readyWaffle.EmployeeCollect();
                 _readyWaffle = null;
                 ActivateStoveMovement();
                 return true;
@@ -101,7 +103,7 @@ namespace Sharyq
             if (ResourceManager.Instance.Get("Batter") <= 0) return false;
 
             ResourceManager.Instance.TrySpend("Batter", 1);
-            var batter = Instantiate(new GameObject()).AddComponent<Batter>();
+            var batter = Instantiate(batterPrefab).GetComponent<Batter>();
             batter.gameObject.SetActive(false);
             BeginCooking(batter);
             return true;
