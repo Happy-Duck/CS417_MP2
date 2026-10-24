@@ -89,7 +89,7 @@ namespace Sharyq
             batterDetection.enabled = true;
         }
 
-        public bool TryAutomate()
+        public bool TryAutomate(Employee employee)
         {
             if (_readyWaffle != null)
             {

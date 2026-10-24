@@ -129,7 +129,7 @@ namespace Sharyq
                 socket.enabled = value;
         }
 
-        public bool TryAutomate()
+        public bool TryAutomate(Employee employee)
         {
             if (IsMixing || added.Count > 0) return false;
             

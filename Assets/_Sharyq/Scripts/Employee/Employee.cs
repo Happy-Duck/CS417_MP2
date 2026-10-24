@@ -9,9 +9,17 @@ namespace Sharyq
 {
     public class Employee : MonoBehaviour
     {
-        [SerializeField] private float range = 2.5f;
-        [SerializeField] private float actionInterval = 1f;
-        [SerializeField] private LayerMask stationMask = ~0;
+        [SerializeField] 
+        private float range = 2.5f;
+        [SerializeField] 
+        private float actionInterval = 1f;
+        [SerializeField] 
+        private LayerMask stationMask = ~0;
+
+        [SerializeField] 
+        private float efficiencyScore = 0.5f;
+        
+        public float Efficiency => efficiencyScore;
         
         private GridPlaceable _placeable;
 
@@ -46,7 +54,7 @@ namespace Sharyq
             {
                 ScanStations();
                 foreach (var s in _stations)
-                    if (s.TryAutomate()) break;
+                    if (s.TryAutomate(this)) break;
                 yield return wait;
             }
         }

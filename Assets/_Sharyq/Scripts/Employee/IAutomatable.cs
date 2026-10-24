@@ -2,6 +2,6 @@
 {
     public interface IAutomatable
     {
-        public bool TryAutomate();
+        public bool TryAutomate(Employee employee);
     }
 }

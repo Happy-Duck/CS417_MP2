@@ -78,6 +78,10 @@ MonoBehaviour:
     description: Sell Your First Waffle
     requiredAchievementsNames: []
     achieved: 0
+  - name: This is Getting Repetitive
+    description: Cook 30 Waffles. Unlocked Employee!
+    requiredAchievementsNames: []
+    achieved: 0
   onAchieved:
     m_PersistentCalls:
       m_Calls: []
