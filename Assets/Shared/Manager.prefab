@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 167004589865245838}
   - component: {fileID: 2091467498042506321}
   - component: {fileID: 5210377355401608306}
+  - component: {fileID: 7565207170302455576}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -60,3 +61,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shared.ResourceManager
   logChanges: 1
+--- !u!114 &7565207170302455576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8987188474708572149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7d2dc2480214119a9b6735983e42b64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Shared.AchievementsManager
+  achievements:
+  - name: Making Carbs into Cash
+    description: Sell Your First Waffle
+    requiredAchievementsNames: []
+    achieved: 0
+  onAchieved:
+    m_PersistentCalls:
+      m_Calls: []
