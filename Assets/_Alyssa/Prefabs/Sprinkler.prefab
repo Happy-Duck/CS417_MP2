@@ -139,7 +139,6 @@ GameObject:
   - component: {fileID: 6865820528801070079}
   - component: {fileID: 5191392260078735377}
   - component: {fileID: 4808406139914138115}
-  - component: {fileID: 1531813630005028544}
   m_Layer: 0
   m_Name: Sprinkler
   m_TagString: Untagged
@@ -379,21 +378,7 @@ MonoBehaviour:
   interval: 5
   waterPerPulse: 15
   slot: {x: 0.097, y: 0.473, z: -0.231}
---- !u!114 &1531813630005028544
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6631133964903487314}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c212dd85d5f1f043a4b188e9aa138d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Alyssa.StatLabel
-  target: {fileID: 0}
-  offset: {x: 0, y: 0.5, z: 0}
-  characterSize: 0.02
+  slotRotation: {x: 0, y: 0, z: 0}
 --- !u!1 &8624184074326874755
 GameObject:
   m_ObjectHideFlags: 0
