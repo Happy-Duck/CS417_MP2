@@ -18,7 +18,8 @@ namespace Alyssa
             b.lastGrowth = p.Get("Growth").value;
             p.growthPerSec = b.baseRate * b.multiplier;
             GameEvents.RaiseFertilized();
-            Feedback.Hint("fertilized-" + p.GetInstanceID(), "Fertilized! Growing twice as fast this cycle.",
+            Feedback.Hint("fertilized-" + System.Runtime.CompilerServices.RuntimeHelpers.GetHashCode(p),
+                          "Fertilized! Growing twice as fast this cycle.",
                           p.transform.position + Vector3.up * 0.3f, 3f, 0f);
             return true;
         }

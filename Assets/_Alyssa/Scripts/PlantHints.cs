@@ -24,7 +24,8 @@ namespace Alyssa
                 if (!reminded && ripeFor >= ripeReminderSeconds)
                 {
                     reminded = true;
-                    Feedback.Hint("ripe-" + GetInstanceID(), "Ripe! Pick the fruit and drop it in the basket.",
+                    Feedback.Hint("ripe-" + System.Runtime.CompilerServices.RuntimeHelpers.GetHashCode(this),
+                                  "Ripe! Pick the fruit and drop it in the basket.",
                                   transform.position + Vector3.up * 0.3f, 4f, 0f);
                 }
             }
