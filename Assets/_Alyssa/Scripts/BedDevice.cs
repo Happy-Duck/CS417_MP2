@@ -1,3 +1,4 @@
+using System.Collections;
 using Shared;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
@@ -5,7 +6,8 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 namespace Alyssa
 {
     // One script for all four unlocked helpers. Grab it, drop it on a soil bed, and it snaps into
-    // its slot and works every `interval` seconds. Set Kind and Slot on each prefab.
+    // its slot and works every `interval` seconds. Grab it again to take it off the bed.
+    // Set Kind, Slot and Slot Rotation on each prefab.
     [RequireComponent(typeof(XRGrabInteractable))]
     public class BedDevice : Statted
     {
@@ -15,14 +17,22 @@ namespace Alyssa
         public float interval = 5f;          // seconds between actions
         public float waterPerPulse = 15f;    // Sprinkler only, taken from the barrel's Reservoir
         public Vector3 slot;                 // where it sits on the bed (bed-local), one corner per kind
+        public Vector3 slotRotation;         // how it is rotated on the bed (bed-local euler angles)
 
         XRGrabInteractable grab;
         SoilBed bed;
+        Transform originalParent;
+        bool origKinematic, origGravity, pulledOff;
         Stat reservoir;
 
         void Awake()
         {
             grab = GetComponent<XRGrabInteractable>();
+            originalParent = transform.parent;                   // where to return to when pulled off a bed
+            var rb0 = GetComponent<Rigidbody>();
+            if (rb0 != null) { origKinematic = rb0.isKinematic; origGravity = rb0.useGravity; }   // the prefab's own physics settings
+            grab.selectEntered.AddListener(_ => OnGrabbed());
+            grab.selectExited.AddListener(_ => OnReleased());
             if (Get("Cooldown") == null)
                 stats.Add(new Stat { name = "Cooldown", value = interval, max = interval, ratePerSec = -1f });
         }
@@ -58,10 +68,34 @@ namespace Alyssa
             bed = b;
             var rb = GetComponent<Rigidbody>();
             if (rb != null) { rb.isKinematic = true; rb.useGravity = false; }
-            grab.enabled = false;                                // stays on the bed
             transform.SetParent(b.transform, false);             // moves with the bed, dies with the bed
             transform.localPosition = slot;
-            transform.localRotation = Quaternion.identity;
+            transform.localRotation = Quaternion.Euler(slotRotation);
+        }
+
+        // grabbing a device that is on a bed pulls it off
+        void OnGrabbed()
+        {
+            if (bed == null) return;
+            pulledOff = true;
+            bed = null;                                          // Cooldown resets and the animation stops
+            transform.SetParent(originalParent, true);
+        }
+
+        // XRI restores the Rigidbody to what it was before the grab (kinematic while on a bed),
+        // so after pulling a device off a bed put back the prefab's own settings a frame later
+        void OnReleased()
+        {
+            if (!pulledOff) return;
+            pulledOff = false;
+            StartCoroutine(Unfreeze());
+        }
+
+        IEnumerator Unfreeze()
+        {
+            yield return null;
+            var rb = GetComponent<Rigidbody>();
+            if (rb != null && bed == null) { rb.isKinematic = origKinematic; rb.useGravity = origGravity; }
         }
 
         void Act()
