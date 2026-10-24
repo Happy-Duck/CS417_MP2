@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c36843bac48b29469f79baf3c98f9b6, type: 3}
-  m_Name: AndroidXRHandMeshData Standalone
+  m_Name: AndroidXRHandMeshData Android
   m_EditorClassIdentifier: Unity.XR.AndroidOpenXR::UnityEngine.XR.OpenXR.Features.Android.AndroidXRHandMeshData
   m_enabled: 0
   nameUi: 'Android XR: Hand Mesh Data'
@@ -1015,7 +1015,7 @@ MonoBehaviour:
   - {fileID: -4166740740631445519}
   - {fileID: -8999059302058509960}
   - {fileID: -5212364890371797913}
-  - {fileID: 3837512152752227827}
+  - {fileID: 4210545775653936748}
   - {fileID: 3566024783637146022}
   - {fileID: 3125651787552706407}
   - {fileID: 7315257835845194922}
@@ -1755,7 +1755,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 12d3bf61b014a48a2b7564c61da9d7ad, type: 3}
-  m_Name: AndroidXRPerformanceMetrics Standalone
+  m_Name: AndroidXRPerformanceMetrics Android
   m_EditorClassIdentifier: Unity.XR.AndroidOpenXR::UnityEngine.XR.OpenXR.Features.Android.AndroidXRPerformanceMetrics
   m_enabled: 0
   nameUi: Android XR Performance Metrics
@@ -2015,8 +2015,8 @@ MonoBehaviour:
   - {fileID: 7011443450567333355}
   - {fileID: -671281728444007487}
   - {fileID: 2051105749830685677}
-  - {fileID: 7308977175740746178}
-  - {fileID: 5301766213445046132}
+  - {fileID: 5446298113917510106}
+  - {fileID: 2731679696190463395}
   - {fileID: 8980318060753866109}
   - {fileID: -6559185765804338520}
   - {fileID: -4756202077021157709}
@@ -2027,7 +2027,7 @@ MonoBehaviour:
   - {fileID: 348827886137839178}
   - {fileID: -7499073031166464939}
   - {fileID: 7666556398442971420}
-  - {fileID: 8573896722261986100}
+  - {fileID: 6430511725228449177}
   - {fileID: -6978811377440417770}
   - {fileID: -6974919542627570209}
   - {fileID: 2269934188850680656}
@@ -2631,7 +2631,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90ae1e8c3c7a542bba339faf2e771c5a, type: 3}
-  m_Name: AndroidXRSupportFeature Standalone
+  m_Name: AndroidXRSupportFeature Android
   m_EditorClassIdentifier: Unity.XR.AndroidOpenXR::UnityEngine.XR.OpenXR.Features.Android.AndroidXRSupportFeature
   m_enabled: 0
   nameUi: Android XR Support
@@ -2834,77 +2834,6 @@ MonoBehaviour:
   required: 0
   customRuntimeLoaderName: 
 --- !u!114 &3837512152752227827
-  m_Script: {fileID: 11500000, guid: b5a1f07dc5afe854f9f12a4194aca3fb, type: 3}
-  m_Name: Android
-  m_EditorClassIdentifier: Unity.XR.OpenXR::UnityEngine.XR.OpenXR.OpenXRSettings
-  features:
-  - {fileID: 8174033522238373835}
-  - {fileID: 414497182714993488}
-  - {fileID: -3533245056492960754}
-  - {fileID: 7013504897089488204}
-  - {fileID: 6099138048896976957}
-  - {fileID: -7279707210968331114}
-  - {fileID: -5711322379158043173}
-  - {fileID: 3075607402316982889}
-  - {fileID: 3617591442907095141}
-  - {fileID: -8345485419213084430}
-  - {fileID: -8337066270686476415}
-  - {fileID: -5409703229157142787}
-  - {fileID: 5759667067408993438}
-  - {fileID: 2916851530819646573}
-  - {fileID: -7006590985798570117}
-  - {fileID: 9087737374927518166}
-  - {fileID: -3664761759873686814}
-  - {fileID: 3738316340413273266}
-  - {fileID: 6630875342612985796}
-  - {fileID: 426280307996456686}
-  - {fileID: -7821586985508878469}
-  - {fileID: 5823560929795475883}
-  - {fileID: -6646389096453451450}
-  - {fileID: 4590266698008724487}
-  - {fileID: 1618209481612935927}
-  - {fileID: -3788611500053074200}
-  - {fileID: 5626628549573479027}
-  - {fileID: -7065908179167927367}
-  - {fileID: 7364700836630901691}
-  - {fileID: 3862871910593841498}
-  - {fileID: -5139815575175146117}
-  - {fileID: -4773971255082970515}
-  - {fileID: 1220130014667243461}
-  - {fileID: 1786604480616387166}
-  - {fileID: -3431866585836567787}
-  - {fileID: 6243785938515684172}
-  - {fileID: -8575689966636433536}
-  - {fileID: 6532107589058469895}
-  - {fileID: -8340779210743908707}
-  - {fileID: -7747772191608323240}
-  - {fileID: 5622633956514919343}
-  - {fileID: -8544538170787720129}
-  - {fileID: 6756431188255377104}
-  - {fileID: -3284061445266737400}
-  - {fileID: -5172898061169868714}
-  - {fileID: 3506791179376174370}
-  - {fileID: -2048112609552126419}
-  - {fileID: 3763310651675841538}
-  - {fileID: 5436055354777173200}
-  - {fileID: -7715971034519392637}
-  - {fileID: -2430278936010050602}
-  customLoaderName: 
-  m_renderMode: 1
-  m_latencyOptimization: 0
-  m_autoColorSubmissionMode: 1
-  m_colorSubmissionModes:
-    m_List: 00000000
-  m_depthSubmissionMode: 0
-  m_spacewarpMotionVectorTextureFormat: 0
-  m_optimizeBufferDiscards: 1
-  m_symmetricProjection: 0
-  m_optimizeMultiviewRenderRegions: 0
-  m_multiviewRenderRegionsOptimizationMode: 0
-  m_hasMigratedMultiviewRenderRegionSetting: 1
-  m_foveatedRenderingApi: 1
-  m_useOpenXRPredictedTime: 1
---- !u!114 &4210545775653936748
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2913,19 +2842,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f6bfdbcb316ed242b30a8798c9eb853, type: 3}
-  m_Name: KHRSimpleControllerProfile Standalone
+  m_Script: {fileID: 11500000, guid: b5a1f07dc5afe854f9f12a4194aca3fb, type: 3}
+  m_Name: 
   m_EditorClassIdentifier: 
-  m_enabled: 0
-  nameUi: Khronos Simple Controller Profile
-  version: 0.0.1
-  featureIdInternal: com.unity.openxr.feature.input.khrsimpleprofile
-  openxrExtensionStrings: 
-  company: Unity
-  priority: 0
-  targetOpenXRApiVersion: 
-  required: 0
-  customRuntimeLoaderName: 
+  features: []
+  customLoaderName: 
+  m_renderMode: 1
+  m_latencyOptimization: 0
+  m_autoColorSubmissionMode: 1
+  m_colorSubmissionModes:
+    m_List: 00000000
+  m_depthSubmissionMode: 0
+  m_spacewarpMotionVectorTextureFormat: 0
+  m_optimizeBufferDiscards: 0
+  m_symmetricProjection: 0
+  m_optimizeMultiviewRenderRegions: 0
+  m_multiviewRenderRegionsOptimizationMode: 0
+  m_hasMigratedMultiviewRenderRegionSetting: 1
+  m_foveatedRenderingApi: 1
+  m_useOpenXRPredictedTime: 1
 --- !u!114 &3856827537404388762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2945,6 +2880,28 @@ MonoBehaviour:
   openxrExtensionStrings: XR_FB_scene XR_FB_spatial_entity XR_FB_spatial_entity_container
     XR_META_spatial_entity_discovery
   company: Unity Technologies
+  priority: 0
+  targetOpenXRApiVersion: 
+  required: 0
+  customRuntimeLoaderName: 
+--- !u!114 &4210545775653936748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f6bfdbcb316ed242b30a8798c9eb853, type: 3}
+  m_Name: KHRSimpleControllerProfile Standalone
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  nameUi: Khronos Simple Controller Profile
+  version: 0.0.1
+  featureIdInternal: com.unity.openxr.feature.input.khrsimpleprofile
+  openxrExtensionStrings: 
+  company: Unity
   priority: 0
   targetOpenXRApiVersion: 
   required: 0
