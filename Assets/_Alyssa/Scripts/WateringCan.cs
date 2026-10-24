@@ -28,7 +28,7 @@ namespace Alyssa
 
         void SetPouring(bool p)
         {
-            Debug.Log("Pouring: " + p);          // delete once it works
+            Debug.Log("Pouring: " + p);          
             pouring = p;
             if (!stream) return;
             if (p) stream.Play();
