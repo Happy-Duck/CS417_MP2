@@ -689,6 +689,7 @@ MonoBehaviour:
   batterDetection: {fileID: 8729888582367803796}
   batterPreview: {fileID: 431878317145111557}
   waffleCooking: {fileID: 845667268175273013}
+  batterPrefab: {fileID: 6943661097626880655, guid: 9c7c9236a1b352a4d90fff22caab3416, type: 3}
   instanceLocation: {fileID: 1101521148297516717}
 --- !u!114 &6427037149268126050
 MonoBehaviour:

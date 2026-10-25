@@ -8,6 +8,8 @@ namespace Rishi {
 		[SerializeField] AudioClip pickUpSound;
 		[SerializeField] AudioClip placeSound;
 		[SerializeField] AudioClip purchaseSound;
+		// cant afford it or the spot is taken
+		[SerializeField] AudioClip failSound;
 
 		[Range(0f, 1f)]
 		[SerializeField] float volume = 1f;
@@ -22,12 +24,14 @@ namespace Rishi {
 			placeable.PickedUp += HandlePickedUp;
 			placeable.Placed += HandlePlaced;
 			placeable.Purchased += HandlePurchased;
+			placeable.PlaceFailed += HandlePlaceFailed;
 		}
 
 		void OnDisable() {
 			placeable.PickedUp -= HandlePickedUp;
 			placeable.Placed -= HandlePlaced;
 			placeable.Purchased -= HandlePurchased;
+			placeable.PlaceFailed -= HandlePlaceFailed;
 		}
 
 		private void HandlePickedUp(GridPlaceable item) {
@@ -40,6 +44,12 @@ namespace Rishi {
 
 		private void HandlePurchased(GridPlaceable item) {
 			Play(purchaseSound);
+		}
+
+		private void HandlePlaceFailed(GridPlaceable item, string reason) {
+			if (reason == "") return;
+			Play(failSound);
+			Popups.Hint("place" + GetHashCode(), reason, transform.position);
 		}
 
 		private void Play(AudioClip clip) {

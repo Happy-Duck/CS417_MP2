@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 1358182744731797055}
   - component: {fileID: 134957839534710857}
   - component: {fileID: -1621701683096549782}
+  - component: {fileID: 598968941170855209}
   m_Layer: 0
   m_Name: HayBale
   m_TagString: Untagged
@@ -394,4 +395,21 @@ MonoBehaviour:
   pickUpSound: {fileID: 8300000, guid: 42dcf73ff59a24e45b3450f18fd0cb81, type: 3}
   placeSound: {fileID: 8300000, guid: 18353cb115beb534b941b5fb41e12cfc, type: 3}
   purchaseSound: {fileID: 8300000, guid: fdb4898950f9dec4eb03c1363be06b1c, type: 3}
+  failSound: {fileID: 0}
   volume: 1
+--- !u!208 &598968941170855209
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8089871061960937175}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.215, y: 0.175, z: 0.45}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.14, z: 0}
+  m_TimeToStationary: 0.5

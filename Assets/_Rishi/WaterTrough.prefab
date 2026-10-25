@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 378e210f3a05bc74d888fdfc068db404, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shared.GridPlaceable
-  costResource: Coin
+  costResource: Dollar
   costAmount: 15
   placeableSurfaceLayers:
     serializedVersion: 2
@@ -321,6 +321,7 @@ MonoBehaviour:
   pickUpSound: {fileID: 8300000, guid: 42dcf73ff59a24e45b3450f18fd0cb81, type: 3}
   placeSound: {fileID: 8300000, guid: 18353cb115beb534b941b5fb41e12cfc, type: 3}
   purchaseSound: {fileID: 8300000, guid: fdb4898950f9dec4eb03c1363be06b1c, type: 3}
+  failSound: {fileID: 8300000, guid: a511fcd913925b143917bc4fd2a96e5f, type: 3}
   volume: 1
 --- !u!1 &7383500092216625168
 GameObject:
@@ -505,6 +506,7 @@ MonoBehaviour:
   sourceStat: Remaining Water
   drainPerSecond: 2
   reducePerSecond: 10
+  firstUseHint: A chicken is drinking! Keep the trough full
 --- !u!1001 &1992248015905532621
 PrefabInstance:
   m_ObjectHideFlags: 0
