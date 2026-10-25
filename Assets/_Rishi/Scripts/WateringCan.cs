@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 namespace Rishi {
 	[RequireComponent(typeof(Stats))]
@@ -12,10 +13,14 @@ namespace Rishi {
 
 		[SerializeField] AudioClip pickupWater;
 
+		[SerializeField] string emptyHint = "The can is empty! Dip it in the well to fill it.";
+
 		private Stats canStats;
+		private XRGrabInteractable grab;
 
 		void Start() {
 			canStats = GetComponent<Stats>();
+			grab = GetComponent<XRGrabInteractable>();
 			if (pourWater != null) pourWater.SetActive(false);
 		}
 
@@ -25,6 +30,10 @@ namespace Rishi {
 				canStats.changeStat(canStatName, -pourPerSecond * Time.deltaTime);
 			}
 			if (pourWater != null) pourWater.SetActive(pouring);
+
+			if (IsTilted() && !pouring && grab != null && grab.isSelected && emptyHint != "") {
+				Popups.Hint("emptyCan", emptyHint, transform.position);
+			}
 		}
 
 		private bool IsTilted() {

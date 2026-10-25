@@ -12,6 +12,7 @@ namespace Rishi {
 
 			stats.changeStat("Health", -damage);
 			Debug.Log("shot " + stats.gameObject.name);
+			if (stats.GetComponent<ChickenBehavior>() != null) FarmAchievements.Count("Chicken Shot");
 			gameObject.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
 			Destroy(gameObject, 1f);
 		}
