@@ -133,6 +133,7 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
         bool m_StartCalled;
         bool m_PostponedDeactivateTeleport;
         bool m_PostponedNearRegionLocomotion;
+        bool m_PostponedSelectionEndLocomotion;
         bool m_HoveringScrollableUI;
 
         readonly HashSet<InputAction> m_LocomotionUsers = new HashSet<InputAction>();
@@ -299,12 +300,7 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
         void OnNearFarSelectionRegionChanged(NearFarInteractor.Region selectionRegion)
         {
             m_PostponedNearRegionLocomotion = false;
-
-            if (selectionRegion == NearFarInteractor.Region.None)
-            {
-                UpdateLocomotionActions();
-                return;
-            }
+            m_PostponedSelectionEndLocomotion = false;
 
             var manipulateAttachTransform = false;
             var attachController = m_NearFarInteractor.interactionAttachController as InteractionAttachController;
@@ -313,6 +309,22 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
                 manipulateAttachTransform = attachController.useManipulationInput &&
                     (attachController.manipulationInput.inputSourceMode == XRInputValueReader.InputSourceMode.InputActionReference && attachController.manipulationInput.inputActionReference != null) ||
                     (attachController.manipulationInput.inputSourceMode != XRInputValueReader.InputSourceMode.InputActionReference && attachController.manipulationInput.inputSourceMode != XRInputValueReader.InputSourceMode.Unused);
+            }
+
+            if (selectionRegion == NearFarInteractor.Region.None)
+            {
+                // Rishi edit: if the selection ends while the thumbstick is still held (e.g. the held object
+                // got destroyed, like hay going into a feeder), wait for the stick to be released before
+                // enabling locomotion, otherwise the held stick immediately triggers a snap turn around.
+                if (manipulateAttachTransform && HasStickInput(attachController))
+                {
+                    m_PostponedSelectionEndLocomotion = true;
+                    DisableAllLocomotionActions();
+                    return;
+                }
+
+                UpdateLocomotionActions();
+                return;
             }
 
             if (selectionRegion == NearFarInteractor.Region.Far)
@@ -451,6 +463,24 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
                     UpdateLocomotionActions();
                     if (!m_NearFarEnableTeleportDuringNearInteraction)
                         DisableTeleportActions();
+                }
+            }
+
+            // Rishi edit: same as above but for when the selection ended while the stick was held.
+            if (m_PostponedSelectionEndLocomotion)
+            {
+                var hasStickInput = false;
+                if (m_NearFarInteractor != null &&
+                    m_NearFarInteractor.interactionAttachController is InteractionAttachController attachController
+                    && attachController != null)
+                {
+                    hasStickInput = HasStickInput(attachController);
+                }
+
+                if (!hasStickInput)
+                {
+                    m_PostponedSelectionEndLocomotion = false;
+                    UpdateLocomotionActions();
                 }
             }
         }

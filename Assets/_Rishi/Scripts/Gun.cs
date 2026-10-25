@@ -18,11 +18,14 @@ namespace Rishi {
 		}
 
 		public void shoot() {
+			if (ResourceManager.Instance == null) return;
 			if (ResourceManager.Instance.TrySpend("Bullet", 1)) {
 				GameObject bulletInstance = Instantiate(bullet, bulletSpawn.position, bulletSpawn.rotation);
 				gunAudio.PlayOneShot(shootSound);
 				bulletInstance.GetComponent<Rigidbody>().AddForce(transform.forward * forceMagnitude);
 				Destroy(bulletInstance, 10f);
+			} else {
+				Popups.Hint("noBullets", "Out of bullets! Buy more at the market stall.", transform.position);
 			}
 		}
 	}

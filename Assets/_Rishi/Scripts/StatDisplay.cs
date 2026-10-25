@@ -20,6 +20,7 @@ namespace Rishi {
 		private class StatBar {
 			public Stat stat;
 			public Slider slider;
+			public GameObject barObject;
 		}
 
 		private Stats stats;
@@ -30,9 +31,22 @@ namespace Rishi {
 		private Transform cameraTransform;
 		private float panelHeight;
 		private bool isShopStock = false;
+		private HashSet<string> hiddenStats = new HashSet<string>();
 
 		public void SetShopStock(bool value) {
 			isShopStock = value;
+		}
+
+		// for stats that aren't turned on yet (chicken needs before FarmProgression unlocks them)
+		public void SetStatVisible(string statName, bool visible) {
+			if (visible) {
+				hiddenStats.Remove(statName);
+			} else {
+				hiddenStats.Add(statName);
+			}
+			foreach (StatBar bar in bars) {
+				if (bar.stat.statName == statName) bar.barObject.SetActive(visible);
+			}
 		}
 
 		void Start() {
@@ -109,7 +123,11 @@ namespace Rishi {
 				StatBar bar = new StatBar();
 				bar.stat = stat;
 				bar.slider = slider;
+				bar.barObject = barObject;
 				bars.Add(bar);
+
+				// ChickenBehavior can hide some before the bars exist
+				if (hiddenStats.Contains(stat.statName)) barObject.SetActive(false);
 			}
 		}
 

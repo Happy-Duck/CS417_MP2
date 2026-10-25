@@ -19,6 +19,9 @@ namespace Shared {
 		// optional cost, leave the resource name empty for free
 		[SerializeField] private string costResource = "";
 		[SerializeField] private int costAmount = 0;
+		
+		public string CostResource => costResource;
+		public int CostAmount => costAmount;
 
 		// set this to only have the layers you want to place stuff on
 		// 64 (2^6) is layer 6 (canPlaceOn), look into layer masks if curious, its basically a bitstring
@@ -39,6 +42,8 @@ namespace Shared {
 		public event Action<GridPlaceable> PickedUp;
 		public event Action<GridPlaceable> Placed;
 		public event Action<GridPlaceable> Purchased;
+		// PlaceFailed: the player let go of it and it couldn't be placed, with a reason you can show them
+		public event Action<GridPlaceable, string> PlaceFailed;
 
 		private XRGrabInteractable grab;
 		private GridOccupant occupant;
@@ -48,6 +53,7 @@ namespace Shared {
 		private bool isPaidFor = false;
 		private Vector3 lastPosition;
 		private Quaternion lastRotation;
+		private string failReason = "";
 
 		private void Awake() {
 			grab = GetComponent<XRGrabInteractable>();
@@ -105,6 +111,9 @@ namespace Shared {
 		private void OnReleased(SelectExitEventArgs args) {
 			if (TryPlaceOnFloor()) return;
 
+			// canceled = it got destroyed or disabled while held (like hay going into a feeder), not a real drop
+			if (!args.isCanceled && PlaceFailed != null) PlaceFailed.Invoke(this, failReason);
+
 			// couldn't place it, so put it back where it was, or get rid of it if it was never placed
 			if (isPaidFor) {
 				SetRotation(lastRotation);
@@ -116,6 +125,7 @@ namespace Shared {
 
 		// finds the floor under the object and places it on the nearest free spot there
 		private bool TryPlaceOnFloor() {
+			failReason = "";
 			GridManager grid = GridManager.Instance;
 			if (grid == null) return false;
 
@@ -123,24 +133,40 @@ namespace Shared {
 			Vector3 rayStart = transform.position + Vector3.up * rayStartHeight;
 			bool hitGround = Physics.Raycast(rayStart, Vector3.down, out RaycastHit hit,
 				maxDropHeight + rayStartHeight, placeableSurfaceLayers, QueryTriggerInteraction.Ignore);
-			if (!hitGround) return false;
+			if (!hitGround) {
+				failReason = "Can't place it there. Let go of it over the ground.";
+				return false;
+			}
 
 			// 2. make sure the whole footprint is empty
 			Vector2Int start = grid.GetFootprintStart(hit.point, occupant.Size);
-			if (!grid.IsAreaFree(start, occupant.Size)) return false;
+			if (!grid.IsAreaFree(start, occupant.Size)) {
+				failReason = "That spot's taken. Try an empty spot.";
+				return false;
+			}
 
 			// 3. pay for it the first time its placed (after the free check, so the player never pays for a failed placement)
 			bool wasPaidFor = isPaidFor;
 			if (!isPaidFor) {
 				if (!string.IsNullOrEmpty(costResource)) {
-					if (ResourceManager.Instance == null || !ResourceManager.Instance.TrySpend(costResource, costAmount)) return false;
+					if (ResourceManager.Instance == null || !ResourceManager.Instance.TrySpend(costResource, costAmount)) {
+						if (costResource == "Dollar") {
+							failReason = "Not enough money! This costs $" + costAmount;
+						} else {
+							failReason = "Not enough " + costResource + " (costs " + costAmount + ")";
+						}
+						return false;
+					}
 				}
 				isPaidFor = true;
 			}
 
 			// 4. stand it upright and snap it into place
 			SetRotation(SnappedRotation());
-			if (!occupant.TryPlaceAt(hit.point)) return false;
+			if (!occupant.TryPlaceAt(hit.point)) {
+				failReason = "That spot's taken. Try an empty spot.";
+				return false;
+			}
 
 			if (Placed != null) Placed.Invoke(this);
 			if (!wasPaidFor && Purchased != null) Purchased.Invoke(this);

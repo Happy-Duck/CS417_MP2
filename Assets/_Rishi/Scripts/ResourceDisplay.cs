@@ -51,6 +51,10 @@ namespace Rishi {
 
 		private void AddLine(string resource, int amount) {
 			if (builder.Length > 0) builder.Append("\n");
+			if (resource == "Dollar") {
+				builder.Append("Money: $" + amount);
+				return;
+			}
 			builder.Append(resource + "s");
 			builder.Append(": ");
 			builder.Append(amount);

@@ -24,11 +24,16 @@ namespace Rishi {
 		[SerializeField] AudioClip laySound;
 		[SerializeField] AudioClip dieSound;
 
+		// these stay off until FarmProgression turns them on
+		[SerializeField] List<string> needs = new List<string> { "Hunger", "Thirst", "Warmth" };
+
 		// must be bigger than health regen
 		private const float problemPenalty = 2f;
 
 		private float normalHealthRate;
 		private float normalEggRate;
+		private Dictionary<string, float> needRates = new Dictionary<string, float>();
+		private StatDisplay display;
 
 		// Start is called once before the first execution of Update after the MonoBehaviour is created
 		void Start() {
@@ -38,6 +43,22 @@ namespace Rishi {
 			if (ResourceManager.Instance != null) ResourceManager.Instance.Add("Living Chicken", 1);
 
 			chickenAudioSource = GetComponent<AudioSource>();
+
+			// bars for needs that are off stay hidden, health too until any need is on
+			display = GetComponent<StatDisplay>();
+			bool anyNeedOn = true;
+			if (FarmProgression.Instance != null) anyNeedOn = false;
+			foreach (string need in needs) {
+				needRates[need] = stats.getStatRate(need);
+				if (FarmProgression.Instance != null && !FarmProgression.Instance.IsNeedOn(need)) {
+					stats.setStatRate(need, 0f);
+					if (display != null) display.SetStatVisible(need, false);
+				} else {
+					anyNeedOn = true;
+				}
+			}
+			if (!anyNeedOn && display != null) display.SetStatVisible("Health", false);
+			FarmProgression.NeedTurnedOn += TurnOnNeed;
 
 			stats.OnStatReachedMax += HandleMax;
 			stats.OnStatReachedMin += HandleMin;
@@ -101,6 +122,15 @@ namespace Rishi {
 			}
 		}
 
+		private void TurnOnNeed(string need) {
+			if (!needRates.ContainsKey(need)) return;
+			stats.setStatRate(need, needRates[need]);
+			if (display != null) {
+				display.SetStatVisible(need, true);
+				display.SetStatVisible("Health", true);
+			}
+		}
+
 		private void StartProblem() {
 			stats.changeStatRate("Health", -problemPenalty);
 			stats.setStatRate("EggProgress", 0f);
@@ -151,6 +181,7 @@ namespace Rishi {
 
 		private void OnDestroy() {
 			if (ResourceManager.Instance != null) ResourceManager.Instance.Add("Living Chicken", -1);
+			FarmProgression.NeedTurnedOn -= TurnOnNeed;
 			if (stats == null) return;
 			stats.OnStatReachedMax -= HandleMax;
 			stats.OnStatReachedMin -= HandleMin;

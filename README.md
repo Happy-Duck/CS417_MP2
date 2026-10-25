@@ -1,4 +1,4 @@
-# Waffle House Simulator CS 417 MP 2 Fall 2026 Team 7
+# Chey Gaufre: A Culinary Experience; CS 417 MP 2 Fall 2026 Team 7
 
 ## Contributors
 - Kyle: Crop farm (wheat and corn for flour and corn syrup)

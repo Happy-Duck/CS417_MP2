@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Shared {
 
@@ -6,6 +7,7 @@ namespace Shared {
 	// Keeps one item sitting at the display point, when the player grabs it a new one shows up after a short delay
 	// The item isn't paid for until the player actually places it on the grid
 	public class GridPurchaseShelf : MonoBehaviour {
+		public UnityEvent<string, int> onPurchase;
 		[SerializeField] private GridPlaceable itemPrefab;
 
 		// where the item sits on the shelf, uses this object's position if left empty
@@ -38,6 +40,7 @@ namespace Shared {
 		private void OnItemTaken(GridPlaceable item) {
 			item.TakenFromShelf -= OnItemTaken;
 			Invoke(nameof(Restock), restockDelay);
+			onPurchase.Invoke(item.CostResource, item.CostAmount);
 		}
 	}
 }

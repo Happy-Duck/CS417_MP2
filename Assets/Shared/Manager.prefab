@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 167004589865245838}
   - component: {fileID: 2091467498042506321}
   - component: {fileID: 5210377355401608306}
+  - component: {fileID: 7565207170302455576}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -60,3 +61,138 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shared.ResourceManager
   logChanges: 1
+--- !u!114 &7565207170302455576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8987188474708572149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7d2dc2480214119a9b6735983e42b64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Shared.AchievementsManager
+  achievements:
+  - name: Making Carbs into Cash
+    description: Sell Your First Waffle
+    requiredAchievementsNames: []
+    achieved: 0
+  - name: This is Getting Repetitive
+    description: Cook 30 Waffles. Unlocked Employee!
+    requiredAchievementsNames: []
+    achieved: 0
+  - name: Golden Goose
+    description: Collect a Golden Egg!
+    requiredAchievementsNames: []
+    achieved: 0
+  - name: Last One There
+    description: Collect a rotten egg
+    requiredAchievementsNames: []
+    achieved: 0
+  - name: Gonna need more baskets
+    description: Have 50 Eggs
+    requiredAchievementsNames: []
+    achieved: 0
+  - name: What the flock
+    description: Have 15 chickens
+    requiredAchievementsNames: []
+    achieved: 0
+  - name: Omega Fard
+    description: Collect 50 chicken poops
+    requiredAchievementsNames: []
+    achieved: 0
+  - name: Easter Bunny
+    description: Use an egg collection hooper
+    requiredAchievementsNames: []
+    achieved: 0
+  - name: Gas Gas Gas
+    description: Automate your chicken heaters
+    requiredAchievementsNames: []
+    achieved: 0
+  - name: Well Well Well
+    description: Automate your chickens' water trough
+    requiredAchievementsNames: []
+    achieved: 0
+  - name: What the glock?
+    description: Purchase the McGlock
+    requiredAchievementsNames: []
+    achieved: 0
+  - name: Bang Bang Chicken
+    description: Shoot a chicken
+    requiredAchievementsNames: []
+    achieved: 0
+  - name: Who bought that?
+    description: Sell something rotten
+    requiredAchievementsNames: []
+    achieved: 0
+  - name: Breeder
+    description: Sell 10 living chickens
+    requiredAchievementsNames: []
+    achieved: 0
+  - name: All the Eggs in the Rainbow
+    description: Collect an egg of each color
+    requiredAchievementsNames: []
+    achieved: 0
+  - name: Brooder
+    description: Buy 10 living chickens
+    requiredAchievementsNames: []
+    achieved: 0
+  - name: Supporting Workers
+    description: Get a first tip
+    requiredAchievementsNames:
+    - Making Carbs into Cash
+    achieved: 0
+  - name: Reuse Reduce Recycle
+    description: Sell Leftovers or Burnt Waffle
+    requiredAchievementsNames:
+    - Making Carbs into Cash
+    achieved: 0
+  - name: Lunch Rush
+    description: Have 20 Customers in the Restaurant at the same time; Unlock Topping
+      Station
+    requiredAchievementsNames:
+    - Making Carbs into Cash
+    achieved: 0
+  - name: Sit and Relax
+    description: Have 20 Customers in the Restaurant at the same time
+    requiredAchievementsNames:
+    - 'Have an Employee make and collect a waffle: can buy Chicken Coop or Farm'
+    achieved: 0
+  - name: Bougie
+    description: Sell a waffle with corn or chicken
+    requiredAchievementsNames:
+    - 'Have an Employee make and collect a waffle: can buy Chicken Coop or Farm'
+    achieved: 0
+  - name: Increasing Production
+    description: Make batter with a Blue Egg
+    requiredAchievementsNames:
+    - Lunch Rush
+    achieved: 0
+  - name: Its Healthier I Hope
+    description: top a waffle with a Fruit
+    requiredAchievementsNames:
+    - Lunch Rush
+    achieved: 0
+  - name: Its Free Money
+    description: Automate All of the waffle stands
+    requiredAchievementsNames:
+    - This is Getting Repetitive
+    achieved: 0
+  - name: Dont tell the FDA
+    description: Sell a Energized Waffle
+    requiredAchievementsNames:
+    - Lunch Rush
+    achieved: 0
+  - name: You should be taxed
+    description: Have a total of 10k dollars
+    requiredAchievementsNames: []
+    achieved: 0
+  - name: Breaking Bad
+    description: Sell 100 Energized Waffles
+    requiredAchievementsNames:
+    - Making Carbs into Cash
+    achieved: 0
+  onAchieved:
+    m_PersistentCalls:
+      m_Calls: []
