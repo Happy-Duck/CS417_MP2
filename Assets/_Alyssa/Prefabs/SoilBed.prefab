@@ -322,6 +322,7 @@ GameObject:
   - component: {fileID: 2667961172177653938}
   - component: {fileID: 1579140554268653562}
   - component: {fileID: 8294624828677840788}
+  - component: {fileID: -8481209316268522718}
   m_Layer: 0
   m_Name: SoilBed
   m_TagString: Untagged
@@ -587,9 +588,28 @@ MonoBehaviour:
 
     to the bed to plant it.'
   id: SoilBed
+  triggerMode: 0
   showDistance: 1.5
+  hideAfterSeconds: 6
   offset: {x: 0, y: 0.6, z: 0}
   characterSize: 0.012
+  onlyWhenPlaced: 0
+--- !u!114 &-8481209316268522718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4663439157954125399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eebad00f9379aa41b47901a8fecb922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Alyssa.BedCostHint
+  costResource: Compost
+  cost: 1
+  tip: Pull weeds to earn more.
+  shelfRadius: 1.5
 --- !u!1 &5482973714992615485
 GameObject:
   m_ObjectHideFlags: 0

@@ -731,7 +731,7 @@ MonoBehaviour:
   - {fileID: 940086196630358559}
   - {fileID: 6228366259084201087}
   - {fileID: 7050578420108124206}
-  costResource: GOLD
+  costResource: Dollar
   restockCost: 5
   restockButton: {fileID: 3051398078140029720}
   stock: 0
