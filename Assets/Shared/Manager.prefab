@@ -82,6 +82,62 @@ MonoBehaviour:
     description: Cook 30 Waffles. Unlocked Employee!
     requiredAchievementsNames: []
     achieved: 0
+  - name: Golden Goose
+    description: Collect a Golden Egg!
+    requiredAchievementsNames: []
+    achieved: 0
+  - name: Last One There
+    description: Collect a rotten egg
+    requiredAchievementsNames: []
+    achieved: 0
+  - name: Gonna need more baskets
+    description: Have 50 Eggs
+    requiredAchievementsNames: []
+    achieved: 0
+  - name: What the flock
+    description: Have 15 chickens
+    requiredAchievementsNames: []
+    achieved: 0
+  - name: Omega Fard
+    description: Collect 50 chicken poops
+    requiredAchievementsNames: []
+    achieved: 0
+  - name: Easter Bunny
+    description: Use an egg collection hooper
+    requiredAchievementsNames: []
+    achieved: 0
+  - name: Gas Gas Gas
+    description: Automate your chicken heaters
+    requiredAchievementsNames: []
+    achieved: 0
+  - name: Well Well Well
+    description: Automate your chickens' water trough
+    requiredAchievementsNames: []
+    achieved: 0
+  - name: What the glock?
+    description: Purchase the McGlock
+    requiredAchievementsNames: []
+    achieved: 0
+  - name: Bang Bang Chicken
+    description: Shoot a chicken
+    requiredAchievementsNames: []
+    achieved: 0
+  - name: Who bought that?
+    description: Sell something rotten
+    requiredAchievementsNames: []
+    achieved: 0
+  - name: Breeder
+    description: Sell 10 living chickens
+    requiredAchievementsNames: []
+    achieved: 0
+  - name: All the Eggs in the Rainbow
+    description: Collect an egg of each color
+    requiredAchievementsNames: []
+    achieved: 0
+  - name: Brooder
+    description: Buy 10 living chickens
+    requiredAchievementsNames: []
+    achieved: 0
   onAchieved:
     m_PersistentCalls:
       m_Calls: []
