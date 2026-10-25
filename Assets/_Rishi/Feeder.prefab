@@ -70,6 +70,7 @@ MonoBehaviour:
   sourceStat: Remaining Food
   drainPerSecond: 2
   reducePerSecond: 10
+  firstUseHint: A chicken is eating! Make sure you keep the feeder stocked!
 --- !u!1 &848564498022418655
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,6 +139,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Rishi.RefillReceiver
   acceptedStat: Feed
   targetStat: Remaining Food
+  fullHint: The feeder's already full! Save the hay for later
+  wrongItemHint: Chickens can't eat fuel! That goes in the heater
 --- !u!1 &2218950536215231629
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,7 +388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 378e210f3a05bc74d888fdfc068db404, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shared.GridPlaceable
-  costResource: Coin
+  costResource: Dollar
   costAmount: 15
   placeableSurfaceLayers:
     serializedVersion: 2
@@ -459,6 +462,7 @@ MonoBehaviour:
   pickUpSound: {fileID: 8300000, guid: 42dcf73ff59a24e45b3450f18fd0cb81, type: 3}
   placeSound: {fileID: 8300000, guid: 18353cb115beb534b941b5fb41e12cfc, type: 3}
   purchaseSound: {fileID: 8300000, guid: fdb4898950f9dec4eb03c1363be06b1c, type: 3}
+  failSound: {fileID: 8300000, guid: a511fcd913925b143917bc4fd2a96e5f, type: 3}
   volume: 1
 --- !u!1001 &6788193441980640277
 PrefabInstance:
