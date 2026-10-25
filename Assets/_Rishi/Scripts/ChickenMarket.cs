@@ -7,7 +7,7 @@ namespace Rishi {
 	// trigger, needs a kinematic rigidbody
 	public class ChickenMarket : MonoBehaviour {
 
-		[SerializeField] string payResource = "Coin";
+		[SerializeField] string payResource = "Dollar";
 		[SerializeField] int payAmount = 30;
 
 		[SerializeField] AudioClip buySound;
@@ -23,6 +23,7 @@ namespace Rishi {
 			ChickenBehavior chicken = FindClosestUnsoldChicken();
 			if (chicken == null) {
 				Debug.Log("ChickenMarket: no chicken to sell");
+				Popups.Hint("noChicken", "No chickens left to sell! Buy one at the stall first.", Popups.NearPlayer());
 				return;
 			}
 
@@ -62,6 +63,7 @@ namespace Rishi {
 
 			if (ResourceManager.Instance != null) ResourceManager.Instance.Add(payResource, payAmount);
 			AudioSource.PlayClipAtPoint(buySound, gameObject.transform.position);
+			FarmAchievements.Count("Chicken Sold");
 			Destroy(chicken.gameObject);
 		}
 	}

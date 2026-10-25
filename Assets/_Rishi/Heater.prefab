@@ -190,6 +190,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Rishi.RefillReceiver
   acceptedStat: Fuel
   targetStat: Remaining Fuel
+  fullHint: The heater's already full of fuel!
+  wrongItemHint: Don't burn the hay! That goes in the feeder
 --- !u!1 &1886245598992279550
 GameObject:
   m_ObjectHideFlags: 0
@@ -843,7 +845,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 378e210f3a05bc74d888fdfc068db404, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shared.GridPlaceable
-  costResource: Coin
+  costResource: Dollar
   costAmount: 10
   placeableSurfaceLayers:
     serializedVersion: 2
@@ -917,6 +919,7 @@ MonoBehaviour:
   pickUpSound: {fileID: 8300000, guid: 42dcf73ff59a24e45b3450f18fd0cb81, type: 3}
   placeSound: {fileID: 8300000, guid: 18353cb115beb534b941b5fb41e12cfc, type: 3}
   purchaseSound: {fileID: 8300000, guid: fdb4898950f9dec4eb03c1363be06b1c, type: 3}
+  failSound: {fileID: 8300000, guid: a511fcd913925b143917bc4fd2a96e5f, type: 3}
   volume: 1
 --- !u!1 &5941823810507234506
 GameObject:
@@ -1566,3 +1569,4 @@ MonoBehaviour:
   sourceStat: Remaining Fuel
   drainPerSecond: 1
   reducePerSecond: -20
+  firstUseHint: The chickens are warming up, don't let this heater run out of fuel!

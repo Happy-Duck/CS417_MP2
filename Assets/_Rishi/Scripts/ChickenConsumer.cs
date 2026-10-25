@@ -9,6 +9,9 @@ namespace Rishi {
 		// negative raises it
 		[SerializeField] float reducePerSecond = 10f;
 
+		// shows once, the first time any chicken uses one of these
+		[SerializeField] string firstUseHint = "";
+
 		private Stats sourceStats;
 
 		void Start() {
@@ -37,6 +40,7 @@ namespace Rishi {
 
 			chicken.changeStat(chickenStat, -reducePerSecond * Time.deltaTime);
 			if (hasSource) sourceStats.changeStat(sourceStat, -drainPerSecond * Time.deltaTime);
+			if (firstUseHint != "") Popups.FirstTime("firstUse" + chickenStat, firstUseHint, chicken.transform.position);
 		}
 	}
 }

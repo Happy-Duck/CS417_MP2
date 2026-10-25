@@ -55,5 +55,17 @@ namespace Sharyq
             onResourcePickup.Invoke();
             Destroy(gameObject);
         }
+
+        public void EmployeeCollect()
+        {
+            ResourceManager.Instance.Add(resource, 1);
+            var popup = Instantiate(
+                finishedPopupPrefab,
+                transform.position + popupOffset,
+                Quaternion.identity);
+            popup.AddedResource(resource, 1);
+            onResourcePickup.Invoke();
+            Destroy(gameObject);
+        }
     }
 }
