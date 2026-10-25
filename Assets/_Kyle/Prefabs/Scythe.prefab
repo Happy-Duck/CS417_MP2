@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 4281884499899845720}
   - component: {fileID: 4827932096051371133}
   - component: {fileID: 2960601417990363387}
-  - component: {fileID: 72443809232966059}
+  - component: {fileID: 4476066159097933963}
   m_Layer: 0
   m_Name: Scythe
   m_TagString: Untagged
@@ -67,6 +67,7 @@ Transform:
   - {fileID: 6091998736972282002}
   - {fileID: 6158712581264613767}
   - {fileID: 1371657604780629293}
+  - {fileID: 1096026554985384683}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &4281884499899845720
@@ -115,8 +116,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0931848, y: 1.8451661, z: 0.11798096}
-  m_Center: {x: 0.023899399, y: 0.98509103, z: 0.022737503}
+  m_Size: {x: 0.0931848, y: 1.4009663, z: 0.11798096}
+  m_Center: {x: 0.023899399, y: 0.76299113, z: 0.022737503}
 --- !u!114 &2960601417990363387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,7 +248,7 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
---- !u!114 &72443809232966059
+--- !u!114 &4476066159097933963
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -256,13 +257,78 @@ MonoBehaviour:
   m_GameObject: {fileID: 2947813392932862483}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 702d34e60cafb3e47a322dbb8a95c4b6, type: 3}
+  m_Script: {fileID: 11500000, guid: c19a4a84b3b62914587af60fd28ad41c, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Kyle.FarmingToolScript
+  m_EditorClassIdentifier: Assembly-CSharp::Kyle.HarvestToolScript
   toolAction: 4
   visualChild: {fileID: 6091998736972282002}
-  miniScale: 0.1
-  shrinkSpeed: 5
+--- !u!1 &4376674972593922124
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1096026554985384683}
+  - component: {fileID: 7814804416910078621}
+  - component: {fileID: 6672523661106823134}
+  m_Layer: 0
+  m_Name: BladeHitbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1096026554985384683
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4376674972593922124}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.197, y: 1.742, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1238315770258959576}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7814804416910078621
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4376674972593922124}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.54871774, y: 0.3406948, z: 0.11052132}
+  m_Center: {x: 0.04035732, y: -0.013330042, z: 0.002398491}
+--- !u!114 &6672523661106823134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4376674972593922124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86b1afbf1f824a0418861de33ac8503d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Kyle.BladeHitboxScript
+  harvestTool: {fileID: 4476066159097933963}
 --- !u!1 &8388055362393527368
 GameObject:
   m_ObjectHideFlags: 0

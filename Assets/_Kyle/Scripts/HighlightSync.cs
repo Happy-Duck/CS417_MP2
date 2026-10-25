@@ -71,6 +71,7 @@ namespace Kyle
             interactable.selectMode = InteractableSelectMode.Multiple;
             interactable.hoverFilters.Add(this);
         }
+
         private void OnEnable()
         {
             leftTrigger.action.Enable();
@@ -418,6 +419,39 @@ namespace Kyle
 
             // follow controller pointer
             return GetCurrentHoverCell();
+        }
+
+        private void Start()
+        {
+            GenerateCellColliders();
+        }
+
+        public void GenerateCellColliders()
+        {
+            GameObject colliderHolder = new GameObject("TableCellCollidersContainer");
+            colliderHolder.transform.SetParent(tableOrigin);
+            colliderHolder.transform.localPosition = Vector3.zero;
+            colliderHolder.transform.localRotation = Quaternion.identity;
+
+            for (int x = 0; x < gridColumns; x++)
+            {
+                for (int z = 0; z < gridRows; z++)
+                {
+                    GameObject cellObj = new GameObject($"Cell_Collider_{x}_{z}");
+                    cellObj.transform.SetParent(colliderHolder.transform);
+
+                    Vector3 localPos = new Vector3((x * tableCellSize), 0.02f, (z * tableCellSize));
+                    cellObj.transform.localPosition = localPos;
+                    cellObj.transform.localRotation = Quaternion.identity;
+
+                    BoxCollider box = cellObj.AddComponent<BoxCollider>();
+                    box.size = new Vector3(tableCellSize * 0.9f, 0.1f, tableCellSize * 0.9f);
+                    box.isTrigger = true;
+
+                    FieldCellCollider cellCollider = cellObj.AddComponent<FieldCellCollider>();
+                    cellCollider.Initialize(new Vector2Int(x, z));
+                }
+            }
         }
     }
 }
