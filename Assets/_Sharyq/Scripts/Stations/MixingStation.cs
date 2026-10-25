@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using Shared;
 using UnityEngine;
@@ -9,7 +8,7 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 namespace Sharyq
 {
-    public class MixingStation : MonoBehaviour
+    public class MixingStation : MonoBehaviour, IAutomatable
     {
         [Header("Setup")]
         [SerializeField] private XRSocketInteractor socket;
@@ -128,6 +127,23 @@ namespace Sharyq
                 _currentInteractable.enabled = value;
             if (socket != null)
                 socket.enabled = value;
+        }
+
+        public bool TryAutomate(Employee employee)
+        {
+            if (IsMixing || added.Count > 0) return false;
+            
+            if (ResourceManager.Instance.Get("Egg") <= 0)
+                 return false;
+            
+            if (ResourceManager.Instance.Get("Wheat") <= 0)
+                return false;
+            
+            ResourceManager.Instance.TrySpend("Egg", 1);
+            ResourceManager.Instance.TrySpend("Wheat", 1);
+            
+            StartMixing();
+            return true;
         }
     }
 }

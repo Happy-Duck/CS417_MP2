@@ -29,7 +29,7 @@ namespace Sharyq
             _active = true;
             currentTime = 0.0f;
         }
-        
+
         private void ProductionFinished()
         {
             _active = false;

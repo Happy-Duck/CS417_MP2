@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Mono.Cecil;
 using Shared;
 using UnityEngine;
 using UnityEngine.Events;
@@ -7,7 +8,7 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 namespace Sharyq
 {
-    public class ToppingStation : MonoBehaviour
+    public class ToppingStation : MonoBehaviour, IAutomatable
     {
         [Serializable]
         public struct ToppingRecipe
@@ -32,6 +33,10 @@ namespace Sharyq
         private UnityEvent onFailed;
 
         private Dictionary<IngredientType, string> lookup;
+        
+        // Employee stuff
+        private bool _employeeWorking = false;
+        private float _currentTime = 0f;
 
         private void Reset()
         {
@@ -100,6 +105,58 @@ namespace Sharyq
             Destroy(selected.transform.gameObject);
 
             onToppingAdded?.Invoke(result);
+        }
+
+        public bool TryAutomate(Employee employee)
+        {
+            if (ResourceManager.Instance.Get("Waffle") <= 0)
+                return false;
+            
+            var ingredientType = GetIngredientToAdd();
+
+            float timeToComplete = Mathf.Pow(employee.Efficiency, -1);
+            if (_currentTime >= timeToComplete)
+            {
+                _employeeWorking = false;
+                TopWaffle(ingredientType);
+                _currentTime = 0f;
+            }
+
+            if (_employeeWorking)
+                _currentTime += 1;
+            else
+            {
+                _employeeWorking = true;
+                _currentTime = 0f;
+            }
+            
+            return true;
+        }
+
+        private void TopWaffle(IngredientType ingredientType)
+        {
+            // Spend Base Waffle
+            ResourceManager.Instance.TrySpend(baseResource, 1);
+                
+            // TODO Add Spend of resource to top; need to talk to teap about that
+
+            // Add Resource
+            lookup.TryGetValue(ingredientType, out string result);
+            ResourceManager.Instance.Add(result, 1);
+                
+            if (notif != null)
+            {
+                var notifInst = Instantiate(notif, transform.position + notifOffset, transform.rotation)
+                    .GetComponent<ResourceNotifier>();
+                notifInst.AddedResource(result, 1);
+            }
+                
+            onToppingAdded?.Invoke(result);
+        }
+
+        private IngredientType GetIngredientToAdd()
+        {
+            return IngredientType.Meth;
         }
     }
 }
