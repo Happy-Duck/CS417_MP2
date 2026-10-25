@@ -49,6 +49,9 @@ namespace Kyle
 
         //private readonly Dictionary<Vector2Int, GameObject> activeCrops = new Dictionary<Vector2Int, GameObject>();
 
+        [SerializeField] private GameObject cornDropPrefab;
+        [SerializeField] private GameObject wheatDropPrefab;
+
         private float weedSpawnTimer = 0f;
         private float nextWeedSpawnInterval = 20f;
 
@@ -81,7 +84,7 @@ namespace Kyle
             if (weedSpawnTimer >= nextWeedSpawnInterval)
             {
                 weedSpawnTimer = 0f;
-                nextWeedSpawnInterval = Random.Range(20f, 60f);
+                nextWeedSpawnInterval = Random.Range(10f, 60f);
                 TrySpawnRandomWeed();
                 needsVisualUpdate = true;
             }
@@ -373,6 +376,81 @@ namespace Kyle
 
                 InstancedCropRenderer.Instance.PlantCellCrops(target, 15);
                 InstancedCropRenderer.Instance.RebuildMatricesFromState(activeCrops);
+            }
+        }
+
+        private Vector3 GetCellWorldPosition(Vector2Int cell)
+        {
+            Transform fieldOrigin = HighlightSync.Instance.fieldOrigin;
+            float fSize = HighlightSync.Instance.fieldCellSize;
+
+            return fieldOrigin.position
+                + (fieldOrigin.right * (cell.x * fSize))
+                + (fieldOrigin.forward * (cell.y * fSize));
+        }
+
+        private Vector3 GetTableWorldPosition(Vector2Int cell)
+        {
+            Transform tableOrigin = HighlightSync.Instance.tableOrigin;
+            float tSize = HighlightSync.Instance.tableCellSize;
+
+            return tableOrigin.position
+                + (tableOrigin.right * (cell.x * tSize))
+                + (tableOrigin.forward * (cell.y * tSize));
+        }
+
+        private GameObject GetDropPrefab(string targetResource)
+        {
+            switch (targetResource)
+            {
+                case "HarvestedCorn":
+                    return cornDropPrefab;
+                case "HarvestedWheat":
+                    return wheatDropPrefab;
+                default:
+                    return null;
+            }
+        }
+
+        public void TrySwipeHarvest(Vector2Int cell)
+        {
+            if (activeCrops.TryGetValue(cell, out CropData crop))
+            {
+                string targetResource = "";
+                int dropCount = 3;
+
+                if (crop.state == CellState.CornReadyForHarvest)
+                {
+                    targetResource = "HarvestedCorn";
+                    crop.state = CellState.Empty;
+                    crop.growth = 0f;
+                }
+                else if (crop.state == CellState.WheatReadyForHarvest)
+                {
+                    targetResource = "HarvestedWheat";
+                    crop.state = CellState.Empty;
+                    crop.growth = 0f;
+                }
+
+                if (!string.IsNullOrEmpty(targetResource))
+                {
+                    InstancedCropRenderer.Instance.RebuildMatricesFromState(activeCrops);
+
+                    Vector3 worldPos = GetTableWorldPosition(cell);
+                    for (int i = 0; i < dropCount; i++)
+                    {
+                        GameObject dropPrefab = GetDropPrefab(targetResource);
+                        if (dropPrefab != null)
+                        {
+                            GameObject dropObj = Instantiate(dropPrefab, worldPos + Vector3.up * 0.2f, Quaternion.identity);
+                            FieldDropItem dropItem = dropObj.GetComponent<FieldDropItem>();
+                            if (dropItem != null)
+                            {
+                                dropItem.Launch();
+                            }
+                        }
+                    }
+                }
             }
         }
     }
