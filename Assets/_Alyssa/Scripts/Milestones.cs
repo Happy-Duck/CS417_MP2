@@ -79,6 +79,7 @@ namespace Alyssa
             bool weeds = false;
             foreach (var b in FindObjectsByType<SoilBed>())
             {
+                if (!b.Placed) continue;                  // the bed still sitting on the crate isn't part of the garden
                 if (b.plant != null) planted++;
                 if (b.HasWeed) weeds = true;
             }
