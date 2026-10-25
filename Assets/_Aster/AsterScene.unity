@@ -2370,7 +2370,7 @@ Transform:
   m_GameObject: {fileID: 599435652}
   serializedVersion: 2
   m_LocalRotation: {x: 0.000000037748954, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.011400414, y: 0.797, z: -0.099}
+  m_LocalPosition: {x: 0.011400414, y: 0.8166, z: -0.099}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2390,9 +2390,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Aster.ItemShop
   itemPrefab: {fileID: 6425038295204177656, guid: 80843a469da95184fbef3e7c8630c22b, type: 3}
   spawnPoint: {fileID: 599435653}
-  costResource: GOLD
+  costResource: Dollar
   cost: 10
-  giveFreeOnStart: 1
+  giveFreeOnStart: 0
   onlyOneAtATime: 1
   onBought:
     m_PersistentCalls:
@@ -8138,11 +8138,6 @@ MonoBehaviour:
   onFailed:
     m_PersistentCalls:
       m_Calls: []
---- !u!4 &709047394 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5936169705510108226, guid: 80843a469da95184fbef3e7c8630c22b, type: 3}
-  m_PrefabInstance: {fileID: 4206132650034288285}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &738088653
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13876,7 +13871,7 @@ MonoBehaviour:
     inputs:
     - resource: METH
       count: 1
-    output: GOLD
+    output: Dollar
     outputAmount: 10
     liquidColor: {r: 0, g: 0, b: 0, a: 0}
   statusText: {fileID: 1553630764}
@@ -14286,7 +14281,6 @@ Transform:
   - {fileID: 1249617921}
   - {fileID: 2142105961}
   - {fileID: 2101783874}
-  - {fileID: 709047394}
   - {fileID: 1752285848}
   - {fileID: 1860241512}
   - {fileID: 706129647}
@@ -14912,32 +14906,44 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7640980549541761924, guid: 1b8b350c4b506214b9dd4f6ffe05974c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640980549541761924, guid: 1b8b350c4b506214b9dd4f6ffe05974c, type: 3}
       propertyPath: m_LocalScale.y
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8222516835795113355, guid: 1b8b350c4b506214b9dd4f6ffe05974c, type: 3}
       propertyPath: m_text
-      value: 
+      value: sample
       objectReference: {fileID: 0}
     - target: {fileID: 8222516835795113355, guid: 1b8b350c4b506214b9dd4f6ffe05974c, type: 3}
       propertyPath: m_fontSize
-      value: 0.08
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 8222516835795113355, guid: 1b8b350c4b506214b9dd4f6ffe05974c, type: 3}
       propertyPath: m_margin.w
-      value: 0.33346465
+      value: 0.39046043
+      objectReference: {fileID: 0}
+    - target: {fileID: 8222516835795113355, guid: 1b8b350c4b506214b9dd4f6ffe05974c, type: 3}
+      propertyPath: m_margin.x
+      value: 0.25248194
       objectReference: {fileID: 0}
     - target: {fileID: 8222516835795113355, guid: 1b8b350c4b506214b9dd4f6ffe05974c, type: 3}
       propertyPath: m_margin.y
       value: 0.3803767
       objectReference: {fileID: 0}
     - target: {fileID: 8222516835795113355, guid: 1b8b350c4b506214b9dd4f6ffe05974c, type: 3}
+      propertyPath: m_margin.z
+      value: 0.25250328
+      objectReference: {fileID: 0}
+    - target: {fileID: 8222516835795113355, guid: 1b8b350c4b506214b9dd4f6ffe05974c, type: 3}
       propertyPath: m_fontSizeBase
-      value: 0.08
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 8757660470261613666, guid: 1b8b350c4b506214b9dd4f6ffe05974c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.3
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 8757660470261613666, guid: 1b8b350c4b506214b9dd4f6ffe05974c, type: 3}
       propertyPath: m_LocalScale.y
@@ -17905,7 +17911,7 @@ MonoBehaviour:
   - Salt
   - Mystery Juice
   - METH
-  - GOLD
+  - Dollar
   hideZeroRows: 0
   flashSeconds: 1.5
   flashColor: '#FFD54F'
@@ -19627,7 +19633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Aster.StartingResources
   amounts:
-  - resource: GOLD
+  - resource: Dollar
     count: 50
 --- !u!1001 &2142105960
 PrefabInstance:
@@ -19715,67 +19721,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 432084, guid: 0c33235d8e4ec124b8f0e17c87b30ee1, type: 3}
   m_PrefabInstance: {fileID: 2142105960}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &4206132650034288285
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1023942611}
-    m_Modifications:
-    - target: {fileID: 1747725537672976501, guid: 80843a469da95184fbef3e7c8630c22b, type: 3}
-      propertyPath: killY
-      value: -20
-      objectReference: {fileID: 0}
-    - target: {fileID: 5936169705510108226, guid: 80843a469da95184fbef3e7c8630c22b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -10.859002
-      objectReference: {fileID: 0}
-    - target: {fileID: 5936169705510108226, guid: 80843a469da95184fbef3e7c8630c22b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 7.019
-      objectReference: {fileID: 0}
-    - target: {fileID: 5936169705510108226, guid: 80843a469da95184fbef3e7c8630c22b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 14.361702
-      objectReference: {fileID: 0}
-    - target: {fileID: 5936169705510108226, guid: 80843a469da95184fbef3e7c8630c22b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 5936169705510108226, guid: 80843a469da95184fbef3e7c8630c22b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 5936169705510108226, guid: 80843a469da95184fbef3e7c8630c22b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5936169705510108226, guid: 80843a469da95184fbef3e7c8630c22b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5936169705510108226, guid: 80843a469da95184fbef3e7c8630c22b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 5936169705510108226, guid: 80843a469da95184fbef3e7c8630c22b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5936169705510108226, guid: 80843a469da95184fbef3e7c8630c22b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6425038295204177656, guid: 80843a469da95184fbef3e7c8630c22b, type: 3}
-      propertyPath: m_Name
-      value: Pickaxe
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 80843a469da95184fbef3e7c8630c22b, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
