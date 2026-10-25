@@ -276,9 +276,12 @@ MonoBehaviour:
 
     Pull them out'
   id: 
+  triggerMode: 0
   showDistance: 1.5
+  hideAfterSeconds: 6
   offset: {x: 0, y: 0.6, z: 0}
   characterSize: 0.012
+  onlyWhenPlaced: 0
 --- !u!1 &2375586788089597825
 GameObject:
   m_ObjectHideFlags: 0
