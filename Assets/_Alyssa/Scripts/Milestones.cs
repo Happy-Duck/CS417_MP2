@@ -17,7 +17,8 @@ namespace Alyssa
         }
 
         public Unlock[] unlocks;
-        public TextMesh board;               // achievement board, hidden until the first goal is cleared
+        public GameObject boardRoot;         // the whole achievement board (frame + canvas), hidden until the first goal is cleared
+        public TMPro.TMP_Text boardText;     // the TextMeshPro text on it
         public string[] crops = { "Strawberry", "Peach", "Cherry", "Apple", "Banana" };
         public int bedsNeeded = 4;           // Expansion: this many planted beds...
         public float cleanSeconds = 20f;     // ...with no weeds anywhere, held this long
@@ -51,7 +52,7 @@ namespace Alyssa
                 foreach (var u in unlocks)
                     foreach (var go in u.hidden)
                         if (go != null) go.SetActive(false);
-            if (board != null) board.gameObject.SetActive(false);
+            if (boardRoot != null) boardRoot.SetActive(false);
         }
 
         void OnEnable() { GameEvents.Harvested += OnHarvested; GameEvents.Fertilized += OnFertilized; }
@@ -131,15 +132,15 @@ namespace Alyssa
         // Thresholds on the Horizon: only visible once a goal has been cleared
         void UpdateBoard()
         {
-            if (board == null || cleared.Count == 0) return;
-            board.gameObject.SetActive(true);
+            if (boardRoot == null || boardText == null || cleared.Count == 0) return;
+            boardRoot.SetActive(true);
             foreach (var g in order)
                 if (!cleared.Contains(g))
                 {
-                    board.text = "NEXT GOAL: " + info[g][0] + "\n" + info[g][1] + "\nUnlocks: " + info[g][2];
+                    boardText.text = "NEXT GOAL: " + info[g][0] + "\n" + info[g][1] + "\nUnlocks: " + info[g][2];
                     return;
                 }
-            board.text = "All goals cleared!";
+            boardText.text = "All goals cleared!";
         }
     }
 }
