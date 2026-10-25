@@ -52742,6 +52742,7 @@ GameObject:
   - component: {fileID: 1577142152}
   - component: {fileID: 1577142151}
   - component: {fileID: 1577142150}
+  - component: {fileID: 1577142158}
   m_Layer: 5
   m_Name: AchievementNotif
   m_TagString: Untagged
@@ -52979,6 +52980,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 1.031}
   m_SizeDelta: {x: 400, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1577142158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577142149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bb88540ac8946a19c9e30a3f7b6daa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Shared.BillboardFollow
+  target: {fileID: 2041463344}
+  offset: {x: -2, y: 0, z: 0}
+  smoothSpeed: 10
 --- !u!1 &1579632684
 GameObject:
   m_ObjectHideFlags: 0
@@ -69191,6 +69207,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 435974, guid: cc890b11e6968444bbb9050c8b78e8eb, type: 3}
   m_PrefabInstance: {fileID: 2039280094}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &2041463344 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1767192434, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+  m_PrefabInstance: {fileID: 45686296}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2043054005
 GameObject:
   m_ObjectHideFlags: 0
@@ -73854,5 +73875,5 @@ SceneRoots:
   - {fileID: 45686296}
   - {fileID: 346707771}
   - {fileID: 1605415263}
-  - {fileID: 1943346556}
   - {fileID: 1577142157}
+  - {fileID: 1943346556}
