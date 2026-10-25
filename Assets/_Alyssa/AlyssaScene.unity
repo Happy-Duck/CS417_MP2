@@ -476,7 +476,7 @@ MonoBehaviour:
   itemPrefab: {fileID: 6631133964903487314, guid: 91d1f130de1b4964eb03c3c6e2d50bf7, type: 3}
   displayPoint: {fileID: 188264409}
   spawnParent: {fileID: 127242402}
-  costResource: Coin
+  costResource: Dollar
   cost: 3
   failTip: 
   restockDelay: 1
@@ -549,7 +549,7 @@ MonoBehaviour:
   itemPrefab: {fileID: 7357240415723907987, guid: 1e0a88f1c3b631e47b11aa01d59258ff, type: 3}
   displayPoint: {fileID: 200314024}
   spawnParent: {fileID: 127242402}
-  costResource: Coin
+  costResource: Dollar
   cost: 4
   failTip: 
   restockDelay: 1
@@ -2182,7 +2182,7 @@ MonoBehaviour:
   itemPrefab: {fileID: 1469855542711336795, guid: 056fe4d42f091cc4a943eb72eb555233, type: 3}
   displayPoint: {fileID: 1284536259}
   spawnParent: {fileID: 127242402}
-  costResource: Coin
+  costResource: Dollar
   cost: 3
   failTip: 
   restockDelay: 1
@@ -7684,7 +7684,7 @@ MonoBehaviour:
   itemPrefab: {fileID: 2762901504960978415, guid: 186c5fe4b2fb8be4694f83bea80cef75, type: 3}
   displayPoint: {fileID: 1724762965}
   spawnParent: {fileID: 127242402}
-  costResource: Coin
+  costResource: Dollar
   cost: 3
   failTip: 
   restockDelay: 1
