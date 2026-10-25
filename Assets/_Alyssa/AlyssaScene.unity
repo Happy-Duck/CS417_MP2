@@ -935,7 +935,7 @@ MonoBehaviour:
   seedResource: AppleSeed
   seedsPerPacket: 1
   restockDelay: 1
-  currency: 
+  currency: Dollar
   price: 1
 --- !u!1 &327074376
 GameObject:
@@ -1567,7 +1567,7 @@ MonoBehaviour:
   seedResource: PeachSeed
   seedsPerPacket: 1
   restockDelay: 1
-  currency: 
+  currency: Dollar
   price: 1
 --- !u!1 &1035994828
 GameObject:
@@ -1698,9 +1698,9 @@ MonoBehaviour:
   itemPrefab: {fileID: 3559877579486299646, guid: aaaa58dd5d76f46448d7208ff6c8e30c, type: 3}
   displayPoint: {fileID: 223615514}
   spawnParent: {fileID: 127242402}
-  costResource: Coin
-  cost: 0
-  failTip: 
+  costResource: Dollar
+  cost: 1
+  failTip: Earn Dollars to buy more
   restockDelay: 1
 --- !u!4 &1130113991
 Transform:
@@ -2237,7 +2237,7 @@ MonoBehaviour:
   seedResource: CherrySeed
   seedsPerPacket: 1
   restockDelay: 1
-  currency: 
+  currency: Dollar
   price: 1
 --- !u!1 &1402672470
 GameObject:
@@ -2393,7 +2393,7 @@ MonoBehaviour:
   seedResource: BananaSeed
   seedsPerPacket: 1
   restockDelay: 1
-  currency: 
+  currency: Dollar
   price: 1
 --- !u!1 &1458302534
 GameObject:
@@ -7635,7 +7635,7 @@ MonoBehaviour:
   seedResource: StrawberrySeed
   seedsPerPacket: 1
   restockDelay: 1
-  currency: 
+  currency: Dollar
   price: 1
 --- !u!1 &1724762964
 GameObject:
@@ -9525,6 +9525,7 @@ GameObject:
   - component: {fileID: 543450652378816213}
   - component: {fileID: 3469287838308192624}
   - component: {fileID: 1711813854312375738}
+  - component: {fileID: 3469287838308192625}
   m_Layer: 0
   m_Name: AchievementBoard
   m_TagString: Untagged
@@ -10559,6 +10560,7 @@ GameObject:
   - component: {fileID: 3954435603351673207}
   - component: {fileID: 1488063198133719828}
   - component: {fileID: 3192254631279709991}
+  - component: {fileID: 3954435603351673208}
   m_Layer: 0
   m_Name: UnlockTable
   m_TagString: Untagged
@@ -12076,6 +12078,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148371162223}
   m_Mesh: {fileID: -8886898249395805581, guid: 9bc2ebeb433bf6842bb0d3f14591e85c, type: 3}
+--- !u!64 &3469287838308192625
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148371162223}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8886898249395805581, guid: 9bc2ebeb433bf6842bb0d3f14591e85c, type: 3}
 --- !u!1 &3476078894396630720
 GameObject:
   m_ObjectHideFlags: 0
@@ -12754,6 +12778,28 @@ Transform:
   - {fileID: 1724762965}
   m_Father: {fileID: 127242402}
   m_LocalEulerAnglesHint: {x: -89.98, y: 90, z: 0}
+--- !u!64 &3954435603351673208
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956788582230067557}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2690104283684236836, guid: bebab8a4e6c8d394dab0a37a9a341bf0, type: 3}
 --- !u!33 &3957659167474672921
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13233,6 +13279,7 @@ GameObject:
   - component: {fileID: 2082084574066804428}
   - component: {fileID: 1055572815557047714}
   - component: {fileID: 1160466918852766367}
+  - component: {fileID: 4373154983490784335}
   m_Layer: 0
   m_Name: Pots_Small.024
   m_TagString: Untagged
@@ -13240,6 +13287,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &4373154983490784335
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4373154983490784334}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2350975778213324266, guid: bebab8a4e6c8d394dab0a37a9a341bf0, type: 3}
 --- !u!23 &4397088517088650727
 MeshRenderer:
   m_ObjectHideFlags: 0
