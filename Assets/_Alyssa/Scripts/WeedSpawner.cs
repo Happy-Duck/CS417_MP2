@@ -29,7 +29,7 @@ namespace Alyssa
             var beds = FindObjectsByType<SoilBed>();
             var open = new System.Collections.Generic.List<SoilBed>();
             foreach (var b in beds)
-                if (b.plant == null && !b.HasWeed) open.Add(b);
+                if (b.Placed && b.plant == null && !b.HasWeed) open.Add(b);
             if (open.Count == 0) return;
 
             var bed = open[Random.Range(0, open.Count)];
