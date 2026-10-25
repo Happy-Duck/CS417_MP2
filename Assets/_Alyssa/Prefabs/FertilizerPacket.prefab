@@ -191,6 +191,7 @@ GameObject:
   - component: {fileID: 1805618229811045125}
   - component: {fileID: 3132965937499660303}
   - component: {fileID: 2967977240770106107}
+  - component: {fileID: 3802490214925699575}
   m_Layer: 0
   m_Name: FertilizerPacket
   m_TagString: Untagged
@@ -374,6 +375,19 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
+--- !u!114 &3802490214925699575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3559877579486299646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00851fdb48693f44090a31c2a4a75534, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Alyssa.FertilizerPacket
+  effectPrefab: {fileID: 3621882986986779536, guid: 5c315630b7f1c524298109808d6a0220, type: 3}
 --- !u!1 &4938136620471994230
 GameObject:
   m_ObjectHideFlags: 0
