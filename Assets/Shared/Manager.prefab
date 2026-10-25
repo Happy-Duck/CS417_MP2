@@ -138,6 +138,61 @@ MonoBehaviour:
     description: Buy 10 living chickens
     requiredAchievementsNames: []
     achieved: 0
+  - name: Supporting Workers
+    description: Get a first tip
+    requiredAchievementsNames:
+    - Making Carbs into Cash
+    achieved: 0
+  - name: Reuse Reduce Recycle
+    description: Sell Leftovers or Burnt Waffle
+    requiredAchievementsNames:
+    - Making Carbs into Cash
+    achieved: 0
+  - name: Lunch Rush
+    description: Have 20 Customers in the Restaurant at the same time; Unlock Topping
+      Station
+    requiredAchievementsNames:
+    - Making Carbs into Cash
+    achieved: 0
+  - name: Sit and Relax
+    description: Have 20 Customers in the Restaurant at the same time
+    requiredAchievementsNames:
+    - 'Have an Employee make and collect a waffle: can buy Chicken Coop or Farm'
+    achieved: 0
+  - name: Bougie
+    description: Sell a waffle with corn or chicken
+    requiredAchievementsNames:
+    - 'Have an Employee make and collect a waffle: can buy Chicken Coop or Farm'
+    achieved: 0
+  - name: Increasing Production
+    description: Make batter with a Blue Egg
+    requiredAchievementsNames:
+    - Lunch Rush
+    achieved: 0
+  - name: Its Healthier I Hope
+    description: top a waffle with a Fruit
+    requiredAchievementsNames:
+    - Lunch Rush
+    achieved: 0
+  - name: Its Free Money
+    description: Automate All of the waffle stands
+    requiredAchievementsNames:
+    - This is Getting Repetitive
+    achieved: 0
+  - name: Dont tell the FDA
+    description: Sell a Energized Waffle
+    requiredAchievementsNames:
+    - Lunch Rush
+    achieved: 0
+  - name: You should be taxed
+    description: Have a total of 10k dollars
+    requiredAchievementsNames: []
+    achieved: 0
+  - name: Breaking Bad
+    description: Sell 100 Energized Waffles
+    requiredAchievementsNames:
+    - Making Carbs into Cash
+    achieved: 0
   onAchieved:
     m_PersistentCalls:
       m_Calls: []
