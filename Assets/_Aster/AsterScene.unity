@@ -2390,9 +2390,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Aster.ItemShop
   itemPrefab: {fileID: 6425038295204177656, guid: 80843a469da95184fbef3e7c8630c22b, type: 3}
   spawnPoint: {fileID: 599435653}
-  costResource: GOLD
+  costResource: Dollar
   cost: 10
-  giveFreeOnStart: 1
+  giveFreeOnStart: 0
   onlyOneAtATime: 1
   onBought:
     m_PersistentCalls:
@@ -13871,7 +13871,7 @@ MonoBehaviour:
     inputs:
     - resource: METH
       count: 1
-    output: GOLD
+    output: Dollar
     outputAmount: 10
     liquidColor: {r: 0, g: 0, b: 0, a: 0}
   statusText: {fileID: 1553630764}
@@ -17911,7 +17911,7 @@ MonoBehaviour:
   - Salt
   - Mystery Juice
   - METH
-  - GOLD
+  - Dollar
   hideZeroRows: 0
   flashSeconds: 1.5
   flashColor: '#FFD54F'
@@ -19633,7 +19633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Aster.StartingResources
   amounts:
-  - resource: GOLD
+  - resource: Dollar
     count: 50
 --- !u!1001 &2142105960
 PrefabInstance:

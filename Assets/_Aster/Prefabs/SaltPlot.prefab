@@ -503,7 +503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 378e210f3a05bc74d888fdfc068db404, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shared.GridPlaceable
-  costResource: GOLD
+  costResource: Dollar
   costAmount: 10
   placeableSurfaceLayers:
     serializedVersion: 2
