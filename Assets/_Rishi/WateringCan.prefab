@@ -573,9 +573,9 @@ MonoBehaviour:
   m_ParentInteractableObject: {fileID: 0}
   m_AttachTransform: {fileID: 0}
   m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 1
+  m_UseDynamicAttach: 0
   m_MatchAttachPosition: 0
-  m_MatchAttachRotation: 1
+  m_MatchAttachRotation: 0
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
@@ -701,10 +701,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Rishi.WateringCan
   canStatName: Fullness
   targetStatName: Remaining Water
-  pourPerSecond: 30
+  pourPerSecond: 0
   tiltThreshold: 0.6
   pourWater: {fileID: 1873890525116460610}
   pickupWater: {fileID: 0}
+  emptyHint: 
 --- !u!114 &1369866131455331770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -719,7 +720,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Rishi.WateringCan
   canStatName: Fullness
   targetStatName: Remaining Water
-  pourPerSecond: 0
+  pourPerSecond: 30
   tiltThreshold: 0.6
   pourWater: {fileID: 1760814278113795101}
   pickupWater: {fileID: 8300000, guid: 39a674579ba9f834d952c0148b1dc96e, type: 3}
+  emptyHint: The can is empty, dip it in the well to fill it
