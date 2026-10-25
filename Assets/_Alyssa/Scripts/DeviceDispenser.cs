@@ -14,7 +14,8 @@ namespace Alyssa
         public Transform displayPoint;           // uses this object if empty
         public Transform spawnParent;            // Alyssa_Scene_Root
         public string costResource = "Compost";
-        public int cost = 3;
+        public int cost = 3;                     // 0 = free (use while a currency isn't implemented yet)
+        public string failTip = "";               // how to earn it, shown when the player can't afford it
         public float restockDelay = 1f;
 
         void Start() { Restock(); }
@@ -35,7 +36,8 @@ namespace Alyssa
                 {
                     // Error Tolerant Lesson: recognise the attempt, explain why it failed
                     Feedback.Hint("cant-afford-" + itemPrefab.name,
-                        "Not enough " + costResource + ". You need " + cost + " to buy this.", item.transform.position);
+                        "Not enough " + costResource + ". You need " + cost + " for this." +
+                        (string.IsNullOrEmpty(failTip) ? "" : " " + failTip), item.transform.position);
                     Destroy(item);
                 }
                 else if (cost > 0)

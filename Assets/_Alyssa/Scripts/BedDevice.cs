@@ -18,6 +18,8 @@ namespace Alyssa
         public float waterPerPulse = 15f;    // Sprinkler only, taken from the barrel's Reservoir
         public Vector3 slot;                 // where it sits on the bed (bed-local), one corner per kind
         public Vector3 slotRotation;         // how it is rotated on the bed (bed-local euler angles)
+        public GameObject effectPrefab;      // AutoFertilizer only: sparkle effect shown on the boosted plant
+        public string fertilizerResource = "Compost";   // AutoFertilizer only: what it spends each time
 
         XRGrabInteractable grab;
         SoilBed bed;
@@ -125,8 +127,8 @@ namespace Alyssa
                 case Kind.AutoFertilizer:
                     if (bed.plant == null) return;
                     var rm = ResourceManager.Instance;
-                    if (rm.CanAfford("Fertilizer", 1) && FertilizerBoost.Apply(bed.plant))
-                        rm.TrySpend("Fertilizer", 1);
+                    if (rm.CanAfford(fertilizerResource, 1) && FertilizerBoost.Apply(bed.plant, effectPrefab))
+                        rm.TrySpend(fertilizerResource, 1);
                     break;
 
                 case Kind.AutoHarvester:
