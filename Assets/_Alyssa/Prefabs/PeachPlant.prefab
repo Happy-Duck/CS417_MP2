@@ -256,6 +256,7 @@ GameObject:
   - component: {fileID: 3972246998744666706}
   - component: {fileID: 2481311913368470055}
   - component: {fileID: -2335095833009090818}
+  - component: {fileID: -4610307727628922534}
   m_Layer: 0
   m_Name: PeachPlant
   m_TagString: Untagged
@@ -373,6 +374,19 @@ MonoBehaviour:
   offset: {x: 0, y: 0.6, z: 0}
   characterSize: 0.012
   onlyWhenPlaced: 0
+--- !u!114 &-4610307727628922534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926308250766541447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de41ad45ac42a1f4daffcee49c7ba899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Alyssa.PlantHints
+  ripeReminderSeconds: 30
 --- !u!1 &2116289570666531456
 GameObject:
   m_ObjectHideFlags: 0

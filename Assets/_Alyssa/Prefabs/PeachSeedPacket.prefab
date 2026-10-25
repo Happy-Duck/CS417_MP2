@@ -193,6 +193,7 @@ GameObject:
   - component: {fileID: 2967977240770106107}
   - component: {fileID: 3364544057188601791}
   - component: {fileID: 1688259838338030484}
+  - component: {fileID: 4756568820678426689}
   m_Layer: 0
   m_Name: PeachSeedPacket
   m_TagString: Untagged
@@ -412,6 +413,18 @@ MonoBehaviour:
   offset: {x: 0, y: 0.4, z: 0}
   characterSize: 0.012
   onlyWhenPlaced: 0
+--- !u!114 &4756568820678426689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3559877579486299646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0997ce5b88d6677459977a82803f135a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Alyssa.SeedPacketHints
 --- !u!1 &4938136620471994230
 GameObject:
   m_ObjectHideFlags: 0
