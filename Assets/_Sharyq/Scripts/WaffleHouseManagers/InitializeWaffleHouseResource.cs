@@ -24,6 +24,12 @@ namespace Sharyq {
             ResourceManager.Instance.Add("Leftover", 0);
             ResourceManager.Instance.Add("Burnt Waffle", 0);
             ResourceManager.Instance.Add("Energizing Waffle", 0);
+            
+            // Egg resources
+            ResourceManager.Instance.Add("White Egg", 10);
+            ResourceManager.Instance.Add("Brown Egg", 10);
+            ResourceManager.Instance.Add("Red Egg", 10);
+            ResourceManager.Instance.Add("Blue Egg", 10);
         }
     }
 }
