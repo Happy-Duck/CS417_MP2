@@ -1,4 +1,5 @@
-﻿using Shared;
+﻿using System;
+using Shared;
 using UnityEngine;
 
 namespace Sharyq
@@ -18,7 +19,8 @@ namespace Sharyq
 
         private void Awake()
         {
-            ResourceManager.Instance.OnResourceChanged += CheckRequirement;
+            if (!AchievementsManager.Instance.IsAchieved(achievementName))
+                ResourceManager.Instance.OnResourceChanged += CheckRequirement;
         }
 
         private void Start()
@@ -45,6 +47,11 @@ namespace Sharyq
                 }
                 _prevWaffles = newAmount;
             }
+        }
+
+        private void OnDestroy()
+        {
+            ResourceManager.Instance.OnResourceChanged -= CheckRequirement;
         }
     }
 }
