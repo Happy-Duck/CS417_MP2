@@ -2818,6 +2818,7 @@ GameObject:
   - component: {fileID: 5275593645733615250}
   - component: {fileID: 1434711723038719808}
   - component: {fileID: 8859870343014089216}
+  - component: {fileID: 90453585556856776}
   m_Layer: 0
   m_Name: SpecialAchievementCheckers
   m_TagString: Untagged
@@ -3032,6 +3033,21 @@ MonoBehaviour:
   resourceName: Peach Waffle
   totalWafflesSold: 0
   thresholdWafflesSold: 1
+--- !u!114 &90453585556856776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163560012947081960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 469f227d532e4bf6abd81f168b62f856, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Sharyq.ReachedResourceAmount
+  amount: 10000
+  resourceName: Dollar
+  achievementName: You should be taxed
 --- !u!1 &1184861030510357809
 GameObject:
   m_ObjectHideFlags: 0
