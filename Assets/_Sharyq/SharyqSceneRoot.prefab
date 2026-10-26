@@ -644,6 +644,71 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &599933908920706343
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7112903660393025098}
+  - component: {fileID: 8218794134170126273}
+  - component: {fileID: 4657839329243936724}
+  m_Layer: 0
+  m_Name: UnlockableShelves
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7112903660393025098
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599933908920706343}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6964834971171892}
+  - {fileID: 4265811351973116712}
+  m_Father: {fileID: 6144650943582902043}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8218794134170126273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599933908920706343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a58b531637d24a04c87e4208de5d0554, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Sharyq.RevealAfterAchieve
+  achievementName: This is Getting Repetitive
+  revealableObjects:
+  - {fileID: 2156452818641570712}
+--- !u!114 &4657839329243936724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599933908920706343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a58b531637d24a04c87e4208de5d0554, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Sharyq.RevealAfterAchieve
+  achievementName: Lunch Rush
+  revealableObjects:
+  - {fileID: 2794141346012253316}
 --- !u!1 &609272979249482834
 GameObject:
   m_ObjectHideFlags: 0
@@ -2732,6 +2797,241 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &1163560012947081960
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3562680786498114611}
+  - component: {fileID: 3697008289398344554}
+  - component: {fileID: 7228798526591788013}
+  - component: {fileID: 5560508786394291249}
+  - component: {fileID: 3134335181658457002}
+  - component: {fileID: 2909916009875057014}
+  - component: {fileID: 1905946197602971147}
+  - component: {fileID: 4762146350992924693}
+  - component: {fileID: 1017218444346817839}
+  - component: {fileID: 2309001850616988900}
+  - component: {fileID: 5275593645733615250}
+  - component: {fileID: 1434711723038719808}
+  - component: {fileID: 8859870343014089216}
+  m_Layer: 0
+  m_Name: SpecialAchievementCheckers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3562680786498114611
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163560012947081960}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6144650943582902043}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3697008289398344554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163560012947081960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5384300bece415b8243d9626aafc1c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Sharyq.TrackTotalResourceSold
+  achievementName: This is Getting Repetitive
+  resourceName: Waffle
+  totalWafflesSold: 0
+  thresholdWafflesSold: 30
+--- !u!114 &7228798526591788013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163560012947081960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5384300bece415b8243d9626aafc1c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Sharyq.TrackTotalResourceSold
+  achievementName: Breaking Bad
+  resourceName: Energized Waffle
+  totalWafflesSold: 0
+  thresholdWafflesSold: 100
+--- !u!114 &5560508786394291249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163560012947081960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5384300bece415b8243d9626aafc1c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Sharyq.TrackTotalResourceSold
+  achievementName: Dont tell the FDA
+  resourceName: Energized Waffle
+  totalWafflesSold: 0
+  thresholdWafflesSold: 1
+--- !u!114 &3134335181658457002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163560012947081960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5384300bece415b8243d9626aafc1c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Sharyq.TrackTotalResourceSold
+  achievementName: Bougie
+  resourceName: Corn Waffle
+  totalWafflesSold: 0
+  thresholdWafflesSold: 1
+--- !u!114 &2909916009875057014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163560012947081960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5384300bece415b8243d9626aafc1c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Sharyq.TrackTotalResourceSold
+  achievementName: Bougie
+  resourceName: Chicken Waffle
+  totalWafflesSold: 0
+  thresholdWafflesSold: 1
+--- !u!114 &1905946197602971147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163560012947081960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5384300bece415b8243d9626aafc1c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Sharyq.TrackTotalResourceSold
+  achievementName: Reuse Reduce Recycle
+  resourceName: Burnt Waffle
+  totalWafflesSold: 0
+  thresholdWafflesSold: 1
+--- !u!114 &4762146350992924693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163560012947081960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5384300bece415b8243d9626aafc1c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Sharyq.TrackTotalResourceSold
+  achievementName: Reuse Reduce Recycle
+  resourceName: Leftover
+  totalWafflesSold: 0
+  thresholdWafflesSold: 1
+--- !u!114 &1017218444346817839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163560012947081960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5384300bece415b8243d9626aafc1c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Sharyq.TrackTotalResourceSold
+  achievementName: Its Healthier I Hope
+  resourceName: Apple Waffle
+  totalWafflesSold: 0
+  thresholdWafflesSold: 1
+--- !u!114 &2309001850616988900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163560012947081960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5384300bece415b8243d9626aafc1c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Sharyq.TrackTotalResourceSold
+  achievementName: Its Healthier I Hope
+  resourceName: Banana Waffle
+  totalWafflesSold: 0
+  thresholdWafflesSold: 1
+--- !u!114 &5275593645733615250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163560012947081960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5384300bece415b8243d9626aafc1c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Sharyq.TrackTotalResourceSold
+  achievementName: Its Healthier I Hope
+  resourceName: Strawberry Waffle
+  totalWafflesSold: 0
+  thresholdWafflesSold: 1
+--- !u!114 &1434711723038719808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163560012947081960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5384300bece415b8243d9626aafc1c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Sharyq.TrackTotalResourceSold
+  achievementName: Its Healthier I Hope
+  resourceName: Cherry Waffle
+  totalWafflesSold: 0
+  thresholdWafflesSold: 1
+--- !u!114 &8859870343014089216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163560012947081960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5384300bece415b8243d9626aafc1c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Sharyq.TrackTotalResourceSold
+  achievementName: Its Healthier I Hope
+  resourceName: Peach Waffle
+  totalWafflesSold: 0
+  thresholdWafflesSold: 1
 --- !u!1 &1184861030510357809
 GameObject:
   m_ObjectHideFlags: 0
@@ -7230,14 +7530,14 @@ Transform:
   - {fileID: 4458120938274867729}
   - {fileID: 8667680807223336771}
   - {fileID: 4400023579893588381}
-  - {fileID: 6964834971171892}
-  - {fileID: 4265811351973116712}
+  - {fileID: 7112903660393025098}
   - {fileID: 3447649150325064984}
   - {fileID: 8779033429867002212}
   - {fileID: 4800168397082710523}
   - {fileID: 216357019369581723}
   - {fileID: 2838400465474183178}
   - {fileID: 4096367902073459082}
+  - {fileID: 3562680786498114611}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6736158468910207713
@@ -18412,7 +18712,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 6144650943582902043}
+    m_TransformParent: {fileID: 7112903660393025098}
     m_Modifications:
     - target: {fileID: 2916333986318510300, guid: bc5b3df2279cec34dae9007402861681, type: 3}
       propertyPath: m_Enabled
@@ -18457,6 +18757,10 @@ PrefabInstance:
     - target: {fileID: 6041319983396038216, guid: bc5b3df2279cec34dae9007402861681, type: 3}
       propertyPath: m_Name
       value: BuyingShelf (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041319983396038216, guid: bc5b3df2279cec34dae9007402861681, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8433379801290561272, guid: bc5b3df2279cec34dae9007402861681, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19493,7 +19797,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 6144650943582902043}
+    m_TransformParent: {fileID: 7112903660393025098}
     m_Modifications:
     - target: {fileID: 2916333986318510300, guid: bc5b3df2279cec34dae9007402861681, type: 3}
       propertyPath: itemPrefab
@@ -19535,6 +19839,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuyingShelf (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6041319983396038216, guid: bc5b3df2279cec34dae9007402861681, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8433379801290561272, guid: bc5b3df2279cec34dae9007402861681, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.32824996
+      objectReference: {fileID: 0}
+    - target: {fileID: 8433379801290561272, guid: bc5b3df2279cec34dae9007402861681, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.32824996
+      objectReference: {fileID: 0}
     - target: {fileID: 8433379801290561272, guid: bc5b3df2279cec34dae9007402861681, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.276
@@ -19553,7 +19869,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8433379801290561272, guid: bc5b3df2279cec34dae9007402861681, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8433379801290561272, guid: bc5b3df2279cec34dae9007402861681, type: 3}
       propertyPath: m_LocalRotation.y
@@ -19561,7 +19877,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8433379801290561272, guid: bc5b3df2279cec34dae9007402861681, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8433379801290561272, guid: bc5b3df2279cec34dae9007402861681, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
