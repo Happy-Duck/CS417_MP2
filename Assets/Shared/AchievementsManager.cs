@@ -10,6 +10,7 @@ namespace Shared
     /// Global Manager to give Achievements to the Player
     /// and Check if player has a specific Achievement
     /// </summary>
+    [DefaultExecutionOrder(-100)]
     public class AchievementsManager : MonoBehaviour
     {
         /// <summary>
