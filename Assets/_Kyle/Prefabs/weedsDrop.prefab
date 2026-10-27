@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 45cc58072c1d1f94ca9afdd0a09b098c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.08883799
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 45cc58072c1d1f94ca9afdd0a09b098c, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.08883799
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 45cc58072c1d1f94ca9afdd0a09b098c, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.08883799
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 45cc58072c1d1f94ca9afdd0a09b098c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -65,6 +65,10 @@ PrefabInstance:
       value: weedsDrop
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 45cc58072c1d1f94ca9afdd0a09b098c, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 45cc58072c1d1f94ca9afdd0a09b098c, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -84,10 +88,10 @@ PrefabInstance:
       addedObject: {fileID: 6936859384305525761}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 45cc58072c1d1f94ca9afdd0a09b098c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7822822602674741411}
+      addedObject: {fileID: 1828482759455120010}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 45cc58072c1d1f94ca9afdd0a09b098c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 50787157455322909}
+      addedObject: {fileID: 796632365717460806}
   m_SourcePrefab: {fileID: 100100000, guid: 45cc58072c1d1f94ca9afdd0a09b098c, type: 3}
 --- !u!1 &7928372768658230085 stripped
 GameObject:
@@ -116,8 +120,8 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -142,7 +146,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5804016, y: 0.27124968, z: 0.5459797}
   m_Center: {x: 0.08921948, y: 0.1302974, z: -0.16420308}
---- !u!114 &7822822602674741411
+--- !u!114 &1828482759455120010
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,13 +155,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7928372768658230085}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a35f6cfbfba9b548aaa00d52cfe8a50, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable
+  m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactables.XRSimpleInteractable
   m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayers:
-    m_Bits: 3
+    m_Bits: 1
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -216,63 +220,7 @@ MonoBehaviour:
   m_StartingInteractionStrengthFilters: []
   m_AutoFindParentInteractableInHierarchy: 0
   m_ParentInteractableObject: {fileID: 0}
-  m_AttachTransform: {fileID: 0}
-  m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 0
-  m_MatchAttachPosition: 1
-  m_MatchAttachRotation: 1
-  m_SnapToColliderVolume: 1
-  m_ReinitializeDynamicAttachEverySingleGrab: 1
-  m_AttachEaseInTime: 0.15
-  m_MovementType: 2
-  m_PredictedVisualsTransform: {fileID: 0}
-  m_VelocityDamping: 1
-  m_VelocityScale: 1
-  m_AngularVelocityDamping: 1
-  m_AngularVelocityScale: 1
-  m_TrackPosition: 1
-  m_SmoothPosition: 0
-  m_SmoothPositionAmount: 8
-  m_TightenPosition: 0.1
-  m_TrackRotation: 1
-  m_SmoothRotation: 0
-  m_SmoothRotationAmount: 8
-  m_TightenRotation: 0.1
-  m_TrackScale: 1
-  m_SmoothScale: 0
-  m_SmoothScaleAmount: 8
-  m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
-  m_ThrowSmoothingDuration: 0.25
-  m_ThrowSmoothingCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  m_ThrowVelocityScale: 1.5
-  m_ThrowAngularVelocityScale: 1
-  m_ForceGravityOnDetach: 0
-  m_UnparentTransformOnGrab: 1
-  m_RetainTransformParent: 1
-  m_StartingSingleGrabTransformers: []
-  m_StartingMultipleGrabTransformers: []
-  m_AddDefaultGrabTransformers: 1
-  m_FarAttachMode: 0
-  m_LimitLinearVelocity: 0
-  m_LimitAngularVelocity: 0
-  m_MaxLinearVelocityDelta: 10
-  m_MaxAngularVelocityDelta: 20
---- !u!114 &50787157455322909
+--- !u!114 &796632365717460806
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -281,6 +229,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 7928372768658230085}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b456be6ecf349d41bffa220b90dbd2a, type: 3}
+  m_Script: {fileID: 11500000, guid: b1ca7fb09aadeae438e98f44c09a4da6, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Kyle.InventoryItem
+  m_EditorClassIdentifier: Assembly-CSharp::Kyle.FieldDropItem
+  resourceKey: Weeds
+  collectSound: {fileID: 8300000, guid: 6059dc910d59c4745aa9e39467fe53de, type: 3}
