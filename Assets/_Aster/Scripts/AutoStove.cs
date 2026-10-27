@@ -9,14 +9,12 @@ namespace Aster
 {
     public class AutoStove : MonoBehaviour
     {
-        [Header("METH Recipe")]
+        
         [SerializeField] private Recipe METHRecipe;
 
-        [Header("UI Text")]
         [SerializeField] private TMP_Text ingredientsText;
         [SerializeField] private TMP_Text METHReadyText;
 
-        [Header("Optional Buttons")]
         [SerializeField] private GameObject collect;
         private int pending;
 
@@ -27,7 +25,7 @@ namespace Aster
             RefreshUI();
         }
 
-        // Connect this to the Turn In button's OnClick event.
+        
         public void TurnInIngredients()
         {
             if (METHRecipe == null || METHRecipe.inputs == null ||
@@ -36,8 +34,7 @@ namespace Aster
                 return;
             }
 
-            // Combine duplicate ingredient entries so the calculation
-            // also works if the recipe lists the same resource twice.
+         
             Dictionary<string, int> required = GetCombinedRequirements();
 
             if (required.Count == 0)
@@ -46,7 +43,7 @@ namespace Aster
                 return;
             }
 
-            // Find the maximum number of complete recipes possible.
+            
             int possibleBatches = int.MaxValue;
             ResourceManager rm = ResourceManager.Instance;
 
@@ -68,30 +65,26 @@ namespace Aster
                 return;
             }
 
-            // Spend all ingredients needed for every possible batch.
+            
             foreach (KeyValuePair<string, int> item in required)
             {
                 int totalNeeded = item.Value * possibleBatches;
 
                 if (!rm.TrySpend(item.Key, totalNeeded))
                 {
-                    // Normally shouldn't happen because we checked
-                    // inventory above. See note below if inventory can
-                    // change from other scripts at the same time.
-                    Debug.LogWarning(
-                        "AutoStove: Could not spend " + item.Key);
+                    
                     RefreshUI();
                     return;
                 }
             }
 
-            // Add all produced output to the uncollected amount.
+            
             pending += possibleBatches * METHRecipe.outputAmount;
 
             RefreshUI();
         }
 
-        // Connect this to the Collect METH button's OnClick event.
+        
         public void CollectMETH()
         {
             if (pending <= 0)
