@@ -8,8 +8,11 @@ namespace Sharyq
         private SellResource _sellResource;
         private void Awake()
         {
-            _sellResource = GetComponent<SellResource>();
-            _sellResource.ItemSoldEvent.AddListener(FirstWaffleSold);
+            if (!AchievementsManager.Instance.IsAchieved("Making Carbs into Cash"))
+            {
+                _sellResource = GetComponent<SellResource>();
+                _sellResource.ItemSoldEvent.AddListener(FirstWaffleSold);
+            }
         }
 
         private void FirstWaffleSold()

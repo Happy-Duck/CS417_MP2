@@ -182,6 +182,9 @@ PrefabInstance:
       addedObject: {fileID: 4146925955280045271}
     - targetCorrespondingSourceObject: {fileID: 1133879610561952144, guid: e882db09139dfa24c918864ff5aa320a, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 2052938588271656065}
+    - targetCorrespondingSourceObject: {fileID: 1133879610561952144, guid: e882db09139dfa24c918864ff5aa320a, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 2705249143559594319}
     - targetCorrespondingSourceObject: {fileID: 1133879610561952144, guid: e882db09139dfa24c918864ff5aa320a, type: 3}
       insertIndex: -1
@@ -216,6 +219,18 @@ MonoBehaviour:
   resource: Dollar
   finishedPopupPrefab: {fileID: 1557378499866557932, guid: 39644129965637e45a18ac0e141ddcdd, type: 3}
   tipAmount: 0
+--- !u!114 &2052938588271656065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4637979376355336368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3fb2b34512b7f64e8aace3ea032c2ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Sharyq.IsFirstTip
 --- !u!114 &2705249143559594319
 MonoBehaviour:
   m_ObjectHideFlags: 0

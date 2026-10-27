@@ -106,6 +106,8 @@ namespace Sharyq
             var batter = Instantiate(batterPrefab).GetComponent<Batter>();
             batter.gameObject.SetActive(false);
             BeginCooking(batter);
+            if (!AchievementsManager.Instance.IsAchieved("Sit and Relax"))
+                AchievementsManager.Instance.CompleteAchievement("Sit and Relax");
             return true;
         }
     }

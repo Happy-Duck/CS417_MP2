@@ -123,6 +123,9 @@ namespace Sharyq
 
         private void StartMixing()
         {
+            bool achieved = AchievementsManager.Instance.IsAchieved("Increasing Production");
+            if (_currentEggType == EggType.Blue && achieved)
+                AchievementsManager.Instance.CompleteAchievement("Increasing Production");
             IsMixing = true;
             progress = 0f;
             SetInteractionEnabled(false);
