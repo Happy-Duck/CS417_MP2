@@ -2167,6 +2167,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: johnn deere 8530
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 77c3cbf6da87d1d448b43a85094c15b5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2802,6 +2806,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: dfe87f16fbe4bd544bc18a2aa2ee97c4, type: 3}
       propertyPath: m_Name
       value: AVIAOo
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dfe87f16fbe4bd544bc18a2aa2ee97c4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3746,6 +3754,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3356961698869764998, guid: 52e0621965d8f494ab5b722b8510251e, type: 3}
+      propertyPath: requiredTrackerKey
+      value: CornCraftedTracker
+      objectReference: {fileID: 0}
     - target: {fileID: 4651906504716711054, guid: 52e0621965d8f494ab5b722b8510251e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4072,6 +4084,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1680501587, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178791450436251564, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_CameraYOffset
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1178791450436251564, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_RequestedTrackingOriginMode
       value: 1
@@ -5005,6 +5025,10 @@ PrefabInstance:
     - target: {fileID: 8581887878169473, guid: f04a2a4c8639fa1499553286349bf7ff, type: 3}
       propertyPath: m_Name
       value: mushrooms_group
+      objectReference: {fileID: 0}
+    - target: {fileID: 8581887878169473, guid: f04a2a4c8639fa1499553286349bf7ff, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 816749685066389819, guid: f04a2a4c8639fa1499553286349bf7ff, type: 3}
       propertyPath: m_LocalPosition.x

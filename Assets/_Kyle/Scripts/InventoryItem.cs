@@ -24,6 +24,7 @@ namespace Kyle
         private ErrorCatchingHint errorHint;
 
         public string ResourceName => resourceName;
+        public string ResourceKey => resourceKey;
 
         public void Initialize(string resName, string resKey, Transform spawnPoint)
         {
@@ -109,8 +110,8 @@ namespace Kyle
                 rb.isKinematic = false;
                 rb.useGravity = true;
 
-                ResourceManager.Instance.TrySpend(resourceKey, 1);
                 InventoryManager.Instance.ClearShelfReference(gameObject);
+                ResourceManager.Instance.TrySpend(resourceKey, 1);
                 //InventoryManager.Instance.UpdateNums();
             }
         }

@@ -82,6 +82,7 @@ namespace Kyle
             ResourceManager.Instance.Add("Chicken Poop", 10);
             ResourceManager.Instance.Add("Burnt Waffle", 10);
             ResourceManager.Instance.Add("Leftover", 10);
+            ResourceManager.Instance.Add("HarvestedWheat", 10);
         }
 
         private void Update()
@@ -153,12 +154,14 @@ namespace Kyle
                     if (crop.water > 0)
                     {
                         //float growthRate = 100f / 120f;
+                        float currentGrowthRate = growthRate;
+
                         if (affectedByWeeds.Contains(cell))
                         {
-                            growthRate *= 0.5f;
+                            currentGrowthRate *= 0.5f;
                         }
 
-                        crop.growth += growthRate * Time.deltaTime;
+                        crop.growth += currentGrowthRate * Time.deltaTime;
                         needsVisualUpdate = true;
 
                         if (crop.growth >= 100f)
@@ -224,7 +227,7 @@ namespace Kyle
                     if (crop.ground != GroundState.Soil) {
                         plantError.ShowError();
                     }
-                    else if (ResourceManager.Instance.CanAfford("CornSeed", 1))
+                    else if (!ResourceManager.Instance.CanAfford("CornSeed", 1))
                     {
                         notEnoughResourceError.ShowError();
                     }
@@ -257,7 +260,7 @@ namespace Kyle
                     {
                         plantError.ShowError();
                     }
-                    else if (ResourceManager.Instance.CanAfford("WheatSeed", 1))
+                    else if (!ResourceManager.Instance.CanAfford("WheatSeed", 1))
                     {
                         notEnoughResourceError.ShowError();
                     }
@@ -277,7 +280,7 @@ namespace Kyle
 
                 case FarmingTool.Fertilize:
                     // error catching
-                    if (ResourceManager.Instance.CanAfford("Fertilizer", 1))
+                    if (!ResourceManager.Instance.CanAfford("Fertilizer", 1))
                     {
                         notEnoughResourceError.ShowError();
                     }
