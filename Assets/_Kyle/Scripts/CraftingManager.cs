@@ -26,10 +26,16 @@ namespace Kyle
     }
     public class CraftingManager : MonoBehaviour
     {
+        private ErrorCatchingHint error;
         [SerializeField] private List<CraftingRecipe> availableRecipes;
 
         [Header("Socket References")]
         [SerializeField] private XRSocketInteractor[] craftingSockets;
+
+        private void Start()
+        {
+            error = GetComponent<ErrorCatchingHint>();
+        }
 
         public void TryCraft()
         {
@@ -61,6 +67,8 @@ namespace Kyle
                     return;
                 }
             }
+
+            error.ShowError();
         }
 
         private bool CanCraftRecipe(CraftingRecipe recipe, Dictionary<string, int> currentItems, int totalItems)

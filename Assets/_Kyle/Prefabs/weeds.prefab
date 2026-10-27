@@ -88,6 +88,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 45cc58072c1d1f94ca9afdd0a09b098c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 707150922264999191}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 45cc58072c1d1f94ca9afdd0a09b098c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7107857371691794906}
   m_SourcePrefab: {fileID: 100100000, guid: 45cc58072c1d1f94ca9afdd0a09b098c, type: 3}
 --- !u!1 &5910057873255262200 stripped
 GameObject:
@@ -284,3 +287,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b456be6ecf349d41bffa220b90dbd2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Kyle.InventoryItem
+--- !u!114 &7107857371691794906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5910057873255262200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1457c6d46a84e4f4da3716ef97513860, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Kyle.ErrorCatchingHint
+  message: You don't have any of this resource!
+  hideAfterSeconds: 3
+  offset: {x: 0, y: 0.4, z: 0}
+  characterSize: 0.012

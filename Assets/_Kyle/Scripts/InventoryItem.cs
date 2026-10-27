@@ -21,6 +21,7 @@ namespace Kyle
         private XRGrabInteractable grabInteractable;
         private Rigidbody rb;
         private Coroutine returnRoutine;
+        private ErrorCatchingHint errorHint;
 
         public string ResourceName => resourceName;
 
@@ -32,11 +33,6 @@ namespace Kyle
 
             if (grabInteractable == null)
                 grabInteractable = GetComponent<XRGrabInteractable>();
-
-            if (ResourceManager.Instance != null)
-            {
-                grabInteractable.enabled = ResourceManager.Instance.Get(resourceKey) > 0;
-            }
         }
 
         private void Awake()
@@ -46,6 +42,8 @@ namespace Kyle
 
             rb.isKinematic = true;
             rb.useGravity = false;
+
+            errorHint = GetComponent<ErrorCatchingHint>();
         }
 
         //private void Start()
@@ -60,15 +58,16 @@ namespace Kyle
         {
             grabInteractable.selectEntered.AddListener(OnSelected);
             grabInteractable.selectExited.AddListener(OnDeselected);
-            ResourceManager.Instance.OnResourceChanged += OnResourceAmountChanged;
+            //ResourceManager.Instance.OnResourceChanged += OnResourceAmountChanged;
         }
 
         private void OnDisable()
         {
             grabInteractable.selectEntered.RemoveListener(OnSelected);
             grabInteractable.selectExited.RemoveListener(OnDeselected);
-            ResourceManager.Instance.OnResourceChanged -= OnResourceAmountChanged;
+            //ResourceManager.Instance.OnResourceChanged -= OnResourceAmountChanged;
         }
+
         private void OnResourceAmountChanged(string changedKey, int newAmount, int change)
         {
             if (!hasBeenGrabbed && changedKey == resourceKey)
@@ -88,6 +87,18 @@ namespace Kyle
             if (args.interactorObject is XRSocketInteractor)
             {
                 isInSocket = true;
+                return;
+            }
+
+            // if player tries to grab 0 resource
+            if (ResourceManager.Instance.Get(resourceKey) <= 0)
+            {
+                if (errorHint != null)
+                {
+                    errorHint.ShowError();
+                }
+
+                args.manager.SelectCancel(args.interactorObject, args.interactableObject);
                 return;
             }
 
@@ -114,7 +125,7 @@ namespace Kyle
                 return;
             }
 
-            if (!isCrafted)
+            if (!isCrafted && hasBeenGrabbed)
             {
                 returnRoutine = StartCoroutine(ReturnToInventoryRoutine());
             }
