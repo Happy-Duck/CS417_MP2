@@ -54,6 +54,9 @@ namespace Kyle
         [SerializeField] private GameObject weedDropPrefab;
         [SerializeField] float growthRate = 10f; // 100f / 120f
 
+        [SerializeField] private ErrorCatchingHint plantError;
+        [SerializeField] private ErrorCatchingHint notEnoughResourceError;
+
         private float weedSpawnTimer = 0f;
         private float nextWeedSpawnInterval = 20f;
 
@@ -74,6 +77,11 @@ namespace Kyle
 
             InstancedCropRenderer.Instance.RebuildGroundMatrices(activeCrops);
             nextWeedSpawnInterval = Random.Range(20f, 60f);
+
+            // DEBUG STUFF!!!!!!!!
+            ResourceManager.Instance.Add("Chicken Poop", 10);
+            ResourceManager.Instance.Add("Burnt Waffle", 10);
+            ResourceManager.Instance.Add("Leftover", 10);
         }
 
         private void Update()
@@ -212,6 +220,15 @@ namespace Kyle
             switch (action)
             {
                 case FarmingTool.PlantCorn:
+                    // error catching
+                    if (crop.ground != GroundState.Soil) {
+                        plantError.ShowError();
+                    }
+                    else if (ResourceManager.Instance.CanAfford("CornSeed", 1))
+                    {
+                        notEnoughResourceError.ShowError();
+                    }
+
                     if (crop.ground == GroundState.Soil && crop.state == CellState.Empty && ResourceManager.Instance.TrySpend("CornSeed", 1))
                     {
                         crop.state = CellState.CornPlanted;
@@ -235,6 +252,16 @@ namespace Kyle
                     break;
 
                 case FarmingTool.PlantWheat:
+                    // error catching
+                    if (crop.ground != GroundState.Soil)
+                    {
+                        plantError.ShowError();
+                    }
+                    else if (ResourceManager.Instance.CanAfford("WheatSeed", 1))
+                    {
+                        notEnoughResourceError.ShowError();
+                    }
+
                     if (crop.ground == GroundState.Soil && crop.state == CellState.Empty && ResourceManager.Instance.TrySpend("WheatSeed", 1))
                     {
                         crop.state = CellState.WheatPlanted;
@@ -249,6 +276,12 @@ namespace Kyle
                     break;
 
                 case FarmingTool.Fertilize:
+                    // error catching
+                    if (ResourceManager.Instance.CanAfford("Fertilizer", 1))
+                    {
+                        notEnoughResourceError.ShowError();
+                    }
+
                     if (crop.fertilization < 100 && ResourceManager.Instance.TrySpend("Fertilizer", 1))
                     {
                         crop.ground = GroundState.Soil;
