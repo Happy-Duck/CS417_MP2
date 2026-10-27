@@ -68,6 +68,7 @@ namespace Aster {
             var r = recipes[index];
             for (int i = 0; i < r.inputs.Count; i++)
                 if (progress[index][i] < r.inputs[i].count) return false;
+            AchievementsManager.Instance.CompleteAchievement("Mmm...");
             return true;
         }
 
