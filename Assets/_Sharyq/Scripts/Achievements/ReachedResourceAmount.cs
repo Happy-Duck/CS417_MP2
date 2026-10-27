@@ -31,7 +31,8 @@ namespace Sharyq
 
         private void OnDestroy()
         {
-            ResourceManager.Instance.OnResourceChanged -= CheckAmount;
+            if (ResourceManager.Instance != null)
+                ResourceManager.Instance.OnResourceChanged -= CheckAmount;
         }
     }
 }

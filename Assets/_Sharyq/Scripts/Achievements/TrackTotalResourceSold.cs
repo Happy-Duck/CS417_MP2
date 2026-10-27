@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Shared;
 using UnityEngine;
 
@@ -15,18 +15,15 @@ namespace Sharyq
         [SerializeField]
         private int thresholdWafflesSold = 30;
         private int _prevWaffles = 0;
-        
-
-        private void Awake()
-        {
-            if (!AchievementsManager.Instance.IsAchieved(achievementName))
-                ResourceManager.Instance.OnResourceChanged += CheckRequirement;
-        }
 
         private void Start()
         {
+            if (!AchievementsManager.Instance.IsAchieved(achievementName))
+                ResourceManager.Instance.OnResourceChanged += CheckRequirement;
             _prevWaffles = ResourceManager.Instance.Get(resourceName);
         }
+
+
 
         private void CheckRequirement(string resource, int newAmount, int changedAmount)
         {
@@ -35,23 +32,25 @@ namespace Sharyq
                 ResourceManager.Instance.OnResourceChanged -= CheckRequirement;
                 return;
             }
-            if (resource == resourceName && newAmount < _prevWaffles)
+
+            if (resource != resourceName || changedAmount >= 0)
+                return;
+
+            totalWafflesSold++;
+
+            if (totalWafflesSold >= thresholdWafflesSold)
             {
-                totalWafflesSold += 1;
-                if (totalWafflesSold > newAmount)
-                {
-                    achievementName = "This is Getting Repetitive";
-                    AchievementsManager.Instance.CompleteAchievement(achievementName);
-                    ResourceManager.Instance.OnResourceChanged -= CheckRequirement;
-                    return;
-                }
-                _prevWaffles = newAmount;
+                AchievementsManager.Instance.CompleteAchievement(achievementName);
+                ResourceManager.Instance.OnResourceChanged -= CheckRequirement;
             }
         }
 
+
+
         private void OnDestroy()
         {
-            ResourceManager.Instance.OnResourceChanged -= CheckRequirement;
+            if (ResourceManager.Instance != null)
+                ResourceManager.Instance.OnResourceChanged -= CheckRequirement;
         }
     }
 }

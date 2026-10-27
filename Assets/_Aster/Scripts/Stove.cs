@@ -27,6 +27,7 @@ namespace Aster
             {
                 case State.Empty:
                     if (!recipe.CanAffordFromResources()) { onFailed?.Invoke(); return; }
+                    AchievementsManager.Instance.CompleteAchievement("Jesse, we need to cook");
                     recipe.SpendFromResources();
                     boilProgress = 0f;
                     state = State.Boiling;

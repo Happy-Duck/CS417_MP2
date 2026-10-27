@@ -33,6 +33,7 @@ namespace Aster
                     rm.Add(r.output, r.outputAmount);
                     sold++;
                 }
+                AchievementsManager.Instance.CompleteAchievement("First Shipment");
             }
             if (bar != null) bar.Set(Mathf.Min(shipped, goalForBar), goalForBar);
             if (sold > 0) onShipped?.Invoke(); else onNothingToShip?.Invoke();
@@ -40,8 +41,9 @@ namespace Aster
             shipped += sold;
             if (shipped >= goalForBar)
             {
+                AchievementsManager.Instance.CompleteAchievement("Dealer");
                 price += 5 * (shipped - goalForBar);
-                goalForBar += 5;
+                goalForBar += 5 * (shipped - goalForBar);
             }
             Refresh();
         }

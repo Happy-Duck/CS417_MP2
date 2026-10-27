@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using Shared;
 using UnityEngine;
@@ -35,10 +36,15 @@ namespace Sharyq
         [SerializeField] private float progress = 0f;
         public float Progress => progress;
 
+        [Header("Rejection")]
+        [SerializeField] private bool ejectRejectedItems = true;
+        [SerializeField] private float rejectCooldown = 1f;
+
         private IngredientPopup popup;
         private ResourceNotifier finishedPopup;
         private XRBaseInteractable _currentInteractable;
         private EggType _currentEggType = EggType.White;
+        private Coroutine _ejectRoutine;
 
         public bool IsMixing { get; private set; }
 
@@ -78,6 +84,8 @@ namespace Sharyq
         {
             if (socket != null)
                 socket.selectEntered.RemoveListener(OnIngredientPlaced);
+
+            _ejectRoutine = null;
         }
 
         private int GetBatterYield(EggType type)
@@ -92,11 +100,19 @@ namespace Sharyq
             if (IsMixing) return;
 
             Ingredient ingredient = args.interactableObject.transform.GetComponentInParent<Ingredient>();
-            if (ingredient == null) return;
-
-            // Only accept types the recipe needs and doesn't have
-            if (!System.Array.Exists(requiredIngredients, t => t == ingredient.type)) return;
-            if (!added.Add(ingredient.type)) return;
+            
+            if (ingredient == null ||
+                !System.Array.Exists(requiredIngredients, t => t == ingredient.type))
+            {
+                RejectIngredient(args.interactableObject);
+                return;
+            }
+            
+            if (!added.Add(ingredient.type))
+            {
+                RejectIngredient(args.interactableObject);
+                return;
+            }
 
             if (ingredient is Egg egg)
                 _currentEggType = egg.EggType;
@@ -110,10 +126,39 @@ namespace Sharyq
                 StartMixing();
         }
 
+        private void RejectIngredient(IXRSelectInteractable interactable)
+        {
+            if (popup != null)
+                popup.InvalidIngredient();
+
+            if (ejectRejectedItems && _ejectRoutine == null)
+                _ejectRoutine = StartCoroutine(EjectRoutine(interactable));
+        }
+
+        private IEnumerator EjectRoutine(IXRSelectInteractable interactable)
+        {
+            yield return null;
+
+            if (socket != null && socket.interactionManager != null &&
+                interactable != null && socket.IsSelecting(interactable))
+            {
+                socket.interactionManager.SelectExit(socket, interactable);
+            }
+            
+            if (socket != null)
+            {
+                socket.socketActive = false;
+                yield return new WaitForSeconds(rejectCooldown);
+                socket.socketActive = true;
+            }
+
+            _ejectRoutine = null;
+        }
+
         private void Update()
         {
             if (!IsMixing) return;
-            
+
             float rate = mixDuration > 0f ? 1f / mixDuration : float.PositiveInfinity;
             progress += rate * Time.deltaTime;
 
@@ -124,7 +169,7 @@ namespace Sharyq
         private void StartMixing()
         {
             bool achieved = AchievementsManager.Instance.IsAchieved("Increasing Production");
-            if (_currentEggType == EggType.Blue && achieved)
+            if (_currentEggType == EggType.Blue && !achieved)
                 AchievementsManager.Instance.CompleteAchievement("Increasing Production");
             IsMixing = true;
             progress = 0f;
@@ -163,8 +208,9 @@ namespace Sharyq
         {
             if (IsMixing || added.Count > 0) return false;
 
+            bool payForWheat = false;
             if (ResourceManager.Instance.Get("Wheat") <= 0)
-                return false;
+                payForWheat = true;
 
             EggType? best = null;
             int bestYield = -1;
@@ -180,12 +226,24 @@ namespace Sharyq
             }
 
             if (best == null)
-                return false;
+            {
+                _currentEggType = EggType.White;
+                ResourceManager.Instance.TrySpend("Dollar", 5);
+            }
+            else
+            {
+                _currentEggType = best.Value;
+                ResourceManager.Instance.TrySpend($"{best.Value} Egg", 1);
+            }
+                
 
-            ResourceManager.Instance.TrySpend($"{best.Value} Egg", 1);
-            ResourceManager.Instance.TrySpend("Wheat", 1);
-
-            _currentEggType = best.Value;
+            if(payForWheat)
+                ResourceManager.Instance.TrySpend("Dollar", 5);
+            else
+            {
+                ResourceManager.Instance.TrySpend("Wheat", 1);
+            }
+            
             StartMixing();
             return true;
         }

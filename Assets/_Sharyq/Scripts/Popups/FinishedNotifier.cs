@@ -51,8 +51,7 @@ namespace Sharyq
                 if (main == null) return;
                 _cam = main.transform;
             }
-
-            // World-space canvases render facing +Z, so point +Z away from the camera
+            
             Vector3 dir = transform.position - _cam.position;
             if (keepUpright)
                 dir.y = 0f;

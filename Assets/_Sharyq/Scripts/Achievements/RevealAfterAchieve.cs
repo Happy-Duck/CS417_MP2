@@ -13,8 +13,12 @@ namespace Sharyq
 
         private void Awake()
         {
-            AchievementsManager.Instance.onAchieved.AddListener(Unlock);
             revealableObjects.ForEach(x => x.SetActive(false));
+        }
+
+        private void Start()
+        {
+            AchievementsManager.Instance.onAchieved.AddListener(Unlock);
         }
 
         public void Unlock(string achievement, string _)

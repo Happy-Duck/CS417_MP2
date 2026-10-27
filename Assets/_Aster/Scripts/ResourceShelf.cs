@@ -13,6 +13,8 @@ namespace Aster
         public GameObject restockButton;    // only shown when the shelf is empty
         public int stock;                   // stat stock
 
+        private ResourceAchievement resourceAchievement;
+
         void Start()
         {
             stock = slots.Length;
@@ -24,6 +26,9 @@ namespace Aster
             if (stock <= 0) return;
             stock--;
             ResourceManager.Instance.Add(resourceName, 1);
+            AchievementsManager.Instance.CompleteAchievement("What groceries u been into lately");
+
+            resourceAchievement = FindFirstObjectByType<ResourceAchievement>();
             Refresh();
         }
 
@@ -31,6 +36,7 @@ namespace Aster
         {
             if (stock > 0) return;
             if (!ResourceManager.Instance.TrySpend(costResource, restockCost)) return;
+            AchievementsManager.Instance.CompleteAchievement("First Restock");
             stock = slots.Length;
             Refresh();
         }

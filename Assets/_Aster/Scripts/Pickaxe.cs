@@ -1,4 +1,5 @@
 using Aster;
+using Shared;
 using UnityEngine;
 
 namespace Aster
@@ -39,7 +40,10 @@ namespace Aster
             {
                 durability--;
                 Refresh();
-                if (durability <= 0) Destroy(gameObject);
+                if (durability <= 0) {
+                    AchievementsManager.Instance.CompleteAchievement("No Unbreaking");
+                    Destroy(gameObject);
+                }
             }
         }
 
