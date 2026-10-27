@@ -12,7 +12,7 @@ namespace Sharyq {
         void Start() {
             ResourceManager.Instance.Add("Dollar", 1000);
             ResourceManager.Instance.Add("Batter", 0);
-            ResourceManager.Instance.Add("Waffle", 10);
+            ResourceManager.Instance.Add("Waffle", 30);
             ResourceManager.Instance.Add("Apple Waffle", 0);
             ResourceManager.Instance.Add("Banana Waffle", 0);
             ResourceManager.Instance.Add("Cherry Waffle", 0);
@@ -26,10 +26,10 @@ namespace Sharyq {
             ResourceManager.Instance.Add("Energizing Waffle", 0);
             
             // Egg resources
-            ResourceManager.Instance.Add("White Egg", 10);
-            ResourceManager.Instance.Add("Brown Egg", 10);
-            ResourceManager.Instance.Add("Red Egg", 10);
-            ResourceManager.Instance.Add("Blue Egg", 10);
+            ResourceManager.Instance.Add("White Egg", 0);
+            ResourceManager.Instance.Add("Brown Egg", 0);
+            ResourceManager.Instance.Add("Red Egg", 0);
+            ResourceManager.Instance.Add("Blue Egg", 0);
         }
     }
 }

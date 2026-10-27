@@ -208,8 +208,9 @@ namespace Sharyq
         {
             if (IsMixing || added.Count > 0) return false;
 
+            bool payForWheat = false;
             if (ResourceManager.Instance.Get("Wheat") <= 0)
-                return false;
+                payForWheat = true;
 
             EggType? best = null;
             int bestYield = -1;
@@ -225,12 +226,24 @@ namespace Sharyq
             }
 
             if (best == null)
-                return false;
+            {
+                _currentEggType = EggType.White;
+                ResourceManager.Instance.TrySpend("Dollar", 5);
+            }
+            else
+            {
+                _currentEggType = best.Value;
+                ResourceManager.Instance.TrySpend($"{best.Value} Egg", 1);
+            }
+                
 
-            ResourceManager.Instance.TrySpend($"{best.Value} Egg", 1);
-            ResourceManager.Instance.TrySpend("Wheat", 1);
-
-            _currentEggType = best.Value;
+            if(payForWheat)
+                ResourceManager.Instance.TrySpend("Dollar", 5);
+            else
+            {
+                ResourceManager.Instance.TrySpend("Wheat", 1);
+            }
+            
             StartMixing();
             return true;
         }
