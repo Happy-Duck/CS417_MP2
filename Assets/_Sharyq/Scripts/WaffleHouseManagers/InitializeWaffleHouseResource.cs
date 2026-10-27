@@ -10,26 +10,36 @@ namespace Sharyq {
     public class InitializeWaffleHouseResources : MonoBehaviour {
         
         void Start() {
-            ResourceManager.Instance.Add("Dollar", 1000);
+            ResourceManager.Instance.Add("Dollar", 9999);
             ResourceManager.Instance.Add("Batter", 0);
             ResourceManager.Instance.Add("Waffle", 30);
-            ResourceManager.Instance.Add("Apple Waffle", 0);
-            ResourceManager.Instance.Add("Banana Waffle", 0);
-            ResourceManager.Instance.Add("Cherry Waffle", 0);
-            ResourceManager.Instance.Add("Peach Waffle", 0);
-            ResourceManager.Instance.Add("Strawberry Waffle", 0);
-            ResourceManager.Instance.Add("Chicken Waffle", 0);
-            ResourceManager.Instance.Add("Corn Waffle", 0);
+            ResourceManager.Instance.Add("Apple Waffle", 10);
+            ResourceManager.Instance.Add("Banana Waffle", 10);
+            ResourceManager.Instance.Add("Cherry Waffle", 10);
+            ResourceManager.Instance.Add("Peach Waffle", 10);
+            ResourceManager.Instance.Add("Strawberry Waffle", 10);
+            ResourceManager.Instance.Add("Chicken Waffle", 10);
+            ResourceManager.Instance.Add("Corn Waffle", 10);
             
-            ResourceManager.Instance.Add("Leftover", 0);
-            ResourceManager.Instance.Add("Burnt Waffle", 0);
-            ResourceManager.Instance.Add("Energizing Waffle", 0);
+            ResourceManager.Instance.Add("Leftover", 10);
+            ResourceManager.Instance.Add("Burnt Waffle", 10);
+            ResourceManager.Instance.Add("Energizing Waffle", 100);
             
             // Egg resources
-            ResourceManager.Instance.Add("White Egg", 0);
-            ResourceManager.Instance.Add("Brown Egg", 0);
-            ResourceManager.Instance.Add("Red Egg", 0);
-            ResourceManager.Instance.Add("Blue Egg", 0);
+            ResourceManager.Instance.Add("White Egg", 10);
+            ResourceManager.Instance.Add("Brown Egg", 10);
+            ResourceManager.Instance.Add("Red Egg", 10);
+            ResourceManager.Instance.Add("Blue Egg", 10);
+
+            ResourceManager.Instance.Add("Chicken", 10);
+            ResourceManager.Instance.Add("Corn", 10);
+
+            ResourceManager.Instance.Add("Strawberry", 10);
+            ResourceManager.Instance.Add("Banana", 10);
+            ResourceManager.Instance.Add("Apple", 10);
+            ResourceManager.Instance.Add("Cherry", 10);
+            ResourceManager.Instance.Add("Peach", 10);
+            ResourceManager.Instance.Add("Meth", 10);
         }
     }
 }

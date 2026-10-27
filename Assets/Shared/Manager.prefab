@@ -155,7 +155,7 @@ MonoBehaviour:
     - Making Carbs into Cash
     achieved: 0
   - name: Sit and Relax
-    description: Have your employee top waffles for you
+    description: Have Employee cook a waffle
     requiredAchievementsNames:
     - 'Have an Employee make and collect a waffle: can buy Chicken Coop or Farm'
     achieved: 0

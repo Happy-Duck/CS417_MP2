@@ -33,7 +33,7 @@ namespace Sharyq
         private UnityEvent onFailed;
 
         private Dictionary<IngredientType, string> lookup;
-        
+
         // Employee stuff
         private bool _employeeWorking = false;
         private float _currentTime = 0f;
@@ -45,12 +45,12 @@ namespace Sharyq
             recipes = new List<ToppingRecipe>
             {
                 new ToppingRecipe { ingredient = IngredientType.Apple, resultResource = "Apple Waffle" },
+                new ToppingRecipe { ingredient = IngredientType.Chicken, resultResource = "Chicken Waffle" },
+                new ToppingRecipe { ingredient = IngredientType.Corn, resultResource = "Corn Waffle" },
                 new ToppingRecipe { ingredient = IngredientType.Banana, resultResource = "Banana Waffle" },
                 new ToppingRecipe { ingredient = IngredientType.Peach, resultResource = "Peach Waffle" },
                 new ToppingRecipe { ingredient = IngredientType.Cherry, resultResource = "Cherry Waffle" },
                 new ToppingRecipe { ingredient = IngredientType.Strawberry, resultResource = "Strawberry Waffle" },
-                new ToppingRecipe { ingredient = IngredientType.Chicken, resultResource = "Chicken Waffle" },
-                new ToppingRecipe { ingredient = IngredientType.Corn, resultResource = "Corn Waffle" },
                 new ToppingRecipe { ingredient = IngredientType.Meth, resultResource = "Energizing Waffle" },
             };
         }
@@ -117,9 +117,9 @@ namespace Sharyq
         {
             if (ResourceManager.Instance.Get("Waffle") <= 0)
                 return false;
-            
+
             var ingredientType = GetIngredientToAdd();
-            
+
             if (ingredientType == null)
                 return false;
 
@@ -140,7 +140,7 @@ namespace Sharyq
             }
             if (!AchievementsManager.Instance.IsAchieved("Its Free Money"))
                 AchievementsManager.Instance.CompleteAchievement("Its Free Money");
-            
+
             return true;
         }
 
@@ -148,37 +148,46 @@ namespace Sharyq
         {
             // Spend Base Waffle
             ResourceManager.Instance.TrySpend(baseResource, 1);
-            
+
             // Add Resource
             lookup.TryGetValue(ingredientType, out string result);
             ResourceManager.Instance.Add(result, 1);
-                
+
             if (notif != null)
             {
                 var notifInst = Instantiate(notif, transform.position + notifOffset, transform.rotation)
                     .GetComponent<ResourceNotifier>();
                 notifInst.AddedResource(result, 1);
             }
-                
+
             onToppingAdded?.Invoke(result);
         }
 
-        // Returns the ingredient type of whatever is currently socketed, or null if nothing valid is there.
+
+
         private IngredientType? GetIngredientToAdd()
         {
-            if (socket == null || !socket.hasSelection)
+            var resources = ResourceManager.Instance;
+            if (resources == null)
                 return null;
 
-            var selected = socket.firstInteractableSelected;
-            if (selected == null)
-                return null;
+            for (int i = recipes.Count - 1; i >= 0; i--)
+            {
+                IngredientType ingredient = recipes[i].ingredient;
 
-            // Ingredient component may be on the root or a child of the grabbed object
-            var ingredient = selected.transform.GetComponentInParent<Ingredient>();
-            if (ingredient == null)
-                return null;
+                if (ingredient == IngredientType.Egg ||
+                    ingredient == IngredientType.Wheat)
+                    continue;
 
-            return ingredient.type;
+                string inputResource = ingredient.ToString();
+
+                if (resources.Get(inputResource) > 0)
+                    return ingredient;
+            }
+
+            return null;
         }
+
+
     }
 }
