@@ -8,6 +8,7 @@ using Shared;
 namespace Kyle
 {
     [RequireComponent(typeof(XRGrabInteractable))]
+    [RequireComponent(typeof(Rigidbody))]
     public class InventoryItem : MonoBehaviour
     {
         private string resourceName;
@@ -18,6 +19,7 @@ namespace Kyle
         private bool isInSocket = false;
 
         private XRGrabInteractable grabInteractable;
+        private Rigidbody rb;
         private Coroutine returnRoutine;
 
         public string ResourceName => resourceName;
@@ -27,23 +29,52 @@ namespace Kyle
             resourceName = resName;
             resourceKey = resKey;
             originalSpawnPoint = spawnPoint;
+
+            if (grabInteractable == null)
+                grabInteractable = GetComponent<XRGrabInteractable>();
+
+            if (ResourceManager.Instance != null)
+            {
+                grabInteractable.enabled = ResourceManager.Instance.Get(resourceKey) > 0;
+            }
         }
 
         private void Awake()
         {
             grabInteractable = GetComponent<XRGrabInteractable>();
+            rb = GetComponent<Rigidbody>();
+
+            rb.isKinematic = true;
+            rb.useGravity = false;
         }
+
+        //private void Start()
+        //{
+        //    if (ResourceManager.Instance != null && !string.IsNullOrEmpty(resourceKey))
+        //    {
+        //        grabInteractable.enabled = ResourceManager.Instance.Get(resourceKey) > 0;
+        //    }
+        //}
 
         private void OnEnable()
         {
             grabInteractable.selectEntered.AddListener(OnSelected);
             grabInteractable.selectExited.AddListener(OnDeselected);
+            ResourceManager.Instance.OnResourceChanged += OnResourceAmountChanged;
         }
 
         private void OnDisable()
         {
             grabInteractable.selectEntered.RemoveListener(OnSelected);
             grabInteractable.selectExited.RemoveListener(OnDeselected);
+            ResourceManager.Instance.OnResourceChanged -= OnResourceAmountChanged;
+        }
+        private void OnResourceAmountChanged(string changedKey, int newAmount, int change)
+        {
+            if (!hasBeenGrabbed && changedKey == resourceKey)
+            {
+                grabInteractable.enabled = newAmount > 0;
+            }
         }
 
         private void OnSelected(SelectEnterEventArgs args)
@@ -63,9 +94,13 @@ namespace Kyle
             if (!hasBeenGrabbed)
             {
                 hasBeenGrabbed = true;
+
+                rb.isKinematic = false;
+                rb.useGravity = true;
+
                 ResourceManager.Instance.TrySpend(resourceKey, 1);
                 InventoryManager.Instance.ClearShelfReference(gameObject);
-                InventoryManager.Instance.UpdateNums();
+                //InventoryManager.Instance.UpdateNums();
             }
         }
 
@@ -95,7 +130,7 @@ namespace Kyle
             }
 
             ResourceManager.Instance.Add(resourceKey, 1);
-            InventoryManager.Instance.UpdateNums();
+            //InventoryManager.Instance.UpdateNums();
             Destroy(gameObject);
         }
 

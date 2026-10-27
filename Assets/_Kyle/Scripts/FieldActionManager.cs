@@ -51,6 +51,8 @@ namespace Kyle
 
         [SerializeField] private GameObject cornDropPrefab;
         [SerializeField] private GameObject wheatDropPrefab;
+        [SerializeField] private GameObject weedDropPrefab;
+        [SerializeField] float growthRate = 10f; // 100f / 120f
 
         private float weedSpawnTimer = 0f;
         private float nextWeedSpawnInterval = 20f;
@@ -142,7 +144,7 @@ namespace Kyle
                     // only grow with water
                     if (crop.water > 0)
                     {
-                        float growthRate = 100f / 120f;
+                        //float growthRate = 100f / 120f;
                         if (affectedByWeeds.Contains(cell))
                         {
                             growthRate *= 0.5f;
@@ -407,34 +409,62 @@ namespace Kyle
                     return cornDropPrefab;
                 case "HarvestedWheat":
                     return wheatDropPrefab;
+                case "Weeds":
+                    return weedDropPrefab;
                 default:
                     return null;
             }
         }
 
-        public void TrySwipeHarvest(Vector2Int cell)
+        public void TrySwipeHarvest(Vector2Int cell, FarmingTool action)
         {
             if (activeCrops.TryGetValue(cell, out CropData crop))
             {
                 string targetResource = "";
-                int dropCount = 3;
+                int dropCount = 0;
 
-                if (crop.state == CellState.CornReadyForHarvest)
+                // scythe stuff
+                if (action == FarmingTool.Harvest)
                 {
-                    targetResource = "HarvestedCorn";
-                    crop.state = CellState.Empty;
-                    crop.growth = 0f;
+                    if (crop.state == CellState.CornReadyForHarvest)
+                    {
+                        targetResource = "HarvestedCorn";
+                        dropCount = 3;
+                        crop.state = CellState.Empty;
+                        crop.growth = 0f;
+                    }
+                    else if (crop.state == CellState.WheatReadyForHarvest)
+                    {
+                        targetResource = "HarvestedWheat";
+                        dropCount = 3;
+                        crop.state = CellState.Empty;
+                        crop.growth = 0f;
+                    }
                 }
-                else if (crop.state == CellState.WheatReadyForHarvest)
+                // hoe logic
+                else if (action == FarmingTool.Hoe)
                 {
-                    targetResource = "HarvestedWheat";
-                    crop.state = CellState.Empty;
-                    crop.growth = 0f;
+                    if (crop.state == CellState.Weedy)
+                    {
+                        targetResource = "Weeds";
+                        dropCount = 4;
+
+                        crop.state = CellState.Empty;
+                        crop.ground = GroundState.Rocky;
+                        crop.growth = 0f;
+                        crop.water = 0f;
+                        crop.fertilization = 0f;
+                    }
                 }
 
                 if (!string.IsNullOrEmpty(targetResource))
                 {
                     InstancedCropRenderer.Instance.RebuildMatricesFromState(activeCrops);
+
+                    if (action == FarmingTool.Hoe)
+                    {
+                        InstancedCropRenderer.Instance.RebuildGroundMatrices(activeCrops);
+                    }
 
                     Vector3 worldPos = GetTableWorldPosition(cell);
                     for (int i = 0; i < dropCount; i++)
