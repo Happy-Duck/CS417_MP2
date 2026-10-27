@@ -35,7 +35,7 @@ namespace Alyssa
                 "Buy/Make fertilizer, and put it on a soilbed with a plant to make it grow twice as fast! (Only works for one growth cycle)" } },
             { Goal.FertilizerPro, new[] { "Fertilizer Pro", "Fertilize 5 crops", "Auto-fertilizer",
                 "Put this on a bed to automatically fertilize the plant (if fertilizer is available in resources)." } },
-            { Goal.HarvesterPro, new[] { "Harvester Pro", "Harvest 50 fruits", "Auto-harvester",
+            { Goal.HarvesterPro, new[] { "Harvester Pro", "Harvest 20 fruits", "Auto-harvester",
                 "Put this on a soilbed to automatically harvest the plant when fruit grows!" } },
         };
 
@@ -102,7 +102,7 @@ namespace Alyssa
                 case Goal.FertilizerPro:
                     return fertilized >= 5;
                 default:
-                    return totalHarvested >= 50;
+                    return totalHarvested >= 20;
             }
         }
 
