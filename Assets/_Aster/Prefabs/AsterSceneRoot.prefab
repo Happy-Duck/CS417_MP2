@@ -147,6 +147,55 @@ Transform:
   - {fileID: 8502808317948884678}
   m_Father: {fileID: 8396755811404445884}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &245422326464341355
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3180959156948893686}
+  - component: {fileID: 5656325954325744357}
+  m_Layer: 0
+  m_Name: AutoStoveUnlock
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3180959156948893686
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245422326464341355}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.94713, y: 3.66077, z: -6.63956}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4728817307344682248}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5656325954325744357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245422326464341355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c07f4db2e9543340bc5ed5a9f80812e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Aster.AutoStoveUnlock
+  upgradeButton: {fileID: 7374583374491876788}
+  toDisable:
+  - {fileID: 184409802715265934}
+  - {fileID: 7714315967354307059}
+  autoStove: {fileID: 7073692034497177069}
 --- !u!1 &335624091953599407
 GameObject:
   m_ObjectHideFlags: 0
@@ -1872,6 +1921,7 @@ Transform:
   - {fileID: 3687904358407344834}
   - {fileID: 7271126051306456953}
   - {fileID: 3049125568124528489}
+  - {fileID: 4382302335626186472}
   - {fileID: 8830195485282668508}
   - {fileID: 3786255598277589628}
   m_Father: {fileID: 4728817307344682248}
@@ -2192,7 +2242,7 @@ Transform:
   - {fileID: 8560863437591658460}
   - {fileID: 8396755811404445884}
   - {fileID: 6571733103813282069}
-  - {fileID: 4382302335626186472}
+  - {fileID: 3180959156948893686}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2880803999647140089
@@ -9767,7 +9817,7 @@ Transform:
   - {fileID: 1122751496131995557}
   - {fileID: 5339468694683925998}
   - {fileID: 5687637117356375869}
-  m_Father: {fileID: 4728817307344682248}
+  m_Father: {fileID: 8396755811404445884}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &776218006107596611
 MonoBehaviour:
@@ -10109,9 +10159,9 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 776218006107596611}
-        m_TargetAssemblyTypeName: Aster.AutoStove, Assembly-CSharp
-        m_MethodName: TurnInIngredients
+      - m_Target: {fileID: 5656325954325744357}
+        m_TargetAssemblyTypeName: Aster.AutoStoveUnlock, Assembly-CSharp
+        m_MethodName: Upgrade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
