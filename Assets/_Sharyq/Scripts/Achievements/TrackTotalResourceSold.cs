@@ -51,7 +51,8 @@ namespace Sharyq
 
         private void OnDestroy()
         {
-            ResourceManager.Instance.OnResourceChanged -= CheckRequirement;
+            if (ResourceManager.Instance != null) 
+                ResourceManager.Instance.OnResourceChanged -= CheckRequirement;
         }
     }
 }
