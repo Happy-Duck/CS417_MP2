@@ -3514,6 +3514,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6658339391155975284, guid: 52e0621965d8f494ab5b722b8510251e, type: 3}
+      propertyPath: spawnParent
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971185977141774181, guid: 52e0621965d8f494ab5b722b8510251e, type: 3}
+      propertyPath: spawnParent
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8063268769946968224, guid: 52e0621965d8f494ab5b722b8510251e, type: 3}
+      propertyPath: spawnParent
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8618442747348072565, guid: 52e0621965d8f494ab5b722b8510251e, type: 3}
       propertyPath: m_Name
       value: KyleSceneRoot
@@ -3522,6 +3534,10 @@ PrefabInstance:
       propertyPath: 'CollisionModule.m_Planes.Array.data[0]'
       value: 
       objectReference: {fileID: 7896350154987659981}
+    - target: {fileID: 8655523796768396307, guid: 52e0621965d8f494ab5b722b8510251e, type: 3}
+      propertyPath: spawnParent
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
