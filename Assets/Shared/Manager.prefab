@@ -193,6 +193,53 @@ MonoBehaviour:
     requiredAchievementsNames:
     - Making Carbs into Cash
     achieved: 0
+  - name: Small Beginnings
+    description: Harvest your first crop
+    requiredAchievementsNames: []
+    achieved: 0
+  - name: Family Farm
+    description: Sell your first crop
+    requiredAchievementsNames:
+    - Small Beginnings
+    achieved: 0
+  - name: Art of the Deal
+    description: Buy your first seed
+    requiredAchievementsNames:
+    - Family Farm
+    achieved: 0
+  - name: Farming Tycoon
+    description: Sell 15 of each crop
+    requiredAchievementsNames:
+    - Family Farm
+    achieved: 0
+  - name: Loyal Deere Customer
+    description: Automate crop harvesting
+    requiredAchievementsNames:
+    - Farming Tycoon
+    achieved: 0
+  - name: Shroom Enthusiast
+    description: Buy your first automated fertilizer
+    requiredAchievementsNames:
+    - Farming Tycoon
+    achieved: 0
+  - name: Commercial Gardener
+    description: Buy your first automated waterer
+    requiredAchievementsNames:
+    - Farming Tycoon
+    achieved: 0
+  - name: 3rd Degree Herbicide
+    description: Dig up your first weed
+    requiredAchievementsNames: []
+    achieved: 0
+  - name: Carcinogen Spreader
+    description: Automate weed killing
+    requiredAchievementsNames:
+    - 3rd Degree Herbicide
+    achieved: 0
+  - name: Craftsman
+    description: Craft your first item
+    requiredAchievementsNames: []
+    achieved: 0
   onAchieved:
     m_PersistentCalls:
       m_Calls: []

@@ -1247,7 +1247,7 @@ Transform:
   m_GameObject: {fileID: 1106822146410198266}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.02055, y: -0, z: 0.011173}
+  m_LocalPosition: {x: -0.02055, y: 0.00586, z: 0.011173}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2404,7 +2404,7 @@ Transform:
   m_GameObject: {fileID: 1982569926864265636}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.01156, y: -0, z: 0.01165}
+  m_LocalPosition: {x: -0.01156, y: 0.00586, z: 0.01165}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -22900,7 +22900,7 @@ Transform:
   m_GameObject: {fileID: 6765447624336608765}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.02828, y: 0.00251, z: 0.0113}
+  m_LocalPosition: {x: -0.02828, y: 0.00586, z: 0.0113}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -25248,7 +25248,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Alyssa.TutorialPopup
   message: 'Hold the grip to carry,
 
-    pull the trigger to pour.'
+    tilt the can to pour.'
   id: 
   triggerMode: 1
   showDistance: 1.5
@@ -25411,6 +25411,8 @@ GameObject:
   - component: {fileID: 120999122362633788}
   - component: {fileID: 246940329470966399}
   - component: {fileID: 3789379632035955442}
+  - component: {fileID: 1531362017604358446}
+  - component: {fileID: 5195349300824399639}
   m_Layer: 0
   m_Name: FieldManager
   m_TagString: Untagged
@@ -25449,6 +25451,8 @@ MonoBehaviour:
   wheatDropPrefab: {fileID: 6096805012228928653, guid: c637a0420a103d942b76c0407520ef53, type: 3}
   weedDropPrefab: {fileID: 7928372768658230085, guid: f9c479f21bacdd047bf2a472f5619615, type: 3}
   growthRate: 10
+  plantError: {fileID: 1531362017604358446}
+  notEnoughResourceError: {fileID: 5195349300824399639}
 --- !u!114 &246940329470966399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25545,6 +25549,38 @@ MonoBehaviour:
   leftoverPrefab: {fileID: 5588606363884871491, guid: 30aa716913b531c43b364da20f6b5bf3, type: 3}
   leftoverSpawn: {fileID: 1335615602390176187}
   numChickenFeed: {fileID: 4281185605017504192}
+--- !u!114 &1531362017604358446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8082832024002846673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1457c6d46a84e4f4da3716ef97513860, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Kyle.ErrorCatchingHint
+  message: Cannot plant without fertilizer!
+  hideAfterSeconds: 3
+  offset: {x: 0, y: 0.4, z: 0}
+  characterSize: 0.012
+--- !u!114 &5195349300824399639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8082832024002846673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1457c6d46a84e4f4da3716ef97513860, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Kyle.ErrorCatchingHint
+  message: You don't have enough of this resource!
+  hideAfterSeconds: 3
+  offset: {x: 0, y: 0.4, z: 0}
+  characterSize: 0.012
 --- !u!1 &8110683523954409754
 GameObject:
   m_ObjectHideFlags: 0
@@ -27691,6 +27727,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b61bf53683c421d4ead942384b2b4627, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1828149696813682455}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b61bf53683c421d4ead942384b2b4627, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7661605656563152941}
   m_SourcePrefab: {fileID: 100100000, guid: b61bf53683c421d4ead942384b2b4627, type: 3}
 --- !u!4 &2336397586134701235 stripped
 Transform:
@@ -27737,19 +27776,65 @@ MonoBehaviour:
     - resourceName: Fertilizer
       amount: 4
   - recipeName: Chicken Feed Recipe
-    ingredients: []
-    results: []
-  - recipeName: Waffle Leftover Fertilizer Recipe
-    ingredients: []
-    results: []
+    ingredients:
+    - resourceName: HarvestedCorn
+      amount: 1
+    - resourceName: HarvestedWheat
+      amount: 1
+    results:
+    - resourceName: Chicken Feed
+      amount: 2
   - recipeName: Chicken Poop Fertilizer Recipe
-    ingredients: []
-    results: []
+    ingredients:
+    - resourceName: Chicken Poop
+      amount: 1
+    results:
+    - resourceName: Fertilizer
+      amount: 2
+  - recipeName: Waffle Leftover Fertilizer Recipe
+    ingredients:
+    - resourceName: Leftover
+      amount: 2
+    results:
+    - resourceName: Fertilizer
+      amount: 1
+  - recipeName: Waffle Burnt Fertilizer Recipe
+    ingredients:
+    - resourceName: Burnt Waffle
+      amount: 2
+    results:
+    - resourceName: Fertilizer
+      amount: 1
+  - recipeName: Waffle Burnt+Leftover Fertilizer Recipe
+    ingredients:
+    - resourceName: Burnt Waffle
+      amount: 1
+    - resourceName: Leftover
+      amount: 1
+    results:
+    - resourceName: Fertilizer
+      amount: 1
   craftingSockets:
   - {fileID: 1800419183715394857}
   - {fileID: 8940910841510279500}
   - {fileID: 5413725615322210765}
   - {fileID: 4307045164482305237}
+--- !u!114 &7661605656563152941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3109556963681488393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1457c6d46a84e4f4da3716ef97513860, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Kyle.ErrorCatchingHint
+  message: Can't craft! Try following one of the recipes listed above
+  hideAfterSeconds: 3
+  offset: {x: 0, y: 0.4, z: 0}
+  characterSize: 0.012
 --- !u!1001 &2889068454515929943
 PrefabInstance:
   m_ObjectHideFlags: 0
