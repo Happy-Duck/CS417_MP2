@@ -68,6 +68,8 @@ namespace Kyle
                 AudioSource.PlayClipAtPoint(collectSound, transform.position, 1.0f);
             }
 
+            //Shared.AchievementsManager.Instance.CompleteAchievement("3rd Degree Herbicide");
+
             Destroy(gameObject);
         }
     }

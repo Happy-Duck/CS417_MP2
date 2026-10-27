@@ -104,12 +104,12 @@ namespace Kyle
 
             if (shelfChickenPoop == null)
             {
-                shelfChickenPoop = SpawnPhysicalItem(chickenPoopPrefab, chickenPoopSpawn, "ChickenPoop", "ChickenPoop");
+                shelfChickenPoop = SpawnPhysicalItem(chickenPoopPrefab, chickenPoopSpawn, "Chicken Poop", "Chicken Poop");
             }
 
             if (shelfBurntWaffle == null)
             {
-                shelfBurntWaffle = SpawnPhysicalItem(burntWafflePrefab, burntWaffleSpawn, "BurntWaffle", "BurntWaffle");
+                shelfBurntWaffle = SpawnPhysicalItem(burntWafflePrefab, burntWaffleSpawn, "Burnt Waffle", "Burnt Waffle");
             }
                 
             if (shelfLeftover == null)

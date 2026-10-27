@@ -49,10 +49,10 @@ namespace Kyle
                     InventoryItem item = socket.interactablesSelected[0].transform.GetComponent<InventoryItem>();
                     if (item != null)
                     {
-                        if (!currentItems.ContainsKey(item.ResourceName))
-                            currentItems[item.ResourceName] = 0;
+                        if (!currentItems.ContainsKey(item.ResourceKey))
+                            currentItems[item.ResourceKey] = 0;
 
-                        currentItems[item.ResourceName]++;
+                        currentItems[item.ResourceKey]++;
                         totalItemsInSockets++;
                     }
                 }
@@ -114,7 +114,7 @@ namespace Kyle
                     GameObject item = socket.interactablesSelected[0].transform.gameObject;
                     InventoryItem tracker = item.GetComponent<InventoryItem>();
 
-                    if (tracker != null && tracker.ResourceName == targetResourceName)
+                    if (tracker != null && tracker.ResourceKey == targetResourceName)
                     {
                         tracker.MarkAsCrafted();
 
