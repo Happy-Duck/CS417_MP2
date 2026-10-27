@@ -22,6 +22,7 @@ namespace Aster
             if (!started)
             {
                 if (plot != null && !plot.IsPlaced) return;  // not yet placed
+                AchievementsManager.Instance.CompleteAchievement("Edible decorations");
                 started = true;
                 Spawn();
             }
