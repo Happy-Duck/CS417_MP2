@@ -10,7 +10,7 @@ namespace Rishi {
 		public string description;
 		public List<string> resources = new List<string>();
 		public int amount = 1;
-		// true = how many you have right now, false = how many you've gotten total
+		// true = how many you have right now, false = how many you've picked up at the farm total
 		public bool held = false;
 
 		public int Progress(FarmProgression farm) {
@@ -19,7 +19,7 @@ namespace Rishi {
 				if (held) {
 					if (ResourceManager.Instance != null) total += ResourceManager.Instance.Get(resource);
 				} else {
-					total += farm.Gained(resource);
+					total += farm.Collected(resource);
 				}
 			}
 			return total;
@@ -55,7 +55,8 @@ namespace Rishi {
 		// locked shelves get a copy of their price label with this on it, empty = no signs
 		[SerializeField] string lockedShelfText = "Restocking soon!";
 
-		private Dictionary<string, int> gained = new Dictionary<string, int>();
+		// only stuff picked up at the farm (Harvestable reports it), so the waffle house's starting eggs dont count
+		private Dictionary<string, int> collected = new Dictionary<string, int>();
 		private Dictionary<string, int> spent = new Dictionary<string, int>();
 		private HashSet<string> needsOn = new HashSet<string>();
 		private Dictionary<GameObject, GameObject> lockedSigns = new Dictionary<GameObject, GameObject>();
@@ -110,16 +111,16 @@ namespace Rishi {
 		}
 
 		private void Tally(string resource, int newAmount, int change) {
-			if (change > 0) {
-				gained[resource] = Gained(resource) + change;
-			} else {
-				spent[resource] = Spent(resource) - change;
-			}
+			if (change < 0) spent[resource] = Spent(resource) - change;
 		}
 
-		public int Gained(string resource) {
+		public void AddCollected(string resource, int amount) {
+			collected[resource] = Collected(resource) + amount;
+		}
+
+		public int Collected(string resource) {
 			int amount;
-			if (gained.TryGetValue(resource, out amount)) return amount;
+			if (collected.TryGetValue(resource, out amount)) return amount;
 			return 0;
 		}
 

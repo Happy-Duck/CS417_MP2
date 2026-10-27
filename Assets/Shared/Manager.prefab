@@ -91,7 +91,7 @@ MonoBehaviour:
     requiredAchievementsNames: []
     achieved: 0
   - name: Gonna need more baskets
-    description: Have 50 Eggs
+    description: Collect 50 eggs
     requiredAchievementsNames: []
     achieved: 0
   - name: What the flock

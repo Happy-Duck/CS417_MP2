@@ -30,6 +30,7 @@ namespace Rishi {
 			AudioSource.PlayClipAtPoint(pickUpSound, gameObject.transform.position);
 			collected = true;
 			ResourceManager.Instance.Add(resourceName, amount);
+			if (FarmProgression.Instance != null) FarmProgression.Instance.AddCollected(resourceName, amount);
 			Destroy(gameObject);
 		}
 	}
