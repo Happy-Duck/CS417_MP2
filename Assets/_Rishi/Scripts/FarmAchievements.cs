@@ -38,11 +38,11 @@ namespace Rishi {
 			if (farm.IsRevealing) return;
 			if (Popups.CardBusy) return;
 
-			Check("Golden Goose", farm.Gained("Golden Egg") >= 1);
-			Check("Last One There", farm.Gained("Rotten Egg") >= 1);
-			Check("Gonna need more baskets", HeldEggs() >= 50);
+			Check("Golden Goose", farm.Collected("Golden Egg") >= 1);
+			Check("Last One There", farm.Collected("Rotten Egg") >= 1);
+			Check("Gonna need more baskets", CollectedEggs(farm) >= 50);
 			Check("What the flock", Held("Living Chicken") >= 15);
-			Check("Omega Fard", farm.Gained("Chicken Poop") >= 50);
+			Check("Omega Fard", farm.Collected("Chicken Poop") >= 50);
 			Check("Easter Bunny", GetCount("Egg Collected") >= 1);
 			Check("Gas Gas Gas", GetCount("Auto Remaining Fuel") >= 1);
 			Check("Well Well Well", GetCount("Auto Remaining Water") >= 1);
@@ -78,17 +78,18 @@ namespace Rishi {
 			return ResourceManager.Instance.Get(resource);
 		}
 
-		private int HeldEggs() {
-			int total = Held("Rotten Egg");
+		// picked up at the farm, rotten ones count too
+		private int CollectedEggs(FarmProgression farm) {
+			int total = farm.Collected("Rotten Egg");
 			foreach (string color in eggColors) {
-				total += Held(color);
+				total += farm.Collected(color);
 			}
 			return total;
 		}
 
 		private bool GotEveryColor(FarmProgression farm) {
 			foreach (string color in eggColors) {
-				if (farm.Gained(color) < 1) return false;
+				if (farm.Collected(color) < 1) return false;
 			}
 			return true;
 		}
