@@ -22,7 +22,8 @@ namespace Sharyq
         [SerializeField] private AudioClip paySound;
         
         private Button _sellButton;
-        
+        [SerializeField] private AudioClip failSound;
+
         public string Resource
         {
             get => sellResource;
@@ -52,7 +53,12 @@ namespace Sharyq
         public void SellButtonPressed()
         {
             var rm = ResourceManager.Instance;
-            if (rm == null || sellAmount <= 0 || !spawner.HasFreeSeat) return;
+            if (rm == null || sellAmount <= 0 || !spawner.HasFreeSeat)
+            {
+                var notif =  Instantiate(notifier, sellNotifLocation.position, sellNotifLocation.rotation).GetComponent<ResourceNotifier>();
+                notif.CantSellWaffle();
+                AudioSource.PlayClipAtPoint(failSound, transform.position);
+            };
 
             if (rm.TrySpend(sellResource, sellAmount))
             {

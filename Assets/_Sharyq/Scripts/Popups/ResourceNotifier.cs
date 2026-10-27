@@ -45,6 +45,24 @@ namespace Sharyq
             routine = StartCoroutine(Run());
         }
         
+        public void InvalidIngredient()
+        {
+            sb.AppendLine($"Invalid ingredient");
+            label.text = sb.ToString().TrimEnd();
+            
+            if (routine != null) StopCoroutine(routine);
+            routine = StartCoroutine(Run());
+        }
+        
+        public void CantSellWaffle()
+        {
+            sb.AppendLine($"Cant Sell :(");
+            label.text = sb.ToString().TrimEnd();
+            
+            if (routine != null) StopCoroutine(routine);
+            routine = StartCoroutine(Run());
+        }
+        
         public void RemoveResource(string ingredientName, int amount)
         {
             if (faceOnEachAdd)

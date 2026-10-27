@@ -78,6 +78,12 @@ namespace Sharyq
 
             if (ingredient == null || !lookup.TryGetValue(ingredient.type, out string result))
             {
+                if (notif != null)
+                {
+                    var notifInst = Instantiate(notif, transform.position + notifOffset, transform.rotation)
+                        .GetComponent<ResourceNotifier>();
+                    notifInst.InvalidIngredient();
+                }
                 Debug.Log($"[Topping] no ingredient or recipe (ingredient: {ingredient})");
                 Debug.Log($"[Topping] type={ingredient.type}, recipes={lookup.Count}, has={lookup.ContainsKey(ingredient.type)}");
                 onFailed?.Invoke();
@@ -113,12 +119,15 @@ namespace Sharyq
                 return false;
             
             var ingredientType = GetIngredientToAdd();
+            
+            if (ingredientType == null)
+                return false;
 
             float timeToComplete = Mathf.Pow(employee.Efficiency, -1);
             if (_currentTime >= timeToComplete)
             {
                 _employeeWorking = false;
-                TopWaffle(ingredientType);
+                TopWaffle(ingredientType.Value);
                 _currentTime = 0f;
             }
 
@@ -129,6 +138,8 @@ namespace Sharyq
                 _employeeWorking = true;
                 _currentTime = 0f;
             }
+            if (!AchievementsManager.Instance.IsAchieved("Its Free Money"))
+                AchievementsManager.Instance.CompleteAchievement("Its Free Money");
             
             return true;
         }
@@ -137,9 +148,7 @@ namespace Sharyq
         {
             // Spend Base Waffle
             ResourceManager.Instance.TrySpend(baseResource, 1);
-                
-            // TODO Add Spend of resource to top; need to talk to teap about that
-
+            
             // Add Resource
             lookup.TryGetValue(ingredientType, out string result);
             ResourceManager.Instance.Add(result, 1);
@@ -154,9 +163,22 @@ namespace Sharyq
             onToppingAdded?.Invoke(result);
         }
 
-        private IngredientType GetIngredientToAdd()
+        // Returns the ingredient type of whatever is currently socketed, or null if nothing valid is there.
+        private IngredientType? GetIngredientToAdd()
         {
-            return IngredientType.Meth;
+            if (socket == null || !socket.hasSelection)
+                return null;
+
+            var selected = socket.firstInteractableSelected;
+            if (selected == null)
+                return null;
+
+            // Ingredient component may be on the root or a child of the grabbed object
+            var ingredient = selected.transform.GetComponentInParent<Ingredient>();
+            if (ingredient == null)
+                return null;
+
+            return ingredient.type;
         }
     }
 }
