@@ -57,7 +57,8 @@ namespace Shared
 
         private void OnDestroy()
         {
-            AchievementsManager.Instance.onAchieved.RemoveListener(Enqueue);
+            if (AchievementsManager.Instance != null)
+                AchievementsManager.Instance.onAchieved.RemoveListener(Enqueue);
         }
 
         private void Enqueue(string achievementName, string description)

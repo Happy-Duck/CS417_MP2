@@ -9,6 +9,7 @@ namespace Shared {
 	// Resource names are case sensitive: "Egg" and "egg" are different resources
 	// use like this: ResourceManager.Instance.Add("Egg", 5);
 	//				  ResourceManager.Instance.TrySpend("Egg", 3);
+	[DefaultExecutionOrder(-100)]
 	public class ResourceManager : MonoBehaviour {
 		[SerializeField] private bool logChanges = true;
 		private readonly Dictionary<string, int> amounts = new Dictionary<string, int>();

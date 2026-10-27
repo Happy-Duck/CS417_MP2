@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dbe6ea185fad3a47ab0812fbbbe093f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shared.ResourceManager
-  logChanges: 1
+  logChanges: 0
 --- !u!114 &7565207170302455576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,7 +155,7 @@ MonoBehaviour:
     - Making Carbs into Cash
     achieved: 0
   - name: Sit and Relax
-    description: Have 20 Customers in the Restaurant at the same time
+    description: Have Employee cook a waffle
     requiredAchievementsNames:
     - 'Have an Employee make and collect a waffle: can buy Chicken Coop or Farm'
     achieved: 0
