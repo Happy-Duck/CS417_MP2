@@ -395,7 +395,7 @@ MonoBehaviour:
   pickUpSound: {fileID: 8300000, guid: 42dcf73ff59a24e45b3450f18fd0cb81, type: 3}
   placeSound: {fileID: 8300000, guid: 18353cb115beb534b941b5fb41e12cfc, type: 3}
   purchaseSound: {fileID: 8300000, guid: fdb4898950f9dec4eb03c1363be06b1c, type: 3}
-  failSound: {fileID: 8300000, guid: a511fcd913925b143917bc4fd2a96e5f, type: 3}
+  failSound: {fileID: 8300000, guid: 5510df0fb3f3dcf4c897c77237878b40, type: 3}
   volume: 1
 --- !u!114 &6826355119718257645
 MonoBehaviour:
@@ -420,7 +420,7 @@ MonoBehaviour:
   emptyHint: out of food :( it needs Leftovers or Chicken Feed
   nothingNearbyHint: Nothing nearby to refill. Move it closer to a feeder
   firstRefillHint: The hopper refilled the feeder! The wonders of automation
-  refillSound: {fileID: 8300000, guid: 188263215619f6949a122de4ad165f2d, type: 3}
+  refillSound: {fileID: 8300000, guid: 1cfe0ebc409c32e4b881afdcec76a3d5, type: 3}
   refillVolume: 0.4
 --- !u!1001 &6384172873032730345
 PrefabInstance:
