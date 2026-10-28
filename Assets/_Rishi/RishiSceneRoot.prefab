@@ -4327,7 +4327,7 @@ MonoBehaviour:
   nextGoalText: {fileID: 5846434809770338178}
   revealDelay: 3
   cardSeconds: 10
-  unlockSound: {fileID: 8300000, guid: f03ad504602cf274bb09d0e36ccd8de7, type: 3}
+  unlockSound: {fileID: 8300000, guid: d01f049e591aade4cab7e5718b3e42eb, type: 3}
   introText: Welcome to the chicken farm! Your chickens have just arrived and thankfully
     aren't super needy yet. Say hi to the little cluckers, and try picking up their
     eggs!
@@ -4345,7 +4345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Rishi.FarmAchievements
   cardSeconds: 8
-  achievementSound: {fileID: 8300000, guid: 233208965e17e7a4a8cd40908f1d2ccd, type: 3}
+  achievementSound: {fileID: 8300000, guid: ee0d462a3d8fa8849bf20aa74fb08c29, type: 3}
 --- !u!1 &5100550365927844605
 GameObject:
   m_ObjectHideFlags: 0
@@ -6642,7 +6642,7 @@ MonoBehaviour:
   spawnedObject: {fileID: 0}
   spawnPosition: {fileID: 0}
   buySound: {fileID: 8300000, guid: fdb4898950f9dec4eb03c1363be06b1c, type: 3}
-  failSound: {fileID: 8300000, guid: a511fcd913925b143917bc4fd2a96e5f, type: 3}
+  failSound: {fileID: 8300000, guid: 5510df0fb3f3dcf4c897c77237878b40, type: 3}
 --- !u!114 &302219196382626552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6663,7 +6663,7 @@ MonoBehaviour:
   spawnedObject: {fileID: 0}
   spawnPosition: {fileID: 0}
   buySound: {fileID: 8300000, guid: fdb4898950f9dec4eb03c1363be06b1c, type: 3}
-  failSound: {fileID: 8300000, guid: a511fcd913925b143917bc4fd2a96e5f, type: 3}
+  failSound: {fileID: 8300000, guid: 5510df0fb3f3dcf4c897c77237878b40, type: 3}
 --- !u!114 &5450266436033018172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6684,7 +6684,7 @@ MonoBehaviour:
   spawnedObject: {fileID: 0}
   spawnPosition: {fileID: 0}
   buySound: {fileID: 8300000, guid: fdb4898950f9dec4eb03c1363be06b1c, type: 3}
-  failSound: {fileID: 8300000, guid: a511fcd913925b143917bc4fd2a96e5f, type: 3}
+  failSound: {fileID: 8300000, guid: 5510df0fb3f3dcf4c897c77237878b40, type: 3}
 --- !u!114 &7770239892062259331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6705,7 +6705,7 @@ MonoBehaviour:
   spawnedObject: {fileID: 0}
   spawnPosition: {fileID: 0}
   buySound: {fileID: 8300000, guid: fdb4898950f9dec4eb03c1363be06b1c, type: 3}
-  failSound: {fileID: 8300000, guid: a511fcd913925b143917bc4fd2a96e5f, type: 3}
+  failSound: {fileID: 8300000, guid: 5510df0fb3f3dcf4c897c77237878b40, type: 3}
 --- !u!114 &4279028101182756266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6726,7 +6726,7 @@ MonoBehaviour:
   spawnedObject: {fileID: 0}
   spawnPosition: {fileID: 0}
   buySound: {fileID: 8300000, guid: fdb4898950f9dec4eb03c1363be06b1c, type: 3}
-  failSound: {fileID: 8300000, guid: a511fcd913925b143917bc4fd2a96e5f, type: 3}
+  failSound: {fileID: 8300000, guid: 5510df0fb3f3dcf4c897c77237878b40, type: 3}
 --- !u!114 &4826918291516146832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6747,7 +6747,7 @@ MonoBehaviour:
   spawnedObject: {fileID: 0}
   spawnPosition: {fileID: 0}
   buySound: {fileID: 8300000, guid: fdb4898950f9dec4eb03c1363be06b1c, type: 3}
-  failSound: {fileID: 8300000, guid: a511fcd913925b143917bc4fd2a96e5f, type: 3}
+  failSound: {fileID: 8300000, guid: 5510df0fb3f3dcf4c897c77237878b40, type: 3}
 --- !u!114 &514757767298173181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6768,7 +6768,7 @@ MonoBehaviour:
   spawnedObject: {fileID: 0}
   spawnPosition: {fileID: 0}
   buySound: {fileID: 8300000, guid: fdb4898950f9dec4eb03c1363be06b1c, type: 3}
-  failSound: {fileID: 8300000, guid: a511fcd913925b143917bc4fd2a96e5f, type: 3}
+  failSound: {fileID: 8300000, guid: 5510df0fb3f3dcf4c897c77237878b40, type: 3}
 --- !u!114 &7940322285227961118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6789,7 +6789,7 @@ MonoBehaviour:
   spawnedObject: {fileID: 0}
   spawnPosition: {fileID: 0}
   buySound: {fileID: 8300000, guid: fdb4898950f9dec4eb03c1363be06b1c, type: 3}
-  failSound: {fileID: 8300000, guid: a511fcd913925b143917bc4fd2a96e5f, type: 3}
+  failSound: {fileID: 8300000, guid: 5510df0fb3f3dcf4c897c77237878b40, type: 3}
 --- !u!114 &6660668497350996069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6810,7 +6810,7 @@ MonoBehaviour:
   spawnedObject: {fileID: 0}
   spawnPosition: {fileID: 0}
   buySound: {fileID: 8300000, guid: fdb4898950f9dec4eb03c1363be06b1c, type: 3}
-  failSound: {fileID: 8300000, guid: a511fcd913925b143917bc4fd2a96e5f, type: 3}
+  failSound: {fileID: 8300000, guid: 5510df0fb3f3dcf4c897c77237878b40, type: 3}
 --- !u!114 &353484602186675782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6831,7 +6831,7 @@ MonoBehaviour:
   spawnedObject: {fileID: 0}
   spawnPosition: {fileID: 0}
   buySound: {fileID: 8300000, guid: fdb4898950f9dec4eb03c1363be06b1c, type: 3}
-  failSound: {fileID: 8300000, guid: a511fcd913925b143917bc4fd2a96e5f, type: 3}
+  failSound: {fileID: 8300000, guid: 5510df0fb3f3dcf4c897c77237878b40, type: 3}
 --- !u!114 &6139840557226210351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6852,7 +6852,7 @@ MonoBehaviour:
   spawnedObject: {fileID: 816837177670809033, guid: 92067d3019379ad4aaa2e9a99c1fbb46, type: 3}
   spawnPosition: {fileID: 34576024094116286}
   buySound: {fileID: 8300000, guid: fdb4898950f9dec4eb03c1363be06b1c, type: 3}
-  failSound: {fileID: 8300000, guid: a511fcd913925b143917bc4fd2a96e5f, type: 3}
+  failSound: {fileID: 8300000, guid: 5510df0fb3f3dcf4c897c77237878b40, type: 3}
 --- !u!114 &7313360621755893331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6873,7 +6873,7 @@ MonoBehaviour:
   spawnedObject: {fileID: 0}
   spawnPosition: {fileID: 0}
   buySound: {fileID: 8300000, guid: fdb4898950f9dec4eb03c1363be06b1c, type: 3}
-  failSound: {fileID: 8300000, guid: a511fcd913925b143917bc4fd2a96e5f, type: 3}
+  failSound: {fileID: 8300000, guid: 5510df0fb3f3dcf4c897c77237878b40, type: 3}
 --- !u!114 &3106448406615866205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6894,7 +6894,7 @@ MonoBehaviour:
   spawnedObject: {fileID: 0}
   spawnPosition: {fileID: 0}
   buySound: {fileID: 8300000, guid: fdb4898950f9dec4eb03c1363be06b1c, type: 3}
-  failSound: {fileID: 8300000, guid: a511fcd913925b143917bc4fd2a96e5f, type: 3}
+  failSound: {fileID: 8300000, guid: 5510df0fb3f3dcf4c897c77237878b40, type: 3}
 --- !u!114 &7653385888356757345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6915,7 +6915,7 @@ MonoBehaviour:
   spawnedObject: {fileID: 0}
   spawnPosition: {fileID: 0}
   buySound: {fileID: 8300000, guid: fdb4898950f9dec4eb03c1363be06b1c, type: 3}
-  failSound: {fileID: 8300000, guid: a511fcd913925b143917bc4fd2a96e5f, type: 3}
+  failSound: {fileID: 8300000, guid: 5510df0fb3f3dcf4c897c77237878b40, type: 3}
 --- !u!114 &5564983532929032608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52914,7 +52914,7 @@ MonoBehaviour:
   bonusResource: 
   bonusAmount: 0
   paySound: {fileID: 8300000, guid: fdb4898950f9dec4eb03c1363be06b1c, type: 3}
-  failSound: {fileID: 8300000, guid: a511fcd913925b143917bc4fd2a96e5f, type: 3}
+  failSound: {fileID: 8300000, guid: 5510df0fb3f3dcf4c897c77237878b40, type: 3}
 --- !u!4 &9041548447595095977 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3008392825381589353, guid: 76d3d0de22efa8c4189935ed98c01d47, type: 3}
@@ -58588,7 +58588,7 @@ MonoBehaviour:
   bonusResource: 
   bonusAmount: 0
   paySound: {fileID: 8300000, guid: fdb4898950f9dec4eb03c1363be06b1c, type: 3}
-  failSound: {fileID: 8300000, guid: a511fcd913925b143917bc4fd2a96e5f, type: 3}
+  failSound: {fileID: 8300000, guid: 5510df0fb3f3dcf4c897c77237878b40, type: 3}
 --- !u!1001 &6641834728869219459
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -60870,7 +60870,7 @@ MonoBehaviour:
   bonusResource: Bullet
   bonusAmount: 10
   paySound: {fileID: 8300000, guid: fdb4898950f9dec4eb03c1363be06b1c, type: 3}
-  failSound: {fileID: 8300000, guid: a511fcd913925b143917bc4fd2a96e5f, type: 3}
+  failSound: {fileID: 8300000, guid: 5510df0fb3f3dcf4c897c77237878b40, type: 3}
 --- !u!1001 &6944864961118621845
 PrefabInstance:
   m_ObjectHideFlags: 0
