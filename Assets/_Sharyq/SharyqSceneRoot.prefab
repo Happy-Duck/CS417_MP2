@@ -20133,7 +20133,7 @@ PrefabInstance:
       objectReference: {fileID: 6144650943582902043}
     - target: {fileID: 6751143969326212339, guid: 33faca699f243d3448ebedbac4674920, type: 3}
       propertyPath: costResource
-      value: Meth
+      value: METH
       objectReference: {fileID: 0}
     - target: {fileID: 7883034349564910010, guid: 33faca699f243d3448ebedbac4674920, type: 3}
       propertyPath: m_LocalPosition.y

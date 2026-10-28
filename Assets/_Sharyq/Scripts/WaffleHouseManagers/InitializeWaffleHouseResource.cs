@@ -39,7 +39,7 @@ namespace Sharyq {
             ResourceManager.Instance.Add("Apple", 10);
             ResourceManager.Instance.Add("Cherry", 10);
             ResourceManager.Instance.Add("Peach", 10);
-            ResourceManager.Instance.Add("Meth", 10);
+            ResourceManager.Instance.Add("METH", 10);
         }
     }
 }

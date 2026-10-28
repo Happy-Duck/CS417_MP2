@@ -50,7 +50,7 @@ namespace Sharyq
                 new ToppingRecipe { ingredient = IngredientType.Peach, resultResource = "Peach Waffle" },
                 new ToppingRecipe { ingredient = IngredientType.Cherry, resultResource = "Cherry Waffle" },
                 new ToppingRecipe { ingredient = IngredientType.Strawberry, resultResource = "Strawberry Waffle" },
-                new ToppingRecipe { ingredient = IngredientType.Meth, resultResource = "Energizing Waffle" },
+                new ToppingRecipe { ingredient = IngredientType.METH, resultResource = "Energizing Waffle" },
             };
         }
 
