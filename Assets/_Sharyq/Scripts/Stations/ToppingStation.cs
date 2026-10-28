@@ -45,7 +45,7 @@ namespace Sharyq
             {
                 new ToppingRecipe { ingredient = IngredientType.Apple, resultResource = "Apple Waffle" },
                 new ToppingRecipe { ingredient = IngredientType.Chicken, resultResource = "Chicken Waffle" },
-                new ToppingRecipe { ingredient = IngredientType.Corn, resultResource = "Corn Waffle" },
+                new ToppingRecipe { ingredient = IngredientType.HarvestedCorn, resultResource = "Corn Waffle" },
                 new ToppingRecipe { ingredient = IngredientType.Banana, resultResource = "Banana Waffle" },
                 new ToppingRecipe { ingredient = IngredientType.Peach, resultResource = "Peach Waffle" },
                 new ToppingRecipe { ingredient = IngredientType.Cherry, resultResource = "Cherry Waffle" },
@@ -175,7 +175,7 @@ namespace Sharyq
                 IngredientType ingredient = recipes[i].ingredient;
 
                 if (ingredient == IngredientType.Egg ||
-                    ingredient == IngredientType.Wheat)
+                    ingredient == IngredientType.HarvestedWheat)
                     continue;
 
                 string inputResource = ingredient.ToString();

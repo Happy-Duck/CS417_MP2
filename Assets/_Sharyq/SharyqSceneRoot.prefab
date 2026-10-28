@@ -17999,6 +17999,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3622808602185693108}
     m_Modifications:
+    - target: {fileID: 2569958626596017899, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3017896968157874465, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
       propertyPath: m_Name
       value: ResouceShelf (3)
@@ -18372,7 +18376,7 @@ PrefabInstance:
       objectReference: {fileID: 6144650943582902043}
     - target: {fileID: 7118282541033314590, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
       propertyPath: costResource
-      value: Wheat
+      value: HarvestedWheat
       objectReference: {fileID: 0}
     - target: {fileID: 7118282541033314590, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
       propertyPath: altCostAmount
@@ -18404,6 +18408,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7229889450000564871}
     m_Modifications:
+    - target: {fileID: 2569958626596017899, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3017896968157874465, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
       propertyPath: m_Name
       value: ResouceShelf (1)
@@ -18511,6 +18519,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7229889450000564871}
     m_Modifications:
+    - target: {fileID: 2569958626596017899, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3017896968157874465, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
       propertyPath: m_Name
       value: ResouceShelf (5)
@@ -18823,6 +18835,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3622808602185693108}
     m_Modifications:
+    - target: {fileID: 2569958626596017899, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3017896968157874465, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
       propertyPath: m_Name
       value: ResouceShelf (5)
@@ -18996,7 +19012,7 @@ PrefabInstance:
       objectReference: {fileID: 6144650943582902043}
     - target: {fileID: 7118282541033314590, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
       propertyPath: costResource
-      value: Egg
+      value: White Egg
       objectReference: {fileID: 0}
     - target: {fileID: 7118282541033314590, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
       propertyPath: altCostAmount
@@ -19090,6 +19106,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7229889450000564871}
     m_Modifications:
+    - target: {fileID: 2569958626596017899, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3017896968157874465, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
       propertyPath: m_Name
       value: ResouceShelf (3)
@@ -19408,6 +19428,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3622808602185693108}
     m_Modifications:
+    - target: {fileID: 2569958626596017899, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3017896968157874465, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
       propertyPath: m_Name
       value: ResouceShelf (4)
@@ -20435,6 +20459,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3622808602185693108}
     m_Modifications:
+    - target: {fileID: 2569958626596017899, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3017896968157874465, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
       propertyPath: m_Name
       value: ResouceShelf (4)
@@ -20849,6 +20877,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7229889450000564871}
     m_Modifications:
+    - target: {fileID: 2569958626596017899, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3017896968157874465, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
       propertyPath: m_Name
       value: ResouceShelf (2)
@@ -20956,6 +20988,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3622808602185693108}
     m_Modifications:
+    - target: {fileID: 2569958626596017899, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3017896968157874465, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
       propertyPath: m_Name
       value: ResouceShelf (3)
@@ -21251,6 +21287,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3622808602185693108}
     m_Modifications:
+    - target: {fileID: 2569958626596017899, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3017896968157874465, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
       propertyPath: m_Name
       value: ResouceShelf (5)
@@ -21484,6 +21524,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3622808602185693108}
     m_Modifications:
+    - target: {fileID: 2569958626596017899, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3017896968157874465, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
       propertyPath: m_Name
       value: ResouceShelf (2)
@@ -21653,6 +21697,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7229889450000564871}
     m_Modifications:
+    - target: {fileID: 2569958626596017899, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3017896968157874465, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
       propertyPath: m_Name
       value: ResouceShelf (4)
@@ -21842,6 +21890,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3622808602185693108}
     m_Modifications:
+    - target: {fileID: 2569958626596017899, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3017896968157874465, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
       propertyPath: m_Name
       value: ResouceShelf (1)
@@ -21924,7 +21976,7 @@ PrefabInstance:
       objectReference: {fileID: 6144650943582902043}
     - target: {fileID: 7118282541033314590, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
       propertyPath: costResource
-      value: Corn
+      value: HarvestedCorn
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
