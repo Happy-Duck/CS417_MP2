@@ -23,7 +23,7 @@ namespace Sharyq
 
         [Header("Recipe")]
         [SerializeField] private IngredientType[] requiredIngredients =
-            { IngredientType.Egg, IngredientType.Wheat };
+            { IngredientType.Egg, IngredientType.HarvestedWheat };
         [SerializeField] private float mixDuration = 3f;
         [SerializeField] private int batterPerMix = 1;
         [SerializeField] private EggYield[] eggYields =
@@ -209,7 +209,7 @@ namespace Sharyq
             if (IsMixing || added.Count > 0) return false;
 
             bool payForWheat = false;
-            if (ResourceManager.Instance.Get("Wheat") <= 0)
+            if (ResourceManager.Instance.Get("HarvestedWheat") <= 0)
                 payForWheat = true;
 
             EggType? best = null;
@@ -241,7 +241,7 @@ namespace Sharyq
                 ResourceManager.Instance.TrySpend("Dollar", 5);
             else
             {
-                ResourceManager.Instance.TrySpend("Wheat", 1);
+                ResourceManager.Instance.TrySpend("HarvestedWheat", 1);
             }
             
             StartMixing();

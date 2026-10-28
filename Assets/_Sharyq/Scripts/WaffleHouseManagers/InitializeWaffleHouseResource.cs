@@ -32,14 +32,15 @@ namespace Sharyq {
             ResourceManager.Instance.Add("Blue Egg", 10);
 
             ResourceManager.Instance.Add("Chicken", 10);
-            ResourceManager.Instance.Add("Corn", 10);
+            ResourceManager.Instance.Add("HarvestedCorn", 10);
+            ResourceManager.Instance.Add("HarvestedWheat", 10);
 
             ResourceManager.Instance.Add("Strawberry", 10);
             ResourceManager.Instance.Add("Banana", 10);
             ResourceManager.Instance.Add("Apple", 10);
             ResourceManager.Instance.Add("Cherry", 10);
             ResourceManager.Instance.Add("Peach", 10);
-            ResourceManager.Instance.Add("Meth", 10);
+            ResourceManager.Instance.Add("METH", 10);
         }
     }
 }
