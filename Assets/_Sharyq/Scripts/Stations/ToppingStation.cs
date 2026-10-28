@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Mono.Cecil;
 using Shared;
 using UnityEngine;
 using UnityEngine.Events;
@@ -33,7 +32,7 @@ namespace Sharyq
         private UnityEvent onFailed;
 
         private Dictionary<IngredientType, string> lookup;
-        
+
         // Employee stuff
         private bool _employeeWorking = false;
         private float _currentTime = 0f;
@@ -45,12 +44,12 @@ namespace Sharyq
             recipes = new List<ToppingRecipe>
             {
                 new ToppingRecipe { ingredient = IngredientType.Apple, resultResource = "Apple Waffle" },
+                new ToppingRecipe { ingredient = IngredientType.Chicken, resultResource = "Chicken Waffle" },
+                new ToppingRecipe { ingredient = IngredientType.Corn, resultResource = "Corn Waffle" },
                 new ToppingRecipe { ingredient = IngredientType.Banana, resultResource = "Banana Waffle" },
                 new ToppingRecipe { ingredient = IngredientType.Peach, resultResource = "Peach Waffle" },
                 new ToppingRecipe { ingredient = IngredientType.Cherry, resultResource = "Cherry Waffle" },
                 new ToppingRecipe { ingredient = IngredientType.Strawberry, resultResource = "Strawberry Waffle" },
-                new ToppingRecipe { ingredient = IngredientType.Chicken, resultResource = "Chicken Waffle" },
-                new ToppingRecipe { ingredient = IngredientType.Corn, resultResource = "Corn Waffle" },
                 new ToppingRecipe { ingredient = IngredientType.Meth, resultResource = "Energizing Waffle" },
             };
         }
@@ -78,6 +77,12 @@ namespace Sharyq
 
             if (ingredient == null || !lookup.TryGetValue(ingredient.type, out string result))
             {
+                if (notif != null)
+                {
+                    var notifInst = Instantiate(notif, transform.position + notifOffset, transform.rotation)
+                        .GetComponent<ResourceNotifier>();
+                    notifInst.InvalidIngredient();
+                }
                 Debug.Log($"[Topping] no ingredient or recipe (ingredient: {ingredient})");
                 Debug.Log($"[Topping] type={ingredient.type}, recipes={lookup.Count}, has={lookup.ContainsKey(ingredient.type)}");
                 onFailed?.Invoke();
@@ -111,14 +116,17 @@ namespace Sharyq
         {
             if (ResourceManager.Instance.Get("Waffle") <= 0)
                 return false;
-            
+
             var ingredientType = GetIngredientToAdd();
+
+            if (ingredientType == null)
+                return false;
 
             float timeToComplete = Mathf.Pow(employee.Efficiency, -1);
             if (_currentTime >= timeToComplete)
             {
                 _employeeWorking = false;
-                TopWaffle(ingredientType);
+                TopWaffle(ingredientType.Value);
                 _currentTime = 0f;
             }
 
@@ -129,7 +137,9 @@ namespace Sharyq
                 _employeeWorking = true;
                 _currentTime = 0f;
             }
-            
+            if (!AchievementsManager.Instance.IsAchieved("Its Free Money"))
+                AchievementsManager.Instance.CompleteAchievement("Its Free Money");
+
             return true;
         }
 
@@ -137,26 +147,46 @@ namespace Sharyq
         {
             // Spend Base Waffle
             ResourceManager.Instance.TrySpend(baseResource, 1);
-                
-            // TODO Add Spend of resource to top; need to talk to teap about that
 
             // Add Resource
             lookup.TryGetValue(ingredientType, out string result);
             ResourceManager.Instance.Add(result, 1);
-                
+
             if (notif != null)
             {
                 var notifInst = Instantiate(notif, transform.position + notifOffset, transform.rotation)
                     .GetComponent<ResourceNotifier>();
                 notifInst.AddedResource(result, 1);
             }
-                
+
             onToppingAdded?.Invoke(result);
         }
 
-        private IngredientType GetIngredientToAdd()
+
+
+        private IngredientType? GetIngredientToAdd()
         {
-            return IngredientType.Meth;
+            var resources = ResourceManager.Instance;
+            if (resources == null)
+                return null;
+
+            for (int i = recipes.Count - 1; i >= 0; i--)
+            {
+                IngredientType ingredient = recipes[i].ingredient;
+
+                if (ingredient == IngredientType.Egg ||
+                    ingredient == IngredientType.Wheat)
+                    continue;
+
+                string inputResource = ingredient.ToString();
+
+                if (resources.Get(inputResource) > 0)
+                    return ingredient;
+            }
+
+            return null;
         }
+
+
     }
 }

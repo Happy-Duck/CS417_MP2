@@ -29,6 +29,15 @@ namespace Sharyq
             if (routine != null) StopCoroutine(routine);
             routine = StartCoroutine(Run());
         }
+        
+        public void InvalidIngredient()
+        {
+            sb.AppendLine($"Invalid ingredient");
+            label.text = sb.ToString().TrimEnd();
+            
+            if (routine != null) StopCoroutine(routine);
+            routine = StartCoroutine(Run());
+        }
 
         public void ClearList()
         {

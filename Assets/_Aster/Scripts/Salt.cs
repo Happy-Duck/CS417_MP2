@@ -1,4 +1,5 @@
 using Aster;
+using Shared;
 using UnityEngine;
 
 namespace Aster
@@ -41,7 +42,10 @@ namespace Aster
 
             if (hitFx != null) hitFx.Play();
             UpdateVisual();
-            if (health <= 0) Destroy(gameObject);
+            if (health <= 0) {
+                AchievementsManager.Instance.CompleteAchievement("This is just like Minecraft...");
+                Destroy(gameObject);
+            }
             return true;
         }
 

@@ -1,4 +1,5 @@
 using Aster;
+using Shared;
 using UnityEngine;
 
 namespace Aster
@@ -27,6 +28,7 @@ namespace Aster
         public void Interact()
         {
             if (current != null || waterLevel < fillCost) return;
+            AchievementsManager.Instance.CompleteAchievement("Not for drinking");
             waterLevel -= fillCost;
             current = Instantiate(Prefab, basin.position, basin.rotation, transform.root);
         }

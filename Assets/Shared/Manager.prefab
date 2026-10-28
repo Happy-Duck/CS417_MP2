@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dbe6ea185fad3a47ab0812fbbbe093f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shared.ResourceManager
-  logChanges: 1
+  logChanges: 0
 --- !u!114 &7565207170302455576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,7 +155,7 @@ MonoBehaviour:
     - Making Carbs into Cash
     achieved: 0
   - name: Sit and Relax
-    description: Have 20 Customers in the Restaurant at the same time
+    description: Have Employee cook a waffle
     requiredAchievementsNames:
     - 'Have an Employee make and collect a waffle: can buy Chicken Coop or Farm'
     achieved: 0
@@ -192,6 +192,53 @@ MonoBehaviour:
     description: Sell 100 Energized Waffles
     requiredAchievementsNames:
     - Making Carbs into Cash
+    achieved: 0
+  - name: Small Beginnings
+    description: Harvest your first crop
+    requiredAchievementsNames: []
+    achieved: 0
+  - name: Family Farm
+    description: Sell your first crop
+    requiredAchievementsNames:
+    - Small Beginnings
+    achieved: 0
+  - name: Art of the Deal
+    description: Buy your first seed
+    requiredAchievementsNames:
+    - Family Farm
+    achieved: 0
+  - name: Farming Tycoon
+    description: Sell 15 of each crop
+    requiredAchievementsNames:
+    - Family Farm
+    achieved: 0
+  - name: Loyal Deere Customer
+    description: Automate crop harvesting
+    requiredAchievementsNames:
+    - Farming Tycoon
+    achieved: 0
+  - name: Shroom Enthusiast
+    description: Buy your first automated fertilizer
+    requiredAchievementsNames:
+    - Farming Tycoon
+    achieved: 0
+  - name: Commercial Gardener
+    description: Buy your first automated waterer
+    requiredAchievementsNames:
+    - Farming Tycoon
+    achieved: 0
+  - name: 3rd Degree Herbicide
+    description: Dig up your first weed
+    requiredAchievementsNames: []
+    achieved: 0
+  - name: Carcinogen Spreader
+    description: Automate weed killing
+    requiredAchievementsNames:
+    - 3rd Degree Herbicide
+    achieved: 0
+  - name: Craftsman
+    description: Craft your first item
+    requiredAchievementsNames: []
     achieved: 0
   onAchieved:
     m_PersistentCalls:

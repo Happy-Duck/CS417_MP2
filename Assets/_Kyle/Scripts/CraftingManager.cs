@@ -1,55 +1,106 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 using Shared;
+using System.Collections.Generic;
 
 namespace Kyle
 {
+    [System.Serializable]
+    public struct ResourceAmount
+    {
+        public string resourceName;
+        public int amount;
+    }
+    // crafting recipe class for ease of editing in the inspector
+    [System.Serializable]
+    public class CraftingRecipe
+    {
+        [Tooltip("ex. Corn Seed Recipe")]
+        public string recipeName = "New Recipe";
+
+        [Tooltip("Items needed to craft recipe")]
+        public List<ResourceAmount> ingredients;
+
+        [Tooltip("Resource gained when crafting")]
+        public List<ResourceAmount> results;
+    }
     public class CraftingManager : MonoBehaviour
     {
+        private ErrorCatchingHint error;
+        [SerializeField] private List<CraftingRecipe> availableRecipes;
+
         [Header("Socket References")]
         [SerializeField] private XRSocketInteractor[] craftingSockets;
 
+        private void Start()
+        {
+            error = GetComponent<ErrorCatchingHint>();
+        }
+
         public void TryCraft()
         {
-            int cornCount = 0;
-            int wheatCount = 0;
-            int weedCount = 0;
+            Dictionary<string, int> currentItems = new Dictionary<string, int>();
+            int totalItemsInSockets = 0;
 
             foreach (var socket in craftingSockets)
             {
                 if (socket.interactablesSelected.Count > 0)
                 {
-                    InventoryItem tracker = socket.interactablesSelected[0].transform.GetComponent<InventoryItem>();
-                    if (tracker == null) continue;
+                    InventoryItem item = socket.interactablesSelected[0].transform.GetComponent<InventoryItem>();
+                    if (item != null)
+                    {
+                        if (!currentItems.ContainsKey(item.ResourceKey))
+                            currentItems[item.ResourceKey] = 0;
 
-                    if (tracker.ResourceName == "Corn") cornCount++;
-                    else if (tracker.ResourceName == "Wheat") wheatCount++;
-                    else if (tracker.ResourceName == "Weeds") weedCount++;
+                        currentItems[item.ResourceKey]++;
+                        totalItemsInSockets++;
+                    }
                 }
             }
 
-            if (cornCount >= 2 && wheatCount == 0 && weedCount == 0)
+            // looking for  recipe
+            foreach (CraftingRecipe recipe in availableRecipes)
             {
-                ConsumeItems(2, "Corn");
-                ResourceManager.Instance.Add("CornSeed", 3);
-                InventoryManager.Instance.UpdateNums();
-                return;
+                if (CanCraftRecipe(recipe, currentItems, totalItemsInSockets))
+                {
+                    ExecuteRecipe(recipe);
+                    return;
+                }
             }
 
-            if (wheatCount >= 2 && cornCount == 0 && weedCount == 0)
+            error.ShowError();
+        }
+
+        private bool CanCraftRecipe(CraftingRecipe recipe, Dictionary<string, int> currentItems, int totalItems)
+        {
+            int totalRecipeItems = 0;
+
+            foreach (ResourceAmount req in recipe.ingredients)
             {
-                ConsumeItems(2, "Wheat");
-                ResourceManager.Instance.Add("WheatSeed", 3);
-                InventoryManager.Instance.UpdateNums();
-                return;
+                if (!currentItems.ContainsKey(req.resourceName) || currentItems[req.resourceName] < req.amount)
+                {
+                    return false;
+                }
+                totalRecipeItems += req.amount;
             }
 
-            if (weedCount >= 4 && cornCount == 0 && wheatCount == 0)
+            if (totalItems != totalRecipeItems)
             {
-                ConsumeItems(4, "Weeds");
-                ResourceManager.Instance.Add("Fertilizer", 4);
-                InventoryManager.Instance.UpdateNums();
-                return;
+                return false;
+            }
+
+            return true;
+        }
+        private void ExecuteRecipe(CraftingRecipe recipe)
+        {
+            foreach (ResourceAmount req in recipe.ingredients)
+            {
+                ConsumeItems(req.amount, req.resourceName);
+            }
+
+            foreach (ResourceAmount res in recipe.results)
+            {
+                ResourceManager.Instance.Add(res.resourceName, res.amount);
             }
         }
 
@@ -63,7 +114,7 @@ namespace Kyle
                     GameObject item = socket.interactablesSelected[0].transform.gameObject;
                     InventoryItem tracker = item.GetComponent<InventoryItem>();
 
-                    if (tracker != null && tracker.ResourceName == targetResourceName)
+                    if (tracker != null && tracker.ResourceKey == targetResourceName)
                     {
                         tracker.MarkAsCrafted();
 
