@@ -15,6 +15,12 @@ namespace Shared {
 	//
 	// To check whenever you want:
 	//		if (ProgressionManager.IsAreaComplete("AREA NAME")) { //do something }
+	// Area Names:
+	// "Champaign Cornfield"
+	// "Meth Lab"
+	// "Chicken Farm"
+	// "Restaurants"
+	// "Greenhouse"
 	public static class ProgressionManager {
 		public static UnityEvent<string> AreaCompleted = new UnityEvent<string>();
 		private static readonly HashSet<string> completed = new HashSet<string>();
