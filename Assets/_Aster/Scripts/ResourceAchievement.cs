@@ -1,37 +1,64 @@
+using Alyssa;
+using Shared;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
-using Shared;
 
 namespace Aster
 {
+    // Awards an achievement once the player has owned at least one of EVERY listed resource (at any time).
+    // Listens to the ResourceManager, so it doesn't matter where the resource came from.
+    // The Console tells you which resources are still missing every time one changes.
     public class ResourceAchievement : MonoBehaviour
     {
-        [SerializeField]
-        private string[] required;
+        [SerializeField] private string[] required;
+        [SerializeField] private string achievementName = "Hoarder";
 
-        private HashSet<string> obtained = new HashSet<string>();
+        private readonly HashSet<string> obtained = new HashSet<string>();
+        private bool done;
 
-        public void ObtainedResource(string resourceName)
+        void Start()
         {
-            if (string.IsNullOrEmpty(resourceName))
-                return;
-
-            obtained.Add(resourceName);
-
-            CheckAllObtained();
+            var rm = ResourceManager.Instance;
+            if (rm == null) { Debug.LogWarning("ResourceAchievement: no ResourceManager in the scene", this); return; }
+            foreach (var r in required) if (rm.Get(r) > 0) obtained.Add(r);
+            rm.OnResourceChanged += OnChanged;
+            Check();
         }
 
-        private void CheckAllObtained()
+        void OnDestroy()
         {
-            foreach (string resource in required)
+            if (ResourceManager.Instance != null)
+                ResourceManager.Instance.OnResourceChanged -= OnChanged;
+        }
+
+        void OnChanged(string resource, int newAmount, int change)
+        {
+            if (change > 0 && Array.IndexOf(required, resource) >= 0)
             {
-                if (!obtained.Contains(resource))
-                    return;
+                obtained.Add(resource);
+                Check();
+            }
+        }
+
+        void Check()
+        {
+            if (required.Length == 0)
+            {
+                Debug.LogWarning($"ResourceAchievement ({achievementName}): the 'required' list is EMPTY, so it can never unlock.", this);
+                return;
             }
 
-            AchievementsManager.Instance.CompleteAchievement(
-                "Hoarder"
-            );
+            var missing = new List<string>();
+            foreach (var r in required) if (!obtained.Contains(r)) missing.Add(r);
+            if (missing.Count > 0)
+            {
+                Debug.Log($"ResourceAchievement ({achievementName}): still need {string.Join(", ", missing)}");
+                return;
+            }
+
+            done = true;
+            if (done) AchievementsManager.Instance.CompleteAchievement("Hoarder");
         }
     }
 }
