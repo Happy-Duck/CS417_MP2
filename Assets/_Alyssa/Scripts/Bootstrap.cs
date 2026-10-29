@@ -8,7 +8,6 @@ namespace Alyssa
         void Start()
         {   // Start, not Awake, so ResourceManager is ready
             ResourceManager.Instance.Add("Compost", 10);
-            ResourceManager.Instance.Add("Dollar", 30); // Change later for integrated scene
 
         }
     }
