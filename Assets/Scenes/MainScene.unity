@@ -1153,207 +1153,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: achievements.Array.size
-      value: 39
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: achievements.Array.data[27].name
-      value: What groceries u been into lately
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: achievements.Array.data[28].name
-      value: Hoarder
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: achievements.Array.data[29].name
-      value: Back in stock
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: achievements.Array.data[30].name
-      value: Mmm...
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: achievements.Array.data[31].name
-      value: Jesse, we need to cook
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: achievements.Array.data[32].name
-      value: Edible decorations
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: achievements.Array.data[33].name
-      value: This is just like Minecraft...
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: achievements.Array.data[34].name
-      value: No Unbreaking
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: achievements.Array.data[35].name
-      value: First Shipment
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: achievements.Array.data[36].name
-      value: Dealer
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: achievements.Array.data[37].name
-      value: Not for drinking
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: achievements.Array.data[1].description
-      value: Cook 10 Waffles. Unlocked Employee!
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: achievements.Array.data[18].description
-      value: Have 10 Customers in the Restaurant at the same time; Unlock Topping
-        Station
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: achievements.Array.data[27].description
-      value: Obtain any METH ingredient for the first time
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: achievements.Array.data[28].description
-      value: Obtain all ingredients for Mystery Juice
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: achievements.Array.data[29].description
-      value: Restock a shelf for the first time
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: achievements.Array.data[30].description
-      value: Make Mystery Juice for the first time
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: achievements.Array.data[31].description
-      value: Make METH for the first time
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: achievements.Array.data[32].description
-      value: Place a salt plot for the first time
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: achievements.Array.data[33].description
-      value: Mine a salt deposit for the first time
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: achievements.Array.data[34].description
-      value: Have a pickaxe break for the first time
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: achievements.Array.data[35].description
-      value: Ship METH for the first time
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: achievements.Array.data[36].description
-      value: Meet a shipment goal for the first time
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: achievements.Array.data[37].description
-      value: Use the sink for the first time
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: achievements.Array.data[38].description
-      value: Upgrade your kitchen
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: achievements.Array.data[27].requiredAchievementsNames.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: achievements.Array.data[28].requiredAchievementsNames.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: achievements.Array.data[29].requiredAchievementsNames.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: achievements.Array.data[30].requiredAchievementsNames.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: achievements.Array.data[31].requiredAchievementsNames.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: achievements.Array.data[32].requiredAchievementsNames.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: achievements.Array.data[33].requiredAchievementsNames.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: achievements.Array.data[34].requiredAchievementsNames.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: achievements.Array.data[35].requiredAchievementsNames.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: achievements.Array.data[36].requiredAchievementsNames.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: achievements.Array.data[37].requiredAchievementsNames.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: achievements.Array.data[38].requiredAchievementsNames.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: 'achievements.Array.data[27].requiredAchievementsNames.Array.data[0]'
-      value: Making Carbs into Cash
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: 'achievements.Array.data[28].requiredAchievementsNames.Array.data[0]'
-      value: Making Carbs into Cash
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: 'achievements.Array.data[29].requiredAchievementsNames.Array.data[0]'
-      value: Making Carbs into Cash
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: 'achievements.Array.data[30].requiredAchievementsNames.Array.data[0]'
-      value: Making Carbs into Cash
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: 'achievements.Array.data[31].requiredAchievementsNames.Array.data[0]'
-      value: Making Carbs into Cash
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: 'achievements.Array.data[32].requiredAchievementsNames.Array.data[0]'
-      value: Making Carbs into Cash
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: 'achievements.Array.data[33].requiredAchievementsNames.Array.data[0]'
-      value: Making Carbs into Cash
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: 'achievements.Array.data[34].requiredAchievementsNames.Array.data[0]'
-      value: Making Carbs into Cash
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: 'achievements.Array.data[35].requiredAchievementsNames.Array.data[0]'
-      value: Making Carbs into Cash
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: 'achievements.Array.data[36].requiredAchievementsNames.Array.data[0]'
-      value: Making Carbs into Cash
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: 'achievements.Array.data[37].requiredAchievementsNames.Array.data[0]'
-      value: Making Carbs into Cash
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565207170302455576, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
-      propertyPath: 'achievements.Array.data[38].requiredAchievementsNames.Array.data[0]'
-      value: Making Carbs into Cash
-      objectReference: {fileID: 0}
     - target: {fileID: 8987188474708572149, guid: 8e566d20a7e52d544b57e564088a1b16, type: 3}
       propertyPath: m_Name
       value: Manager
@@ -2660,7 +2459,7 @@ PrefabInstance:
       objectReference: {fileID: 730886390}
     - target: {fileID: 157848030618197710, guid: ed51bedbfbf083f49abc6a8f3d172e9c, type: 3}
       propertyPath: m_VersionIndex
-      value: 7620
+      value: 7626
       objectReference: {fileID: 0}
     - target: {fileID: 264109466502055616, guid: ed51bedbfbf083f49abc6a8f3d172e9c, type: 3}
       propertyPath: m_Mesh
@@ -2668,7 +2467,7 @@ PrefabInstance:
       objectReference: {fileID: 1346656683}
     - target: {fileID: 264109466502055616, guid: ed51bedbfbf083f49abc6a8f3d172e9c, type: 3}
       propertyPath: m_VersionIndex
-      value: 6643
+      value: 6649
       objectReference: {fileID: 0}
     - target: {fileID: 460048783763595934, guid: ed51bedbfbf083f49abc6a8f3d172e9c, type: 3}
       propertyPath: m_Mesh
@@ -2768,23 +2567,7 @@ PrefabInstance:
       objectReference: {fileID: 145247941}
     - target: {fileID: 2587180942280284571, guid: ed51bedbfbf083f49abc6a8f3d172e9c, type: 3}
       propertyPath: m_VersionIndex
-      value: 11072
-      objectReference: {fileID: 0}
-    - target: {fileID: 2611910291750105901, guid: ed51bedbfbf083f49abc6a8f3d172e9c, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2611910291750105901, guid: ed51bedbfbf083f49abc6a8f3d172e9c, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2611910291750105901, guid: ed51bedbfbf083f49abc6a8f3d172e9c, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2611910291750105901, guid: ed51bedbfbf083f49abc6a8f3d172e9c, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 11078
       objectReference: {fileID: 0}
     - target: {fileID: 2815495441402404203, guid: ed51bedbfbf083f49abc6a8f3d172e9c, type: 3}
       propertyPath: m_Mesh
@@ -2816,7 +2599,7 @@ PrefabInstance:
       objectReference: {fileID: 1839058575}
     - target: {fileID: 3416389098606985890, guid: ed51bedbfbf083f49abc6a8f3d172e9c, type: 3}
       propertyPath: m_VersionIndex
-      value: 11072
+      value: 11078
       objectReference: {fileID: 0}
     - target: {fileID: 3512703032359998856, guid: ed51bedbfbf083f49abc6a8f3d172e9c, type: 3}
       propertyPath: m_Mesh
@@ -2856,7 +2639,7 @@ PrefabInstance:
       objectReference: {fileID: 657079174}
     - target: {fileID: 4695135147218122167, guid: ed51bedbfbf083f49abc6a8f3d172e9c, type: 3}
       propertyPath: m_VersionIndex
-      value: 5201
+      value: 5207
       objectReference: {fileID: 0}
     - target: {fileID: 4963127776830337697, guid: ed51bedbfbf083f49abc6a8f3d172e9c, type: 3}
       propertyPath: m_Mesh
@@ -2868,39 +2651,7 @@ PrefabInstance:
       objectReference: {fileID: 1152659796}
     - target: {fileID: 5117494813203904235, guid: ed51bedbfbf083f49abc6a8f3d172e9c, type: 3}
       propertyPath: m_VersionIndex
-      value: 3953
-      objectReference: {fileID: 0}
-    - target: {fileID: 5353925743757681065, guid: ed51bedbfbf083f49abc6a8f3d172e9c, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5353925743757681065, guid: ed51bedbfbf083f49abc6a8f3d172e9c, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5353925743757681065, guid: ed51bedbfbf083f49abc6a8f3d172e9c, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5353925743757681065, guid: ed51bedbfbf083f49abc6a8f3d172e9c, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5373985426616779788, guid: ed51bedbfbf083f49abc6a8f3d172e9c, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5373985426616779788, guid: ed51bedbfbf083f49abc6a8f3d172e9c, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5373985426616779788, guid: ed51bedbfbf083f49abc6a8f3d172e9c, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5373985426616779788, guid: ed51bedbfbf083f49abc6a8f3d172e9c, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 3959
       objectReference: {fileID: 0}
     - target: {fileID: 5460080416206466979, guid: ed51bedbfbf083f49abc6a8f3d172e9c, type: 3}
       propertyPath: m_Mesh
@@ -2908,23 +2659,7 @@ PrefabInstance:
       objectReference: {fileID: 850713231}
     - target: {fileID: 5460080416206466979, guid: ed51bedbfbf083f49abc6a8f3d172e9c, type: 3}
       propertyPath: m_VersionIndex
-      value: 6265
-      objectReference: {fileID: 0}
-    - target: {fileID: 5858924100271155038, guid: ed51bedbfbf083f49abc6a8f3d172e9c, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5858924100271155038, guid: ed51bedbfbf083f49abc6a8f3d172e9c, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5858924100271155038, guid: ed51bedbfbf083f49abc6a8f3d172e9c, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5858924100271155038, guid: ed51bedbfbf083f49abc6a8f3d172e9c, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 6271
       objectReference: {fileID: 0}
     - target: {fileID: 6144650943582902043, guid: ed51bedbfbf083f49abc6a8f3d172e9c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2972,7 +2707,7 @@ PrefabInstance:
       objectReference: {fileID: 354652198}
     - target: {fileID: 6533472508280215269, guid: ed51bedbfbf083f49abc6a8f3d172e9c, type: 3}
       propertyPath: m_VersionIndex
-      value: 4000
+      value: 4006
       objectReference: {fileID: 0}
     - target: {fileID: 6546455429525453800, guid: ed51bedbfbf083f49abc6a8f3d172e9c, type: 3}
       propertyPath: m_Mesh
@@ -3050,6 +2785,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 657079174}
+    - target: {fileID: 8513635254379883917, guid: ed51bedbfbf083f49abc6a8f3d172e9c, type: 3}
+      propertyPath: 'enableItems.Array.data[0]'
+      value: 
+      objectReference: {fileID: 14517607}
     - target: {fileID: 8805844801250849716, guid: ed51bedbfbf083f49abc6a8f3d172e9c, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -3060,7 +2799,7 @@ PrefabInstance:
       objectReference: {fileID: 1313593921}
     - target: {fileID: 9173057749216932591, guid: ed51bedbfbf083f49abc6a8f3d172e9c, type: 3}
       propertyPath: m_VersionIndex
-      value: 6732
+      value: 6738
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

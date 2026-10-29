@@ -79,7 +79,7 @@ MonoBehaviour:
     requiredAchievementsNames: []
     achieved: 0
   - name: This is Getting Repetitive
-    description: Cook 30 Waffles. Unlocked Employee!
+    description: Cook 10 Waffles. Unlocked Employee!
     requiredAchievementsNames: []
     achieved: 0
   - name: Golden Goose
@@ -149,7 +149,7 @@ MonoBehaviour:
     - Making Carbs into Cash
     achieved: 0
   - name: Lunch Rush
-    description: Have 20 Customers in the Restaurant at the same time; Unlock Topping
+    description: Have 10 Customers in the Restaurant at the same time; Unlock Topping
       Station
     requiredAchievementsNames:
     - Making Carbs into Cash
@@ -193,51 +193,52 @@ MonoBehaviour:
     requiredAchievementsNames:
     - Making Carbs into Cash
     achieved: 0
-  - name: Small Beginnings
-    description: Harvest your first crop
+  - name: What groceries u been into lately
+    description: Obtain any METH ingredient for the first time
     requiredAchievementsNames: []
     achieved: 0
-  - name: Family Farm
-    description: Sell your first crop
-    requiredAchievementsNames:
-    - Small Beginnings
-    achieved: 0
-  - name: Art of the Deal
-    description: Buy your first seed
-    requiredAchievementsNames:
-    - Family Farm
-    achieved: 0
-  - name: Farming Tycoon
-    description: Sell 15 of each crop
-    requiredAchievementsNames:
-    - Family Farm
-    achieved: 0
-  - name: Loyal Deere Customer
-    description: Automate crop harvesting
-    requiredAchievementsNames:
-    - Farming Tycoon
-    achieved: 0
-  - name: Shroom Enthusiast
-    description: Buy your first automated fertilizer
-    requiredAchievementsNames:
-    - Farming Tycoon
-    achieved: 0
-  - name: Commercial Gardener
-    description: Buy your first automated waterer
-    requiredAchievementsNames:
-    - Farming Tycoon
-    achieved: 0
-  - name: 3rd Degree Herbicide
-    description: Dig up your first weed
+  - name: Hoarder
+    description: Obtain all ingredients for Mystery Juice
     requiredAchievementsNames: []
     achieved: 0
-  - name: Carcinogen Spreader
-    description: Automate weed killing
-    requiredAchievementsNames:
-    - 3rd Degree Herbicide
+  - name: Back in stock
+    description: Restock a shelf for the first time
+    requiredAchievementsNames: []
     achieved: 0
-  - name: Craftsman
-    description: Craft your first item
+  - name: Mmm...
+    description: Make Mystery Juice for the first time
+    requiredAchievementsNames: []
+    achieved: 0
+  - name: Jesse, we need to cook
+    description: Make METH for the first time
+    requiredAchievementsNames: []
+    achieved: 0
+  - name: Edible decorations
+    description: Place a salt plot for the first time
+    requiredAchievementsNames: []
+    achieved: 0
+  - name: This is just like Minecraft...
+    description: Mine a salt deposit for the first time
+    requiredAchievementsNames: []
+    achieved: 0
+  - name: No Unbreaking
+    description: Have a pickaxe break for the first time
+    requiredAchievementsNames: []
+    achieved: 0
+  - name: First Shipment
+    description: Ship METH for the first time
+    requiredAchievementsNames: []
+    achieved: 0
+  - name: Dealer
+    description: Meet a shipment goal for the first time
+    requiredAchievementsNames: []
+    achieved: 0
+  - name: Not for drinking
+    description: Use the sink for the first time
+    requiredAchievementsNames: []
+    achieved: 0
+  - name: 
+    description: Upgrade your kitchen
     requiredAchievementsNames: []
     achieved: 0
   onAchieved:
