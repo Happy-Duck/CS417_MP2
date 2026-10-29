@@ -41,7 +41,7 @@ namespace Sharyq
         public void Awake()
         {
             ActiveCount++;
-            if (ActiveCount == 20 && !AchievementsManager.Instance.IsAchieved("Lunch Rush"))
+            if (ActiveCount == 10 && !AchievementsManager.Instance.IsAchieved("Lunch Rush"))
                 AchievementsManager.Instance.CompleteAchievement("Lunch Rush");
             OnCountChanged?.Invoke(ActiveCount);
 
