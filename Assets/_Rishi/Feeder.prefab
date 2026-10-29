@@ -159,6 +159,7 @@ GameObject:
   - component: {fileID: 1875616810048289275}
   - component: {fileID: -2042106396698261017}
   - component: {fileID: -4552722898172724255}
+  - component: {fileID: 4320888189935901414}
   m_Layer: 0
   m_Name: Feeder
   m_TagString: Untagged
@@ -547,3 +548,16 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4258002796198032428, guid: 259dc5221af9e214e87ef02b3ddc29a1, type: 3}
   m_PrefabInstance: {fileID: 6788193441980640277}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4320888189935901414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2218950536215231629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e9dfaae4c30557488dbccdbfcbecc3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OutlineOnHover
+  outlineMaterial: {fileID: 2100000, guid: 728ab9721e9b57d458b6dd81ce8eb8b4, type: 2}

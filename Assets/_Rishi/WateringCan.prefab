@@ -371,6 +371,7 @@ GameObject:
   - component: {fileID: 7989916315889187768}
   - component: {fileID: 7891968427206332941}
   - component: {fileID: 1369866131455331770}
+  - component: {fileID: 3409044535592677059}
   m_Layer: 0
   m_Name: WateringCan
   m_TagString: Untagged
@@ -725,3 +726,16 @@ MonoBehaviour:
   pourWater: {fileID: 1760814278113795101}
   pickupWater: {fileID: 8300000, guid: 39a674579ba9f834d952c0148b1dc96e, type: 3}
   emptyHint: The can is empty, dip it in the well to fill it
+--- !u!114 &3409044535592677059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8866866113067448104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e9dfaae4c30557488dbccdbfcbecc3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OutlineOnHover
+  outlineMaterial: {fileID: 2100000, guid: 728ab9721e9b57d458b6dd81ce8eb8b4, type: 2}

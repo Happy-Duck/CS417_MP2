@@ -219,6 +219,9 @@ PrefabInstance:
       addedObject: {fileID: 8186473427526224612}
     - targetCorrespondingSourceObject: {fileID: 1308899828073608, guid: e42189c530de6c944961b54c51a398e6, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 257724561072147392}
+    - targetCorrespondingSourceObject: {fileID: 1308899828073608, guid: e42189c530de6c944961b54c51a398e6, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 459753558389883875}
     - targetCorrespondingSourceObject: {fileID: 1308899828073608, guid: e42189c530de6c944961b54c51a398e6, type: 3}
       insertIndex: -1
@@ -464,3 +467,16 @@ MonoBehaviour:
   forceMagnitude: 20
   gunAudio: {fileID: 3413992466318541420}
   shootSound: {fileID: 8300000, guid: ac3178ce7ccd8d54b9ac71739fdcb3fd, type: 3}
+--- !u!114 &257724561072147392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2232716704354410933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e9dfaae4c30557488dbccdbfcbecc3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OutlineOnHover
+  outlineMaterial: {fileID: 2100000, guid: 728ab9721e9b57d458b6dd81ce8eb8b4, type: 2}

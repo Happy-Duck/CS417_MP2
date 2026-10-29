@@ -129,6 +129,7 @@ GameObject:
   - component: {fileID: 6547047758951922901}
   - component: {fileID: 1983831574563168092}
   - component: {fileID: 6388448793626720172}
+  - component: {fileID: 8464735512297766098}
   m_Layer: 0
   m_Name: EggCollector
   m_TagString: Untagged
@@ -483,3 +484,16 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 487264, guid: 7c9db1abedcdc2443bde7301346f4dc3, type: 3}
   m_PrefabInstance: {fileID: 3442247613831314718}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8464735512297766098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4306560877232865068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e9dfaae4c30557488dbccdbfcbecc3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OutlineOnHover
+  outlineMaterial: {fileID: 2100000, guid: 728ab9721e9b57d458b6dd81ce8eb8b4, type: 2}
