@@ -36,7 +36,7 @@ namespace Aster
         {
             if (stock > 0) return;
             if (!ResourceManager.Instance.TrySpend(costResource, restockCost)) return;
-            AchievementsManager.Instance.CompleteAchievement("First Restock");
+            AchievementsManager.Instance.CompleteAchievement("Back in stock");
             stock = slots.Length;
             Refresh();
         }

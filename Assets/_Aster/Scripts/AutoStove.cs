@@ -122,7 +122,7 @@ namespace Aster
                 return;
 
             textBuilder.Clear();
-            textBuilder.AppendLine("<b>METH</b>");
+            textBuilder.AppendLine("<b>METH</b>\n");
 
             Dictionary<string, int> requirements = GetCombinedRequirements();
 
@@ -134,7 +134,8 @@ namespace Aster
                     .Append(": ")
                     .Append(available)
                     .Append("/")
-                    .Append(item.Value);
+                    .Append(item.Value)
+                    .Append('\n');
             }
 
             int possibleBatches = int.MaxValue;

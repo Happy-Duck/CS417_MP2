@@ -49,7 +49,7 @@ namespace Aster
         }
         void Refresh()
         {
-            statusText.text = "METH Sell Price: " + price + " Gold\n\nGoal: " + goalForBar + " METH\n\nAmount of METH Sold: " + shipped;
+            statusText.text = "METH Sell Price: " + price + " Dollars\n\nGoal: " + goalForBar + " METH\n\nAmount of METH Sold: " + shipped;
         }
     }
 }

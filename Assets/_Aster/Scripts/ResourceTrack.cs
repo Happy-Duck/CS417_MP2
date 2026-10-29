@@ -12,7 +12,7 @@ namespace Aster
         public string title = "INVENTORY";
         //public string[] resources = {
         //    "Water","Gasoline","Medicine","Paint Thinner","Matches","Acetone","Dye",
-        //    "Batteries","Fertilizer","Salt","Mystery Juice","METH","GOLD"
+        //    "Batteries","Fertilizer","Salt","Mystery Juice","METH","Dollar"
         //};
         public string[] resources = {};
         public bool hideZeroRows = false;
