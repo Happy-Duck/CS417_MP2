@@ -1787,7 +1787,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 6253
+  m_VersionIndex: 6262
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2860,7 +2860,7 @@ MonoBehaviour:
   achievementName: This is Getting Repetitive
   resourceName: Waffle
   totalWafflesSold: 0
-  thresholdWafflesSold: 30
+  thresholdWafflesSold: 10
 --- !u!114 &7228798526591788013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3141,7 +3141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a671cc8f2e484a45bae2391472b3f80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Sharyq.BuildingBoard
-  rentManager: {fileID: 6767513907843601081}
+  rentManager: {fileID: 0}
   displayText: {fileID: 13043822346426163}
 --- !u!1 &1259360253970086954
 GameObject:
@@ -6780,7 +6780,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 7608
+  m_VersionIndex: 7617
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -7755,7 +7755,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 427069852691446229}
-  - {fileID: 8583331577658109007}
   - {fileID: 6240147210307397417}
   - {fileID: 4458120938274867729}
   - {fileID: 8667680807223336771}
@@ -8590,7 +8589,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 6720
+  m_VersionIndex: 6729
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -9545,7 +9544,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3988
+  m_VersionIndex: 3997
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -12468,7 +12467,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 6631
+  m_VersionIndex: 6640
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -13618,7 +13617,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 11060
+  m_VersionIndex: 11069
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -14994,7 +14993,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3941
+  m_VersionIndex: 3950
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -16150,7 +16149,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 5189
+  m_VersionIndex: 5198
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -16642,53 +16641,6 @@ MonoBehaviour:
   buyNotifLocation: {fileID: 3123159101763151802}
   paySound: {fileID: 8300000, guid: 1f92e979691357049af55e4871dfd060, type: 3}
   failSound: {fileID: 8300000, guid: 85e7bfdafe501dd49adff96c985641dd, type: 3}
---- !u!1 &8572621823496584235
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8583331577658109007}
-  - component: {fileID: 6767513907843601081}
-  m_Layer: 0
-  m_Name: BillsManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8583331577658109007
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8572621823496584235}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6144650943582902043}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6767513907843601081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8572621823496584235}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4a3463ccaebd054ba2627f0c304b9e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Sharyq.RentStat
-  rentAmount: 250
-  timeTillRentIsDue: 120
-  debug: 0
 --- !u!1 &8683749536174615045
 GameObject:
   m_ObjectHideFlags: 0
@@ -17102,7 +17054,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 11060
+  m_VersionIndex: 11069
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -17905,7 +17857,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6767513907843601081}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Sharyq.RentStat, Assembly-CSharp
         m_MethodName: PayRent
         m_Mode: 1
@@ -17999,6 +17951,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3622808602185693108}
     m_Modifications:
+    - target: {fileID: 2569958626596017899, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3017896968157874465, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
       propertyPath: m_Name
       value: ResouceShelf (3)
@@ -18372,7 +18328,7 @@ PrefabInstance:
       objectReference: {fileID: 6144650943582902043}
     - target: {fileID: 7118282541033314590, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
       propertyPath: costResource
-      value: Wheat
+      value: HarvestedWheat
       objectReference: {fileID: 0}
     - target: {fileID: 7118282541033314590, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
       propertyPath: altCostAmount
@@ -18404,6 +18360,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7229889450000564871}
     m_Modifications:
+    - target: {fileID: 2569958626596017899, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3017896968157874465, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
       propertyPath: m_Name
       value: ResouceShelf (1)
@@ -18511,6 +18471,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7229889450000564871}
     m_Modifications:
+    - target: {fileID: 2569958626596017899, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3017896968157874465, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
       propertyPath: m_Name
       value: ResouceShelf (5)
@@ -18823,6 +18787,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3622808602185693108}
     m_Modifications:
+    - target: {fileID: 2569958626596017899, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3017896968157874465, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
       propertyPath: m_Name
       value: ResouceShelf (5)
@@ -18996,7 +18964,7 @@ PrefabInstance:
       objectReference: {fileID: 6144650943582902043}
     - target: {fileID: 7118282541033314590, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
       propertyPath: costResource
-      value: Egg
+      value: White Egg
       objectReference: {fileID: 0}
     - target: {fileID: 7118282541033314590, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
       propertyPath: altCostAmount
@@ -19090,6 +19058,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7229889450000564871}
     m_Modifications:
+    - target: {fileID: 2569958626596017899, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3017896968157874465, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
       propertyPath: m_Name
       value: ResouceShelf (3)
@@ -19408,6 +19380,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3622808602185693108}
     m_Modifications:
+    - target: {fileID: 2569958626596017899, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3017896968157874465, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
       propertyPath: m_Name
       value: ResouceShelf (4)
@@ -20133,7 +20109,7 @@ PrefabInstance:
       objectReference: {fileID: 6144650943582902043}
     - target: {fileID: 6751143969326212339, guid: 33faca699f243d3448ebedbac4674920, type: 3}
       propertyPath: costResource
-      value: Meth
+      value: METH
       objectReference: {fileID: 0}
     - target: {fileID: 7883034349564910010, guid: 33faca699f243d3448ebedbac4674920, type: 3}
       propertyPath: m_LocalPosition.y
@@ -20435,6 +20411,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3622808602185693108}
     m_Modifications:
+    - target: {fileID: 2569958626596017899, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3017896968157874465, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
       propertyPath: m_Name
       value: ResouceShelf (4)
@@ -20849,6 +20829,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7229889450000564871}
     m_Modifications:
+    - target: {fileID: 2569958626596017899, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3017896968157874465, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
       propertyPath: m_Name
       value: ResouceShelf (2)
@@ -20956,6 +20940,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3622808602185693108}
     m_Modifications:
+    - target: {fileID: 2569958626596017899, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3017896968157874465, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
       propertyPath: m_Name
       value: ResouceShelf (3)
@@ -21251,6 +21239,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3622808602185693108}
     m_Modifications:
+    - target: {fileID: 2569958626596017899, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3017896968157874465, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
       propertyPath: m_Name
       value: ResouceShelf (5)
@@ -21484,6 +21476,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3622808602185693108}
     m_Modifications:
+    - target: {fileID: 2569958626596017899, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3017896968157874465, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
       propertyPath: m_Name
       value: ResouceShelf (2)
@@ -21653,6 +21649,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7229889450000564871}
     m_Modifications:
+    - target: {fileID: 2569958626596017899, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3017896968157874465, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
       propertyPath: m_Name
       value: ResouceShelf (4)
@@ -21842,6 +21842,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3622808602185693108}
     m_Modifications:
+    - target: {fileID: 2569958626596017899, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3017896968157874465, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
       propertyPath: m_Name
       value: ResouceShelf (1)
@@ -21924,7 +21928,7 @@ PrefabInstance:
       objectReference: {fileID: 6144650943582902043}
     - target: {fileID: 7118282541033314590, guid: 305f785c7e0f4644f94e7eebf24dc9e3, type: 3}
       propertyPath: costResource
-      value: Corn
+      value: HarvestedCorn
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

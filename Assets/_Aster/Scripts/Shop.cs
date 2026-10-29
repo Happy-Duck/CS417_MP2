@@ -9,7 +9,7 @@ namespace Aster
     {
         public GameObject itemPrefab;
         public Transform spawnPoint;
-        public string costResource = "GOLD";
+        public string costResource = "Dollar";
         public int cost = 10;
         public bool giveFreeOnStart = true;
         public bool onlyOneAtATime = true;

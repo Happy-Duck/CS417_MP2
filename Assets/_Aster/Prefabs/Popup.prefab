@@ -125,8 +125,8 @@ MonoBehaviour:
   message: 
   label: {fileID: 8222516835795113355}
   panel: {fileID: 1132165800801688357}
-  showDistance: 5
-  duration: 8
+  showDistance: 3.5
+  duration: 13
 --- !u!1 &5829007775900333850
 GameObject:
   m_ObjectHideFlags: 0

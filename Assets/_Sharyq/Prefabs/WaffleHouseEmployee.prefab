@@ -755,7 +755,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shared.GridPlaceable
   costResource: 
-  costAmount: 0
+  costAmount: 100
   placeableSurfaceLayers:
     serializedVersion: 2
     m_Bits: 64
@@ -791,6 +791,7 @@ MonoBehaviour:
   stationMask:
     serializedVersion: 2
     m_Bits: 4294967295
+  efficiencyScore: 0.5
 --- !u!1 &111194
 GameObject:
   m_ObjectHideFlags: 0
