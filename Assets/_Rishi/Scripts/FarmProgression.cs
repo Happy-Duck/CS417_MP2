@@ -54,6 +54,8 @@ namespace Rishi {
 		[SerializeField] string introText = "";
 		// locked shelves get a copy of their price label with this on it, empty = no signs
 		[SerializeField] string lockedShelfText = "Restocking soon!";
+		// gets marked done in the shared ProgressionManager once every step is finished
+		[SerializeField] string areaName = "Chicken Farm";
 
 		// only stuff picked up at the farm (Harvestable reports it), so the waffle house's starting eggs dont count
 		private Dictionary<string, int> collected = new Dictionary<string, int>();
@@ -171,6 +173,7 @@ namespace Rishi {
 			current++;
 			if (nextGoalBoard != null) nextGoalBoard.SetActive(true);
 			UpdateBoard();
+			if (current >= steps.Count && areaName != "") ProgressionManager.CompleteArea(areaName);
 			revealing = false;
 		}
 
