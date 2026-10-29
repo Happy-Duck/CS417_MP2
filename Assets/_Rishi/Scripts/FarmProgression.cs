@@ -169,6 +169,7 @@ namespace Rishi {
 					lockedSigns.Remove(thing);
 				}
 			}
+			
 
 			current++;
 			if (nextGoalBoard != null) nextGoalBoard.SetActive(true);
