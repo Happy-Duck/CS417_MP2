@@ -3141,7 +3141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a671cc8f2e484a45bae2391472b3f80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Sharyq.BuildingBoard
-  rentManager: {fileID: 6767513907843601081}
+  rentManager: {fileID: 0}
   displayText: {fileID: 13043822346426163}
 --- !u!1 &1259360253970086954
 GameObject:
@@ -7755,7 +7755,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 427069852691446229}
-  - {fileID: 8583331577658109007}
   - {fileID: 6240147210307397417}
   - {fileID: 4458120938274867729}
   - {fileID: 8667680807223336771}
@@ -16642,53 +16641,6 @@ MonoBehaviour:
   buyNotifLocation: {fileID: 3123159101763151802}
   paySound: {fileID: 8300000, guid: 1f92e979691357049af55e4871dfd060, type: 3}
   failSound: {fileID: 8300000, guid: 85e7bfdafe501dd49adff96c985641dd, type: 3}
---- !u!1 &8572621823496584235
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8583331577658109007}
-  - component: {fileID: 6767513907843601081}
-  m_Layer: 0
-  m_Name: BillsManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8583331577658109007
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8572621823496584235}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6144650943582902043}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6767513907843601081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8572621823496584235}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4a3463ccaebd054ba2627f0c304b9e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Sharyq.RentStat
-  rentAmount: 250
-  timeTillRentIsDue: 120
-  debug: 0
 --- !u!1 &8683749536174615045
 GameObject:
   m_ObjectHideFlags: 0
@@ -17905,7 +17857,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6767513907843601081}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Sharyq.RentStat, Assembly-CSharp
         m_MethodName: PayRent
         m_Mode: 1
