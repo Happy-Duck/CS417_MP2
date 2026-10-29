@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 2241092457782733725}
   - component: {fileID: 2255555024092920579}
   - component: {fileID: -4554767128239529571}
+  - component: {fileID: 6367692821701504656}
   m_Layer: 0
   m_Name: WaterTrough
   m_TagString: Untagged
@@ -585,3 +586,16 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3617648734827931316, guid: 0fe7bfb6811d8284e952afe5c0d732bd, type: 3}
   m_PrefabInstance: {fileID: 1992248015905532621}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6367692821701504656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2218950536215231629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e9dfaae4c30557488dbccdbfcbecc3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OutlineOnHover
+  outlineMaterial: {fileID: 2100000, guid: 728ab9721e9b57d458b6dd81ce8eb8b4, type: 2}

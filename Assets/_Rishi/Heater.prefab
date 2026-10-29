@@ -616,6 +616,7 @@ GameObject:
   - component: {fileID: 6536536712844988395}
   - component: {fileID: -4620685687253089401}
   - component: {fileID: 1983831574563168092}
+  - component: {fileID: 3703460998571076592}
   m_Layer: 0
   m_Name: Heater
   m_TagString: Untagged
@@ -1570,3 +1571,16 @@ MonoBehaviour:
   drainPerSecond: 1
   reducePerSecond: -20
   firstUseHint: The chickens are warming up, don't let this heater run out of fuel!
+--- !u!114 &3703460998571076592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4306560877232865068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e9dfaae4c30557488dbccdbfcbecc3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OutlineOnHover
+  outlineMaterial: {fileID: 2100000, guid: 728ab9721e9b57d458b6dd81ce8eb8b4, type: 2}

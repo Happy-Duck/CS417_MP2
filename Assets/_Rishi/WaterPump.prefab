@@ -129,6 +129,7 @@ GameObject:
   - component: {fileID: 6547047758951922901}
   - component: {fileID: 1983831574563168092}
   - component: {fileID: 6826355119718257645}
+  - component: {fileID: 8592474665581731042}
   m_Layer: 0
   m_Name: WaterPump
   m_TagString: Untagged
@@ -482,3 +483,16 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 479640, guid: 400c967e5d1329c4c9dd5bc47e49d545, type: 3}
   m_PrefabInstance: {fileID: 7070977212888499806}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8592474665581731042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4306560877232865068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e9dfaae4c30557488dbccdbfcbecc3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OutlineOnHover
+  outlineMaterial: {fileID: 2100000, guid: 728ab9721e9b57d458b6dd81ce8eb8b4, type: 2}
