@@ -51,7 +51,7 @@ MonoBehaviour:
     Press the Grip button to take an item.
 
     When the shelf is empty,
-    pay Gold to restock'
+    pay Dollars to restock'
   label: {fileID: 6315327025271729854}
   panel: {fileID: 5283380314817379635}
   showDistance: 3.5
@@ -3228,7 +3228,7 @@ Transform:
   m_GameObject: {fileID: 3773911161296500572}
   serializedVersion: 2
   m_LocalRotation: {x: 0.000000037748954, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.011400414, y: 0.8166, z: -0.099}
+  m_LocalPosition: {x: 0.011400414, y: 0.9158, z: -0.099}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3249,7 +3249,7 @@ MonoBehaviour:
   itemPrefab: {fileID: 6425038295204177656, guid: 80843a469da95184fbef3e7c8630c22b, type: 3}
   spawnPoint: {fileID: 1623623911558882822}
   costResource: Dollar
-  cost: 10
+  cost: 20
   giveFreeOnStart: 0
   onlyOneAtATime: 1
   onBought:
@@ -3828,7 +3828,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Restock
 
-    [Price: 5 Gold]'
+    [Price: 5 Dollars]'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4830,8 +4830,8 @@ MonoBehaviour:
   - {fileID: 3650017460697590798}
   - {fileID: 4723153286719594607}
   - {fileID: 1977556417572455655}
-  costResource: GOLD
-  restockCost: 5
+  costResource: Dollar
+  restockCost: 10
   restockButton: {fileID: 335624091953599407}
   stock: 0
 --- !u!65 &1770182445122607482
@@ -11239,7 +11239,7 @@ MonoBehaviour:
     Press the Grip button to take an item.
 
     When the shelf is empty,
-    pay Gold to restock'
+    pay Dollars to restock'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -16905,6 +16905,15 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: -2799741788064027924, guid: 3da1694ef8978ea46a7379478e51c256, type: 3}
+    - target: {fileID: 1289386657132830095, guid: b981b243ebda10d46a546429b999be01, type: 3}
+      propertyPath: message
+      value: '
+
+        Press the Grip button to take an item.
+
+        When the
+        shelf is empty, pay Dollars to restock'
+      objectReference: {fileID: 0}
     - target: {fileID: 3072781879940421845, guid: b981b243ebda10d46a546429b999be01, type: 3}
       propertyPath: m_text
       value: Matches
@@ -16928,6 +16937,10 @@ PrefabInstance:
     - target: {fileID: 3987209803799148579, guid: b981b243ebda10d46a546429b999be01, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.671
+      objectReference: {fileID: 0}
+    - target: {fileID: 4920351752583837172, guid: b981b243ebda10d46a546429b999be01, type: 3}
+      propertyPath: restockCost
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4920351752583837172, guid: b981b243ebda10d46a546429b999be01, type: 3}
       propertyPath: tokenPrefab
@@ -16957,6 +16970,15 @@ PrefabInstance:
       propertyPath: 'slots.Array.data[3]'
       value: 
       objectReference: {fileID: 4118501352064669591}
+    - target: {fileID: 5348184677247646664, guid: b981b243ebda10d46a546429b999be01, type: 3}
+      propertyPath: m_text
+      value: '
+
+        Press the Grip button to take an item.
+
+        When the
+        shelf is empty, pay Dollars to restock'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 4075255208406533268, guid: b981b243ebda10d46a546429b999be01, type: 3}
@@ -17060,7 +17082,7 @@ PrefabInstance:
         Grab a salt plot and place it on the floor to start a new
         salt deposit
 
-        [Price: 10 Gold]'
+        [Price: 30 Dollars]'
       objectReference: {fileID: 0}
     - target: {fileID: 8222516835795113355, guid: 1b8b350c4b506214b9dd4f6ffe05974c, type: 3}
       propertyPath: m_text
@@ -17328,6 +17350,15 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 0.3790003
       objectReference: {fileID: 0}
+    - target: {fileID: 1126419121841586681, guid: 08a4a5bea5e866b4a8da558b91997679, type: 3}
+      propertyPath: m_text
+      value: '
+
+        Press the Grip button to take an item.
+
+        When the
+        shelf is empty, pay Dollars to restock'
+      objectReference: {fileID: 0}
     - target: {fileID: 1189940696172735499, guid: 08a4a5bea5e866b4a8da558b91997679, type: 3}
       propertyPath: m_text
       value: Dye
@@ -17381,12 +17412,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6088193574663153598, guid: 08a4a5bea5e866b4a8da558b91997679, type: 3}
+      propertyPath: message
+      value: '
+
+        Press the Grip button to take an item.
+
+        When the
+        shelf is empty, pay Dollars to restock'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6088193574663153598, guid: 08a4a5bea5e866b4a8da558b91997679, type: 3}
       propertyPath: duration
       value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 6088193574663153598, guid: 08a4a5bea5e866b4a8da558b91997679, type: 3}
       propertyPath: showDistance
       value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6883406919135723493, guid: 08a4a5bea5e866b4a8da558b91997679, type: 3}
+      propertyPath: restockCost
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6883406919135723493, guid: 08a4a5bea5e866b4a8da558b91997679, type: 3}
       propertyPath: resourceName
@@ -17577,6 +17621,15 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: -2799741788064027924, guid: 3da1694ef8978ea46a7379478e51c256, type: 3}
+    - target: {fileID: 1289386657132830095, guid: b981b243ebda10d46a546429b999be01, type: 3}
+      propertyPath: message
+      value: '
+
+        Press the Grip button to take an item.
+
+        When the
+        shelf is empty, pay Dollars to restock'
+      objectReference: {fileID: 0}
     - target: {fileID: 3072781879940421845, guid: b981b243ebda10d46a546429b999be01, type: 3}
       propertyPath: m_text
       value: Acetone
@@ -17596,6 +17649,10 @@ PrefabInstance:
     - target: {fileID: 3987209803799148579, guid: b981b243ebda10d46a546429b999be01, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.589
+      objectReference: {fileID: 0}
+    - target: {fileID: 4920351752583837172, guid: b981b243ebda10d46a546429b999be01, type: 3}
+      propertyPath: restockCost
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4920351752583837172, guid: b981b243ebda10d46a546429b999be01, type: 3}
       propertyPath: tokenPrefab
@@ -17625,6 +17682,10 @@ PrefabInstance:
       propertyPath: 'slots.Array.data[3]'
       value: 
       objectReference: {fileID: 4793426518589272032}
+    - target: {fileID: 5348184677247646664, guid: b981b243ebda10d46a546429b999be01, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 4075255208406533268, guid: b981b243ebda10d46a546429b999be01, type: 3}
@@ -18345,6 +18406,15 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: -2799741788064027924, guid: 3da1694ef8978ea46a7379478e51c256, type: 3}
+    - target: {fileID: 1289386657132830095, guid: b981b243ebda10d46a546429b999be01, type: 3}
+      propertyPath: message
+      value: '
+
+        Press the Grip button to take an item.
+
+        When the
+        shelf is empty, pay Dollars to restock'
+      objectReference: {fileID: 0}
     - target: {fileID: 3072781879940421845, guid: b981b243ebda10d46a546429b999be01, type: 3}
       propertyPath: m_text
       value: Gasoline
@@ -18368,6 +18438,10 @@ PrefabInstance:
     - target: {fileID: 3987209803799148579, guid: b981b243ebda10d46a546429b999be01, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.681
+      objectReference: {fileID: 0}
+    - target: {fileID: 4920351752583837172, guid: b981b243ebda10d46a546429b999be01, type: 3}
+      propertyPath: restockCost
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4920351752583837172, guid: b981b243ebda10d46a546429b999be01, type: 3}
       propertyPath: tokenPrefab
@@ -18397,6 +18471,15 @@ PrefabInstance:
       propertyPath: 'slots.Array.data[3]'
       value: 
       objectReference: {fileID: 6577321419802366868}
+    - target: {fileID: 5348184677247646664, guid: b981b243ebda10d46a546429b999be01, type: 3}
+      propertyPath: m_text
+      value: '
+
+        Press the Grip button to take an item.
+
+        When the
+        shelf is empty, pay Dollars to restock'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 4075255208406533268, guid: b981b243ebda10d46a546429b999be01, type: 3}
@@ -19960,7 +20043,7 @@ MonoBehaviour:
     liquidColor: {r: 0, g: 0, b: 0, a: 0}
   statusText: {fileID: 4467215794488208050}
   shipped: 0
-  price: 10
+  price: 50
   goalForBar: 5
   bar: {fileID: 0}
   onShipped:
@@ -19993,7 +20076,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a97aeaab7b1d90b49bf1febb3758ff76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Alyssa.TutorialPopup
-  message: Sell METH to earn more gold
+  message: Sell METH to earn more Dollars
   id: shippingbox
   triggerMode: 0
   showDistance: 3
@@ -20009,6 +20092,15 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7737775331060273029}
     m_Modifications:
+    - target: {fileID: 1126419121841586681, guid: 08a4a5bea5e866b4a8da558b91997679, type: 3}
+      propertyPath: m_text
+      value: '
+
+        Press the Grip button to take an item.
+
+        When the
+        shelf is empty, pay Dollars to restock'
+      objectReference: {fileID: 0}
     - target: {fileID: 4832768666277719270, guid: 08a4a5bea5e866b4a8da558b91997679, type: 3}
       propertyPath: m_Name
       value: BatteryShelf
@@ -20054,12 +20146,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6088193574663153598, guid: 08a4a5bea5e866b4a8da558b91997679, type: 3}
+      propertyPath: message
+      value: '
+
+        Press the Grip button to take an item.
+
+        When the
+        shelf is empty, pay Dollars to restock'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6088193574663153598, guid: 08a4a5bea5e866b4a8da558b91997679, type: 3}
       propertyPath: duration
       value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 6088193574663153598, guid: 08a4a5bea5e866b4a8da558b91997679, type: 3}
       propertyPath: showDistance
       value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6883406919135723493, guid: 08a4a5bea5e866b4a8da558b91997679, type: 3}
+      propertyPath: restockCost
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8272025823817237010, guid: 08a4a5bea5e866b4a8da558b91997679, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21462,6 +21567,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1289386657132830095, guid: b981b243ebda10d46a546429b999be01, type: 3}
+      propertyPath: message
+      value: '
+
+        Press the Grip button to take an item.
+
+        When the
+        shelf is empty, pay Dollars to restock'
+      objectReference: {fileID: 0}
     - target: {fileID: 3072781879940421845, guid: b981b243ebda10d46a546429b999be01, type: 3}
       propertyPath: m_text
       value: Paint Thinner
@@ -21475,6 +21589,10 @@ PrefabInstance:
       value: 0.596
       objectReference: {fileID: 0}
     - target: {fileID: 4920351752583837172, guid: b981b243ebda10d46a546429b999be01, type: 3}
+      propertyPath: restockCost
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4920351752583837172, guid: b981b243ebda10d46a546429b999be01, type: 3}
       propertyPath: tokenPrefab
       value: 
       objectReference: {fileID: 2512544765882897654, guid: 9214a2c5f4d3c9842b20ad1ce2efc69b, type: 3}
@@ -21486,6 +21604,15 @@ PrefabInstance:
       propertyPath: restockButton
       value: 
       objectReference: {fileID: 7023175119156958035}
+    - target: {fileID: 5348184677247646664, guid: b981b243ebda10d46a546429b999be01, type: 3}
+      propertyPath: m_text
+      value: '
+
+        Press the Grip button to take an item.
+
+        When the
+        shelf is empty, pay Dollars to restock'
+      objectReference: {fileID: 0}
     - target: {fileID: 6077167792737592884, guid: b981b243ebda10d46a546429b999be01, type: 3}
       propertyPath: tokenPrefab
       value: 
