@@ -54,61 +54,8 @@ MonoBehaviour:
     pay Gold to restock'
   label: {fileID: 6315327025271729854}
   panel: {fileID: 5283380314817379635}
-  showDistance: 5
-  duration: 8
---- !u!1 &92704534523983725
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5069219948786984356}
-  - component: {fileID: 3788982001452975918}
-  m_Layer: 0
-  m_Name: GameObject (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5069219948786984356
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 92704534523983725}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 59.28943, y: 0, z: 49.8131}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5831918172514025620}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!65 &3788982001452975918
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 92704534523983725}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 50, y: 50, z: 3}
-  m_Center: {x: 0, y: 0, z: 0}
+  showDistance: 3.5
+  duration: 13
 --- !u!1 &184409802715265934
 GameObject:
   m_ObjectHideFlags: 0
@@ -2027,7 +1974,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5831918172514025620}
   - {fileID: 7582583160088484442}
   - {fileID: 5710012934932583438}
   - {fileID: 8285439696838396340}
@@ -2336,71 +2282,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8141790248275533491}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!1 &2616735639487157508
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8560863437591658460}
-  - component: {fileID: 5237370790057891928}
-  m_Layer: 0
-  m_Name: StartingResources
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8560863437591658460
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2616735639487157508}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4728817307344682248}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5237370790057891928
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2616735639487157508}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d4583fd5bca2754d882215d1b1f36e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Aster.StartingResources
-  amounts:
-  - resource: Dollar
-    count: 50
-  - resource: Fertilizer
-    count: 50
-  - resource: METH
-    count: 50
-  - resource: Water
-    count: 50
-  - resource: Acetone
-    count: 50
-  - resource: Paint Thinner
-    count: 50
-  - resource: Medicine
-    count: 50
-  - resource: Salt
-    count: 50
-  - resource: Batteries
-    count: 50
-  - resource: Dye
-    count: 50
 --- !u!1 &2791152731213816913
 GameObject:
   m_ObjectHideFlags: 0
@@ -2430,7 +2311,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8560863437591658460}
   - {fileID: 8396755811404445884}
   - {fileID: 6078550091801270454}
   m_Father: {fileID: 0}
@@ -3607,59 +3487,6 @@ MonoBehaviour:
       m_Calls: []
   revealTitle: Upgraded kitchen!
   revealBody: You can now make more METH in less time!
---- !u!1 &3931007034915428843
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 892185216035770370}
-  - component: {fileID: 4651233578892702960}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &892185216035770370
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3931007034915428843}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 32.48943, y: 0, z: 24.213099}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5831918172514025620}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &4651233578892702960
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3931007034915428843}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 50, y: 50, z: 3}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4097014908874300229
 GameObject:
   m_ObjectHideFlags: 0
@@ -4254,59 +4081,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 2506690006736469769}
   m_maskType: 0
---- !u!1 &4451167886114800386
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8263903798019419316}
-  - component: {fileID: 8244833148943016588}
-  m_Layer: 0
-  m_Name: GameObject (3)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8263903798019419316
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4451167886114800386}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 5.9894295, y: 0, z: 49.8131}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5831918172514025620}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!65 &8244833148943016588
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4451167886114800386}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 50, y: 50, z: 3}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4646369416215840350
 GameObject:
   m_ObjectHideFlags: 0
@@ -5167,41 +4941,6 @@ MonoBehaviour:
   m_StartingInteractionStrengthFilters: []
   m_AutoFindParentInteractableInHierarchy: 0
   m_ParentInteractableObject: {fileID: 0}
---- !u!1 &6518811395692275109
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5831918172514025620}
-  m_Layer: 0
-  m_Name: Walls
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5831918172514025620
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6518811395692275109}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -32.48943, y: 0, z: -49.8131}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 892185216035770370}
-  - {fileID: 2126946292515449366}
-  - {fileID: 5069219948786984356}
-  - {fileID: 8263903798019419316}
-  m_Father: {fileID: 8396755811404445884}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6679072168644058390
 GameObject:
   m_ObjectHideFlags: 0
@@ -11572,59 +11311,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!1 &8379470060752613332
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2126946292515449366}
-  - component: {fileID: 8617661098033730740}
-  m_Layer: 0
-  m_Name: GameObject (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2126946292515449366
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8379470060752613332}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 32.48943, y: 0, z: 76.5131}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5831918172514025620}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &8617661098033730740
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8379470060752613332}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 50, y: 50, z: 3}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8746192171641649859
 GameObject:
   m_ObjectHideFlags: 0
@@ -17694,6 +17380,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6088193574663153598, guid: 08a4a5bea5e866b4a8da558b91997679, type: 3}
+      propertyPath: duration
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6088193574663153598, guid: 08a4a5bea5e866b4a8da558b91997679, type: 3}
+      propertyPath: showDistance
+      value: 3.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6883406919135723493, guid: 08a4a5bea5e866b4a8da558b91997679, type: 3}
       propertyPath: resourceName
       value: Dye
@@ -20302,7 +19996,7 @@ MonoBehaviour:
   message: Sell METH to earn more gold
   id: shippingbox
   triggerMode: 0
-  showDistance: 1.5
+  showDistance: 3
   hideAfterSeconds: 6
   offset: {x: 0, y: 0.4, z: 0}
   characterSize: 0.012
@@ -20358,6 +20052,14 @@ PrefabInstance:
     - target: {fileID: 5213657449091790428, guid: 08a4a5bea5e866b4a8da558b91997679, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6088193574663153598, guid: 08a4a5bea5e866b4a8da558b91997679, type: 3}
+      propertyPath: duration
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6088193574663153598, guid: 08a4a5bea5e866b4a8da558b91997679, type: 3}
+      propertyPath: showDistance
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 8272025823817237010, guid: 08a4a5bea5e866b4a8da558b91997679, type: 3}
       propertyPath: m_LocalPosition.x
