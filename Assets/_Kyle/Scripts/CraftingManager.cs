@@ -28,6 +28,7 @@ namespace Kyle
     {
         private ErrorCatchingHint error;
         [SerializeField] private List<CraftingRecipe> availableRecipes;
+        [SerializeField] AudioClip craftSound;
 
         [Header("Socket References")]
         [SerializeField] private XRSocketInteractor[] craftingSockets;
@@ -102,6 +103,8 @@ namespace Kyle
             {
                 ResourceManager.Instance.Add(res.resourceName, res.amount);
             }
+
+            AudioSource.PlayClipAtPoint(craftSound, transform.position);
         }
 
         private void ConsumeItems(int amountNeeded, string targetResourceName)
