@@ -237,8 +237,8 @@ MonoBehaviour:
     description: Use the sink for the first time
     requiredAchievementsNames: []
     achieved: 0
-  - name: 
-    description: Upgrade your kitchen
+  - name: Farming Tycoon
+    description: Complete the Champaign Cornfield!
     requiredAchievementsNames: []
     achieved: 0
   onAchieved:

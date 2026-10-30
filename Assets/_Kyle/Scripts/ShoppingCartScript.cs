@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
-using Shared; // Needed for ResourceManager
+using Shared;
+using TMPro;
 
 namespace Kyle
 {
@@ -16,6 +17,10 @@ namespace Kyle
         [SerializeField] private string currencyKey = "Dollar";
         [SerializeField] private List<ItemPrice> priceList;
         [SerializeField] AudioClip sellSound;
+        [SerializeField] TextMeshProUGUI sellText;
+        [SerializeField] ErrorCatchingHint errorCatchingHint;
+
+        public int sellNum = 1;
 
         private Dictionary<string, int> prices = new Dictionary<string, int>();
 
@@ -38,14 +43,23 @@ namespace Kyle
                 {
                     if (ResourceManager.Instance != null)
                     {
-                        ResourceManager.Instance.Add(currencyKey, price);
-                    }
+                        if (ResourceManager.Instance.TrySpend(item.ResourceKey, sellNum))
+                        {
+                            ResourceManager.Instance.Add(currencyKey, price * sellNum);
+                            Destroy(item.gameObject);
 
-                    Destroy(item.gameObject);
-
-                    if (sellSound != null)
-                    {
-                        AudioSource.PlayClipAtPoint(sellSound, transform.position);
+                            if (sellSound != null)
+                            {
+                                AudioSource.PlayClipAtPoint(sellSound, transform.position);
+                            }
+                        }
+                        else
+                        {
+                            int numItems = ResourceManager.Instance.Get(item.ResourceKey);
+                            ResourceManager.Instance.TrySpend(item.ResourceKey, numItems);
+                            errorCatchingHint.message = $"Not enough {item.ResourceKey}! Spent {numItems} instead.";
+                            errorCatchingHint.ShowError();
+                        }
                     }
                 }
                 else
@@ -53,6 +67,21 @@ namespace Kyle
                     Debug.Log($"cannot sell {item.ResourceName}");
                 }
             }
+        }
+
+        public void IncreaseNum()
+        {
+            sellNum++;
+            sellText.text = sellNum.ToString();
+        }
+
+        public void DecreaseNum()
+        {
+            if (sellNum > 1)
+            {
+                sellNum--;
+            }
+            sellText.text = sellNum.ToString();
         }
     }
 }

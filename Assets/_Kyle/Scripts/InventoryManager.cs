@@ -34,7 +34,7 @@ namespace Kyle
         [SerializeField] private Transform leftoverSpawn;
 
         // bottom shelf
-        [SerializeField] TextMeshProUGUI numChickenFeed;
+        //[SerializeField] TextMeshProUGUI numChickenFeed;
 
         public static InventoryManager Instance { get; private set; }
 
@@ -157,7 +157,7 @@ namespace Kyle
             numChickenPoop.text = ResourceManager.Instance.Get("Chicken Poop").ToString();
             numBurntWaffle.text = ResourceManager.Instance.Get("Burnt Waffle").ToString();
             numLeftover.text = ResourceManager.Instance.Get("Leftover").ToString();
-            numChickenFeed.text = ResourceManager.Instance.Get("Chicken Feed").ToString();
+            //numChickenFeed.text = ResourceManager.Instance.Get("Chicken Feed").ToString();
         }
     }
 }
