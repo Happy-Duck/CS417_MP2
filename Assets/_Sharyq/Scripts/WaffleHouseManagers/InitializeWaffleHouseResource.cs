@@ -12,7 +12,8 @@ namespace Sharyq {
         void Start() {
             ResourceManager.Instance.Add("Dollar", 1000);
             ResourceManager.Instance.Add("Batter", 0);
-            ResourceManager.Instance.Add("Waffle", 0);
+            // CHANGE THIS LATER ALYSSA
+            //ResourceManager.Instance.Add("Waffle", 10);
             ResourceManager.Instance.Add("Apple Waffle", 0);
             ResourceManager.Instance.Add("Banana Waffle", 0);
             ResourceManager.Instance.Add("Cherry Waffle", 0);

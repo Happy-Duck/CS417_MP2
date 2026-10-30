@@ -16,7 +16,9 @@ namespace Kyle
         // Update is called once per frame
         void Update()
         {
-            if (!levelCompleted && ResourceManager.Instance.Get("PlaneUpgrade") >= 1 && ResourceManager.Instance.Get("TractorUpgrade") >= 1)
+            // change later to !levelCompleted && ResourceManager.Instance.Get("PlaneUpgrade") >= 1 && ResourceManager.Instance.Get("TractorUpgrade") >= 1
+            // if we fix plane
+            if (ResourceManager.Instance.Get("TractorUpgrade") >= 1)
             {
                 levelCompleted = true;
                 ProgressionManager.CompleteArea("Champaign Cornfield");
