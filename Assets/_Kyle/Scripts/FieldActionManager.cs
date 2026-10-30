@@ -81,11 +81,13 @@ namespace Kyle
             nextWeedSpawnInterval = Random.Range(20f, 60f);
 
             // DEBUG STUFF!!!!!!!!
+            /*
             ResourceManager.Instance.Add("Chicken Poop", 10);
             ResourceManager.Instance.Add("Burnt Waffle", 10);
             ResourceManager.Instance.Add("Leftover", 10);
             ResourceManager.Instance.Add("HarvestedWheat", 10);
             ResourceManager.Instance.Add("Dollar", 300);
+             */
         }
 
         private void Update()
