@@ -594,6 +594,7 @@ GameObject:
   - component: {fileID: 2384741928019342349}
   - component: {fileID: -1753411022612295313}
   - component: {fileID: -6598890248526725844}
+  - component: {fileID: 6883599885684440812}
   m_Layer: 0
   m_Name: rawBird
   m_TagString: Untagged
@@ -961,3 +962,16 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6883599885684440812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7677049683471479743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e9dfaae4c30557488dbccdbfcbecc3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OutlineOnHover
+  outlineMaterial: {fileID: 2100000, guid: 728ab9721e9b57d458b6dd81ce8eb8b4, type: 2}

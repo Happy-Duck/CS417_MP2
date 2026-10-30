@@ -129,6 +129,7 @@ GameObject:
   - component: {fileID: 6547047758951922901}
   - component: {fileID: 1983831574563168092}
   - component: {fileID: 6826355119718257645}
+  - component: {fileID: 5111229932078442123}
   m_Layer: 0
   m_Name: FeedHopper
   m_TagString: Untagged
@@ -500,3 +501,16 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3b8266fcc185c134c81646f7e48152fe, type: 3}
   m_PrefabInstance: {fileID: 6384172873032730345}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5111229932078442123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4306560877232865068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e9dfaae4c30557488dbccdbfcbecc3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OutlineOnHover
+  outlineMaterial: {fileID: 2100000, guid: 728ab9721e9b57d458b6dd81ce8eb8b4, type: 2}

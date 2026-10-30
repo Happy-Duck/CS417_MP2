@@ -57,6 +57,8 @@ namespace Kyle
         [SerializeField] private ErrorCatchingHint plantError;
         [SerializeField] private ErrorCatchingHint notEnoughResourceError;
 
+        [SerializeField] private AudioClip collectSound;
+
         private float weedSpawnTimer = 0f;
         private float nextWeedSpawnInterval = 20f;
 
@@ -79,10 +81,13 @@ namespace Kyle
             nextWeedSpawnInterval = Random.Range(20f, 60f);
 
             // DEBUG STUFF!!!!!!!!
+            /*
             ResourceManager.Instance.Add("Chicken Poop", 10);
             ResourceManager.Instance.Add("Burnt Waffle", 10);
             ResourceManager.Instance.Add("Leftover", 10);
             ResourceManager.Instance.Add("HarvestedWheat", 10);
+            ResourceManager.Instance.Add("Dollar", 300);
+             */
         }
 
         private void Update()
@@ -517,6 +522,57 @@ namespace Kyle
                         }
                     }
                 }
+            }
+        }
+
+        public void AutoCollectCell(Vector2Int cell)
+        {
+            if (activeCrops.TryGetValue(cell, out CropData crop))
+            {
+                bool harvested = false;
+
+                if (crop.state == CellState.CornReadyForHarvest)
+                {
+                    ResourceManager.Instance.Add("HarvestedCorn", 3);
+                    harvested = true;
+                }
+                else if (crop.state == CellState.WheatReadyForHarvest)
+                {
+                    ResourceManager.Instance.Add("HarvestedWheat", 3);
+                    harvested = true;
+                }
+
+                if (harvested)
+                {
+                    crop.state = CellState.Empty;
+                    crop.growth = 0f;
+                    InstancedCropRenderer.Instance.RebuildMatricesFromState(activeCrops);
+                    InventoryManager.Instance?.UpdateNums();
+
+                    AudioSource.PlayClipAtPoint(collectSound, transform.position, 1.0f);
+                }
+            }
+        }
+
+        public void AutoKillAllWeeds()
+        {
+            bool weedsCleared = false;
+
+            foreach (var kvp in activeCrops)
+            {
+                if (kvp.Value.state == CellState.Weedy)
+                {
+                    kvp.Value.state = CellState.Empty;
+                    ResourceManager.Instance.Add("Weeds", 4);
+                    weedsCleared = true;
+                }
+            }
+
+            if (weedsCleared)
+            {
+                InstancedCropRenderer.Instance.RebuildMatricesFromState(activeCrops);
+                InventoryManager.Instance?.UpdateNums();
+                AudioSource.PlayClipAtPoint(collectSound, transform.position, 1.0f);
             }
         }
     }
