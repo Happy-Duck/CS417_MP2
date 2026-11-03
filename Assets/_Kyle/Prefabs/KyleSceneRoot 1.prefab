@@ -44507,7 +44507,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8456789047925659341}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 772167022754113529}
+        m_TargetAssemblyTypeName: Kyle.CraftingManager, Assembly-CSharp
+        m_MethodName: IncreaseNum
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6977062473038981100
 GameObject:
   m_ObjectHideFlags: 0
@@ -47009,6 +47021,8 @@ Transform:
   - {fileID: 1933065046330847478}
   - {fileID: 2409012926694180444}
   - {fileID: 2325464876910969950}
+  - {fileID: 5984477532978541793}
+  - {fileID: 4737478681711332007}
   - {fileID: 7099374103424376868}
   - {fileID: 7088657720964338743}
   - {fileID: 6809732342341204699}
@@ -53223,11 +53237,13 @@ MonoBehaviour:
     - resourceName: Fertilizer
       amount: 1
   craftSound: {fileID: 8300000, guid: 6d77dc33ee7c629489b29a31178b471b, type: 3}
+  craftText: {fileID: 6002422212549839322}
   craftingSockets:
   - {fileID: 8004284940321819033}
   - {fileID: 6567736739763898068}
   - {fileID: 571941424300960873}
   - {fileID: 6534644163115549667}
+  craftNum: 1
 --- !u!114 &313075585907151812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53777,7 +53793,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1701113143089498649}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 772167022754113529}
+        m_TargetAssemblyTypeName: Kyle.CraftingManager, Assembly-CSharp
+        m_MethodName: DecreaseNum
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8361902676337947544
 GameObject:
   m_ObjectHideFlags: 0
@@ -65522,6 +65550,84 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 468672, guid: 9de81cb010fadd74c85f793bbb3f6830, type: 3}
   m_PrefabInstance: {fileID: 1371753194990965801}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1971585147537439588
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3443970820542466813}
+    m_Modifications:
+    - target: {fileID: 6548970514495599043, guid: 04f3ea4bca81de34faa713168c42acbb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 6548970514495599043, guid: 04f3ea4bca81de34faa713168c42acbb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 6548970514495599043, guid: 04f3ea4bca81de34faa713168c42acbb, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 6548970514495599043, guid: 04f3ea4bca81de34faa713168c42acbb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.010659999
+      objectReference: {fileID: 0}
+    - target: {fileID: 6548970514495599043, guid: 04f3ea4bca81de34faa713168c42acbb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.00093000056
+      objectReference: {fileID: 0}
+    - target: {fileID: 6548970514495599043, guid: 04f3ea4bca81de34faa713168c42acbb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.01133
+      objectReference: {fileID: 0}
+    - target: {fileID: 6548970514495599043, guid: 04f3ea4bca81de34faa713168c42acbb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.50008726
+      objectReference: {fileID: 0}
+    - target: {fileID: 6548970514495599043, guid: 04f3ea4bca81de34faa713168c42acbb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.49991274
+      objectReference: {fileID: 0}
+    - target: {fileID: 6548970514495599043, guid: 04f3ea4bca81de34faa713168c42acbb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.50008726
+      objectReference: {fileID: 0}
+    - target: {fileID: 6548970514495599043, guid: 04f3ea4bca81de34faa713168c42acbb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.49991274
+      objectReference: {fileID: 0}
+    - target: {fileID: 6548970514495599043, guid: 04f3ea4bca81de34faa713168c42acbb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6548970514495599043, guid: 04f3ea4bca81de34faa713168c42acbb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6548970514495599043, guid: 04f3ea4bca81de34faa713168c42acbb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6720767181844729181, guid: 04f3ea4bca81de34faa713168c42acbb, type: 3}
+      propertyPath: m_Name
+      value: SprinklerAutomation
+      objectReference: {fileID: 0}
+    - target: {fileID: 6720767181844729181, guid: 04f3ea4bca81de34faa713168c42acbb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 04f3ea4bca81de34faa713168c42acbb, type: 3}
+--- !u!4 &4737478681711332007 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6548970514495599043, guid: 04f3ea4bca81de34faa713168c42acbb, type: 3}
+  m_PrefabInstance: {fileID: 1971585147537439588}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2031488183504709122
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66372,7 +66478,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Kyle.ErrorCatchingHint
   message: You don't have enough money to buy this item!
   hideAfterSeconds: 3
-  offset: {x: 0, y: 0.6, z: 0}
+  offset: {x: 0, y: 0.4, z: 0}
   characterSize: 0.012
 --- !u!114 &3738459014486451740
 MonoBehaviour:
@@ -66388,23 +66494,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Kyle.SpawnableStoreItem
   costResource: Dollar
   cost: 15
-  successSound: {fileID: 0}
-  errorCatchingHint: {fileID: 0}
-  requiredTrackerKey: test
+  successSound: {fileID: 8300000, guid: 1f92e979691357049af55e4871dfd060, type: 3}
+  errorCatchingHint: {fileID: 9209519917968232702}
+  requiredTrackerKey: SeedUnlock
   requiredTrackerAmount: 1
-  progressMessage: Coming soon
+  progressMessage: Unlock previous items first!
   prerequisiteTrackerKey: 
   prerequisiteAmount: 0
-  waitlistMessage: Unlock previous items first!
-  unlockGrantedKey: 
+  waitlistMessage: 
+  unlockGrantedKey: PlaceableUnlock
   lockModel: {fileID: 9092046865648095002}
   lockedBlackMaterial: {fileID: 2100000, guid: 6881d2ab6df59b240bea2a927ab2101f, type: 2}
   floatingCanvas: {fileID: 3349758596052476258}
   statusText: {fileID: 2958841480432074900}
   progressSlider: {fileID: 0}
-  prefabToSpawn: {fileID: 0}
-  spawnPoint: {fileID: 0}
-  spawnPopupMessage: Grab the item and place it on the table!
+  prefabToSpawn: {fileID: 6720767181844729181, guid: 04f3ea4bca81de34faa713168c42acbb, type: 3}
+  spawnPoint: {fileID: 4381312372800425694}
+  spawnPopupMessage: Place the item on an empty cell!
 --- !u!1001 &2702828945180807692
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66865,7 +66971,7 @@ PrefabInstance:
       addedObject: {fileID: 7104288971043151440}
     - targetCorrespondingSourceObject: {fileID: 8581887878169473, guid: f04a2a4c8639fa1499553286349bf7ff, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3296894586797924954}
+      addedObject: {fileID: 1035087521462865447}
     - targetCorrespondingSourceObject: {fileID: 8581887878169473, guid: f04a2a4c8639fa1499553286349bf7ff, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7908254844997984792}
@@ -66875,6 +66981,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8581887878169473, guid: f04a2a4c8639fa1499553286349bf7ff, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5351971671510705043}
+    - targetCorrespondingSourceObject: {fileID: 8581887878169473, guid: f04a2a4c8639fa1499553286349bf7ff, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3962371245148424930}
   m_SourcePrefab: {fileID: 100100000, guid: f04a2a4c8639fa1499553286349bf7ff, type: 3}
 --- !u!4 &2325464876910969950 stripped
 Transform:
@@ -66913,7 +67022,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3296894586797924954
+--- !u!114 &1035087521462865447
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -66922,11 +67031,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3102528589981900516}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a35f6cfbfba9b548aaa00d52cfe8a50, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable
+  m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactables.XRSimpleInteractable
   m_InteractionManager: {fileID: 0}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 7908254844997984792}
   m_InteractionLayers:
     m_Bits: 1
   m_DistanceCalculationMode: 1
@@ -66987,62 +67097,6 @@ MonoBehaviour:
   m_StartingInteractionStrengthFilters: []
   m_AutoFindParentInteractableInHierarchy: 0
   m_ParentInteractableObject: {fileID: 0}
-  m_AttachTransform: {fileID: 0}
-  m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 0
-  m_MatchAttachPosition: 1
-  m_MatchAttachRotation: 1
-  m_SnapToColliderVolume: 1
-  m_ReinitializeDynamicAttachEverySingleGrab: 1
-  m_AttachEaseInTime: 0.15
-  m_MovementType: 2
-  m_PredictedVisualsTransform: {fileID: 0}
-  m_VelocityDamping: 1
-  m_VelocityScale: 1
-  m_AngularVelocityDamping: 1
-  m_AngularVelocityScale: 1
-  m_TrackPosition: 1
-  m_SmoothPosition: 0
-  m_SmoothPositionAmount: 8
-  m_TightenPosition: 0.1
-  m_TrackRotation: 1
-  m_SmoothRotation: 0
-  m_SmoothRotationAmount: 8
-  m_TightenRotation: 0.1
-  m_TrackScale: 1
-  m_SmoothScale: 0
-  m_SmoothScaleAmount: 8
-  m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
-  m_ThrowSmoothingDuration: 0.25
-  m_ThrowSmoothingCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  m_ThrowVelocityScale: 1.5
-  m_ThrowAngularVelocityScale: 1
-  m_ForceGravityOnDetach: 0
-  m_UnparentTransformOnGrab: 1
-  m_RetainTransformParent: 1
-  m_StartingSingleGrabTransformers: []
-  m_StartingMultipleGrabTransformers: []
-  m_AddDefaultGrabTransformers: 1
-  m_FarAttachMode: 0
-  m_LimitLinearVelocity: 0
-  m_LimitAngularVelocity: 0
-  m_MaxLinearVelocityDelta: 10
-  m_MaxAngularVelocityDelta: 20
 --- !u!65 &7908254844997984792
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -67078,23 +67132,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Kyle.SpawnableStoreItem
   costResource: Dollar
   cost: 12
-  successSound: {fileID: 0}
-  errorCatchingHint: {fileID: 0}
-  requiredTrackerKey: test
-  requiredTrackerAmount: 5
-  progressMessage: Coming Soon
+  successSound: {fileID: 8300000, guid: 1f92e979691357049af55e4871dfd060, type: 3}
+  errorCatchingHint: {fileID: 3962371245148424930}
+  requiredTrackerKey: SeedUnlock
+  requiredTrackerAmount: 1
+  progressMessage: Unlock previous items first!
   prerequisiteTrackerKey: 
   prerequisiteAmount: 0
-  waitlistMessage: Unlock previous items first!
-  unlockGrantedKey: 
+  waitlistMessage: 
+  unlockGrantedKey: PlaceableUnlock
   lockModel: {fileID: 1267887292638718540}
   lockedBlackMaterial: {fileID: 2100000, guid: 6881d2ab6df59b240bea2a927ab2101f, type: 2}
   floatingCanvas: {fileID: 7042197531219472847}
   statusText: {fileID: 1993613317464132671}
   progressSlider: {fileID: 0}
-  prefabToSpawn: {fileID: 0}
-  spawnPoint: {fileID: 0}
-  spawnPopupMessage: Grab the item and place it on the table!
+  prefabToSpawn: {fileID: 7919563776726367154, guid: 8e7abf6be0c292f4fb7f5fc825a54b64, type: 3}
+  spawnPoint: {fileID: 2325464876910969950}
+  spawnPopupMessage: Place the item on an empty cell!
 --- !u!114 &5351971671510705043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67108,6 +67162,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OutlineOnHover
   outlineMaterial: {fileID: 2100000, guid: 728ab9721e9b57d458b6dd81ce8eb8b4, type: 2}
+--- !u!114 &3962371245148424930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3102528589981900516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1457c6d46a84e4f4da3716ef97513860, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Kyle.ErrorCatchingHint
+  message: You don't have enough money to buy this item!
+  hideAfterSeconds: 3
+  offset: {x: 0, y: 0.4, z: 0}
+  characterSize: 0.012
 --- !u!1001 &3132787764271880463
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69761,7 +69831,7 @@ MonoBehaviour:
   cost: 50
   successSound: {fileID: 8300000, guid: 1f92e979691357049af55e4871dfd060, type: 3}
   errorCatchingHint: {fileID: 3350650374246837724}
-  requiredTrackerKey: SeedUnlock
+  requiredTrackerKey: PlaceableUnlock
   requiredTrackerAmount: 1
   progressMessage: Unlock previous items first!
   prerequisiteTrackerKey: 
@@ -70281,7 +70351,7 @@ MonoBehaviour:
   cost: 75
   successSound: {fileID: 8300000, guid: 1f92e979691357049af55e4871dfd060, type: 3}
   errorCatchingHint: {fileID: 5902257111060180506}
-  requiredTrackerKey: SeedUnlock
+  requiredTrackerKey: PlaceableUnlock
   requiredTrackerAmount: 1
   progressMessage: Unlock previous items first!
   prerequisiteTrackerKey: 
@@ -70526,6 +70596,72 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6313459005538390227, guid: e5a32a06278fca148ad56724e052aba3, type: 3}
   m_PrefabInstance: {fileID: 7071330873009512313}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7084946019698291511
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3443970820542466813}
+    m_Modifications:
+    - target: {fileID: 3557819816671889366, guid: 8e7abf6be0c292f4fb7f5fc825a54b64, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.00041
+      objectReference: {fileID: 0}
+    - target: {fileID: 3557819816671889366, guid: 8e7abf6be0c292f4fb7f5fc825a54b64, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.00589
+      objectReference: {fileID: 0}
+    - target: {fileID: 3557819816671889366, guid: 8e7abf6be0c292f4fb7f5fc825a54b64, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3557819816671889366, guid: 8e7abf6be0c292f4fb7f5fc825a54b64, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3557819816671889366, guid: 8e7abf6be0c292f4fb7f5fc825a54b64, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3557819816671889366, guid: 8e7abf6be0c292f4fb7f5fc825a54b64, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3557819816671889366, guid: 8e7abf6be0c292f4fb7f5fc825a54b64, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3557819816671889366, guid: 8e7abf6be0c292f4fb7f5fc825a54b64, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3557819816671889366, guid: 8e7abf6be0c292f4fb7f5fc825a54b64, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3557819816671889366, guid: 8e7abf6be0c292f4fb7f5fc825a54b64, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7919563776726367154, guid: 8e7abf6be0c292f4fb7f5fc825a54b64, type: 3}
+      propertyPath: m_Name
+      value: ShroomAutomation
+      objectReference: {fileID: 0}
+    - target: {fileID: 7919563776726367154, guid: 8e7abf6be0c292f4fb7f5fc825a54b64, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8e7abf6be0c292f4fb7f5fc825a54b64, type: 3}
+--- !u!4 &5984477532978541793 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3557819816671889366, guid: 8e7abf6be0c292f4fb7f5fc825a54b64, type: 3}
+  m_PrefabInstance: {fileID: 7084946019698291511}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7133935854735904569
 PrefabInstance:

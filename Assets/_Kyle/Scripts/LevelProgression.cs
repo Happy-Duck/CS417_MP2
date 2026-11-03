@@ -16,6 +16,11 @@ namespace Kyle
         // Update is called once per frame
         void Update()
         {
+<<<<<<< Updated upstream
+=======
+            // change later to !levelCompleted && ResourceManager.Instance.Get("PlaneUpgrade") >= 1 && ResourceManager.Instance.Get("TractorUpgrade") >= 1
+            // if we fix plane
+>>>>>>> Stashed changes
             if (!levelCompleted && ResourceManager.Instance.Get("PlaneUpgrade") >= 1 && ResourceManager.Instance.Get("TractorUpgrade") >= 1)
             {
                 levelCompleted = true;

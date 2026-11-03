@@ -203,7 +203,7 @@ namespace Kyle
                     ResourceManager.Instance.Add(unlockGrantedKey, 1);
                 }
 
-                OnPurchaseSuccess();
+                OnPurchaseSuccess(args);
 
                 if (successSound != null)
                 {
@@ -233,6 +233,8 @@ namespace Kyle
             lockModel.transform.localPosition = originalPos;
         }
 
-        protected abstract void OnPurchaseSuccess();
+        //protected abstract void OnPurchaseSuccess();
+
+        protected abstract void OnPurchaseSuccess(SelectEnterEventArgs args);
     }
 }

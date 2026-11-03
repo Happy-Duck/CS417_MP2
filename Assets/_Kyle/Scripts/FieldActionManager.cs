@@ -84,6 +84,7 @@ namespace Kyle
             ResourceManager.Instance.Add("Chicken Poop", 10);
             ResourceManager.Instance.Add("Burnt Waffle", 10);
             ResourceManager.Instance.Add("Leftover", 10);
+            */
             ResourceManager.Instance.Add("HarvestedWheat", 10);
             ResourceManager.Instance.Add("Dollar", 300);
         }
@@ -571,6 +572,39 @@ namespace Kyle
                 InstancedCropRenderer.Instance.RebuildMatricesFromState(activeCrops);
                 InventoryManager.Instance?.UpdateNums();
                 AudioSource.PlayClipAtPoint(collectSound, transform.position, 1.0f);
+            }
+        }
+
+        public void AutoWaterCell(Vector2Int cell)
+        {
+            CropData crop = GetCropData(cell);
+
+            if (crop.state != CellState.Empty)
+            {
+                crop.water = 100f;
+                crop.lastWateredTime = Time.time;
+
+                if (!activeCrops.ContainsKey(cell)) activeCrops.Add(cell, crop);
+            }
+        }
+        public void AutoFertilizeCell(Vector2Int cell)
+        {
+            CropData crop = GetCropData(cell);
+
+            if (crop.fertilization <= 0f)
+            {
+                if (ResourceManager.Instance.TrySpend("Fertilizer", 1))
+                {
+                    crop.ground = GroundState.Soil;
+                    crop.fertilization = 100f;
+
+                    if (!activeCrops.ContainsKey(cell))
+                    {
+                        activeCrops.Add(cell, crop);
+                    }
+
+                    InstancedCropRenderer.Instance.RebuildGroundMatrices(activeCrops);
+                }
             }
         }
     }

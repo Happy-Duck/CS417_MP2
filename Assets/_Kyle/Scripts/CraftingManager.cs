@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 using Shared;
 using System.Collections.Generic;
+using TMPro;
 
 namespace Kyle
 {
@@ -29,9 +30,12 @@ namespace Kyle
         private ErrorCatchingHint error;
         [SerializeField] private List<CraftingRecipe> availableRecipes;
         [SerializeField] AudioClip craftSound;
+        [SerializeField] TextMeshProUGUI craftText;
 
         [Header("Socket References")]
         [SerializeField] private XRSocketInteractor[] craftingSockets;
+
+        public int craftNum = 1;
 
         private void Start()
         {
@@ -59,75 +63,122 @@ namespace Kyle
                 }
             }
 
-            // looking for  recipe
+            CraftingRecipe matchedRecipe = null;
             foreach (CraftingRecipe recipe in availableRecipes)
             {
-                if (CanCraftRecipe(recipe, currentItems, totalItemsInSockets))
+                if (IsRecipeMatch(recipe, currentItems, totalItemsInSockets))
                 {
-                    ExecuteRecipe(recipe);
-                    return;
+                    matchedRecipe = recipe;
+                    break;
                 }
             }
 
-            error.ShowError();
+            if (matchedRecipe == null)
+            {
+                error.message = "Items in sockets don't match any base recipe!";
+                error.ShowError();
+                return;
+            }
+
+            int actualCrafts = craftNum - 1;
+            if (actualCrafts > 0)
+            {
+                foreach (ResourceAmount req in matchedRecipe.ingredients)
+                {
+                    int availableInInventory = ResourceManager.Instance.Get(req.resourceName);
+                    int maxBatchesForThisIngredient = availableInInventory / req.amount;
+
+                    if (maxBatchesForThisIngredient < actualCrafts)
+                    {
+                        actualCrafts = maxBatchesForThisIngredient;
+                    }
+                }
+            }
+
+            int totalActualCrafts = actualCrafts + 1;
+            if (totalActualCrafts > 0)
+            {
+                ExecuteRecipe(matchedRecipe, totalActualCrafts);
+
+                if (totalActualCrafts < craftNum)
+                {
+                    error.message = $"Not enough resources for {craftNum}! Crafted {actualCrafts} instead.";
+                    error.ShowError();
+                }
+            }
+            else
+            {
+                error.message = "You don't have enough resources in your inventory!";
+                error.ShowError();
+            }
         }
 
-        private bool CanCraftRecipe(CraftingRecipe recipe, Dictionary<string, int> currentItems, int totalItems)
+        private bool IsRecipeMatch(CraftingRecipe recipe, Dictionary<string, int> socketItems, int totalSocketItems)
         {
             int totalRecipeItems = 0;
-
             foreach (ResourceAmount req in recipe.ingredients)
             {
-                if (!currentItems.ContainsKey(req.resourceName) || currentItems[req.resourceName] < req.amount)
+                if (!socketItems.ContainsKey(req.resourceName) || socketItems[req.resourceName] != req.amount)
                 {
                     return false;
                 }
                 totalRecipeItems += req.amount;
             }
 
-            if (totalItems != totalRecipeItems)
-            {
-                return false;
-            }
-
-            return true;
+            return totalSocketItems == totalRecipeItems;
         }
-        private void ExecuteRecipe(CraftingRecipe recipe)
+
+        private void ExecuteRecipe(CraftingRecipe recipe, int amountToCraft)
         {
+            int numToDeduct = amountToCraft - 1;
+
             foreach (ResourceAmount req in recipe.ingredients)
             {
-                ConsumeItems(req.amount, req.resourceName);
+                ResourceManager.Instance.TrySpend(req.resourceName, req.amount * numToDeduct);
+            }
+
+            foreach (var socket in craftingSockets)
+            {
+                if (socket.interactablesSelected.Count > 0)
+                {
+                    GameObject itemObj = socket.interactablesSelected[0].transform.gameObject;
+                    InventoryItem tracker = itemObj.GetComponent<InventoryItem>();
+
+                    if (tracker != null)
+                    {
+                        tracker.MarkAsCrafted();
+                    }
+
+                    socket.enabled = false;
+                    socket.enabled = true;
+                    Destroy(itemObj);
+                }
             }
 
             foreach (ResourceAmount res in recipe.results)
             {
-                ResourceManager.Instance.Add(res.resourceName, res.amount);
+                ResourceManager.Instance.Add(res.resourceName, res.amount * amountToCraft);
             }
 
-            AudioSource.PlayClipAtPoint(craftSound, transform.position);
+            if (craftSound != null)
+            {
+                AudioSource.PlayClipAtPoint(craftSound, transform.position);
+            }
         }
 
-        private void ConsumeItems(int amountNeeded, string targetResourceName)
+        public void IncreaseNum()
         {
-            int destroyed = 0;
-            foreach (var socket in craftingSockets)
+            craftNum++;
+            craftText.text = craftNum.ToString();
+        }
+
+        public void DecreaseNum()
+        {
+            if (craftNum > 1)
             {
-                if (socket.interactablesSelected.Count > 0 && destroyed < amountNeeded)
-                {
-                    GameObject item = socket.interactablesSelected[0].transform.gameObject;
-                    InventoryItem tracker = item.GetComponent<InventoryItem>();
-
-                    if (tracker != null && tracker.ResourceKey == targetResourceName)
-                    {
-                        tracker.MarkAsCrafted();
-
-                        socket.enabled = false;
-                        socket.enabled = true;
-                        Destroy(item);
-                        destroyed++;
-                    }
-                }
+                craftNum--;
             }
+            craftText.text = craftNum.ToString();
         }
     }
 }
