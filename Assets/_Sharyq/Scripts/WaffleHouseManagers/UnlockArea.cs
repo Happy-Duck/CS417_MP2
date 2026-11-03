@@ -7,7 +7,7 @@ namespace Sharyq
     public class UnlockArea : MonoBehaviour
     {
         [SerializeField]
-        private string unlockAreaName;
+        private List<string> neededAreas;
         [SerializeField]
         private List<GameObject> enableItems;
         [SerializeField]
@@ -20,10 +20,16 @@ namespace Sharyq
 
         public void Trigger(string areaName)
         {
-            if (areaName != unlockAreaName)
-                return;
-            enableItems.ForEach(item => item.SetActive(true));
-            disableItems.ForEach(item => item.SetActive(false));
+            if (neededAreas.Contains(areaName))
+            {
+                neededAreas.Remove(areaName);
+            }
+
+            if (neededAreas.Count == 0)
+            {
+                enableItems.ForEach(item => item.SetActive(true));
+                disableItems.ForEach(item => item.SetActive(false));
+            }
         }
     }
 }
