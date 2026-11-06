@@ -2,6 +2,7 @@ using UnityEngine.Events;
 using Shared;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 namespace Kyle
 {
@@ -20,7 +21,7 @@ namespace Kyle
             return ResourceManager.Instance != null && ResourceManager.Instance.Get(upgradeKey) >= 1;
         }
 
-        protected override void OnPurchaseSuccess()
+        protected override void OnPurchaseSuccess(SelectEnterEventArgs args)
         {
             ResourceManager.Instance.Add(upgradeKey, 1);
             onUpgradePurchased?.Invoke();
