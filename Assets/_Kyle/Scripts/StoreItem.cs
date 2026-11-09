@@ -42,6 +42,11 @@ namespace Kyle
         private Dictionary<Renderer, Material[]> originalMaterials = new Dictionary<Renderer, Material[]>();
         protected bool isUnlocked = false;
 
+        private Quaternion initialLockRotation;
+        private Coroutine currentShakeCoroutine;
+
+        public float shakeIntensity = 15f;
+
         private void Awake()
         {
             interactable = GetComponent<XRBaseInteractable>();
@@ -54,6 +59,11 @@ namespace Kyle
         }
         private void Start()
         {
+            if (lockModel != null)
+            {
+                initialLockRotation = lockModel.transform.localRotation;
+            }
+
             if (ResourceManager.Instance != null)
             {
                 ResourceManager.Instance.OnResourceChanged += HandleResourceChanged;
@@ -190,7 +200,13 @@ namespace Kyle
                 errorCatchingHint.message = "Item is still locked!";
                 errorCatchingHint.ShowError();
 
-                StartCoroutine(ShakeEffect());
+                //StartCoroutine(ShakeEffect());
+                if (currentShakeCoroutine != null)
+                {
+                    StopCoroutine(currentShakeCoroutine);
+                    lockModel.transform.localRotation = initialLockRotation;
+                }
+                currentShakeCoroutine = StartCoroutine(ShakeEffect());
                 return;
             }
 
@@ -219,18 +235,22 @@ namespace Kyle
 
         private System.Collections.IEnumerator ShakeEffect()
         {
-            Vector3 originalPos = lockModel.transform.localPosition;
             float duration = 0.2f;
             float elapsed = 0f;
 
             while (elapsed < duration)
             {
-                lockModel.transform.localPosition = originalPos + UnityEngine.Random.insideUnitSphere * 0.05f;
+                float xOffset = UnityEngine.Random.Range(-shakeIntensity, shakeIntensity);
+                float zOffset = UnityEngine.Random.Range(-shakeIntensity, shakeIntensity);
+
+                lockModel.transform.localRotation = initialLockRotation * Quaternion.Euler(xOffset, 0f, zOffset);
+
                 elapsed += Time.deltaTime;
                 yield return null;
             }
 
-            lockModel.transform.localPosition = originalPos;
+            lockModel.transform.localRotation = initialLockRotation;
+            currentShakeCoroutine = null;
         }
 
         //protected abstract void OnPurchaseSuccess();

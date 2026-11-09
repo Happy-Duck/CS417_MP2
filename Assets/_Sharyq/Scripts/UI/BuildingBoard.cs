@@ -31,10 +31,10 @@ namespace Sharyq
             builder.Clear();
             builder.Append("Building Stats\n");
             builder.Append("Rent Due in: ");
-            builder.Append((int)Mathf.Ceil(rentManager.TimeRemaining));
+            if (rentManager != null) builder.Append((int)Mathf.Ceil(rentManager.TimeRemaining));
             builder.Append("\n");
             builder.Append("Rent Amount: $");
-            builder.Append(rentManager.RentAmount);
+            if (rentManager != null) builder.Append(rentManager.RentAmount);
             displayText.text = builder.ToString();
         }
     }

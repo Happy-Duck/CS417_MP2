@@ -62,6 +62,11 @@ namespace Kyle
         private float weedSpawnTimer = 0f;
         private float nextWeedSpawnInterval = 20f;
 
+        private float visualRebuildTimer = 0f;
+        private const float VISUAL_REBUILD_INTERVAL = 0.2f;
+
+        private readonly HashSet<Vector2Int> affectedByWeeds = new HashSet<Vector2Int>();
+
         private void Awake()
         {
             if (Instance == null) Instance = this;
@@ -76,6 +81,7 @@ namespace Kyle
             InventoryManager.Instance.UpdateNums();
 
             SpawnInitialWeeds(5);
+            RecalculateWeedInfluence();
 
             InstancedCropRenderer.Instance.RebuildGroundMatrices(activeCrops);
             nextWeedSpawnInterval = Random.Range(20f, 60f);
@@ -93,6 +99,7 @@ namespace Kyle
         private void Update()
         {
             bool needsVisualUpdate = false;
+            bool forceVisualUpdate = false;
             bool needsGroundUpdate = false;
 
             // random weed spawner
@@ -105,21 +112,7 @@ namespace Kyle
                 needsVisualUpdate = true;
             }
 
-            HashSet<Vector2Int> affectedByWeeds = new HashSet<Vector2Int>();
-            foreach (var kvp in activeCrops)
-            {
-                if (kvp.Value.state == CellState.Weedy)
-                {
-                    Vector2Int weedCell = kvp.Key;
-                    for (int x = weedCell.x - 2; x <= weedCell.x + 2; x++)
-                    {
-                        for (int z = weedCell.y - 2; z <= weedCell.y + 2; z++)
-                        {
-                            affectedByWeeds.Add(new Vector2Int(x, z));
-                        }
-                    }
-                }
-            }
+            //HashSet<Vector2Int> affectedByWeeds = new HashSet<Vector2Int>();
 
             foreach (var kvp in activeCrops)
             {
@@ -177,18 +170,43 @@ namespace Kyle
                                 crop.state = CellState.CornReadyForHarvest;
                             else if (crop.state == CellState.WheatPlanted)
                                 crop.state = CellState.WheatReadyForHarvest;
+                            forceVisualUpdate = true;
                         }
                     }
                 }
             }
 
-            if (needsVisualUpdate)
+            if (needsVisualUpdate || forceVisualUpdate)
             {
-                InstancedCropRenderer.Instance.RebuildMatricesFromState(activeCrops);
+                visualRebuildTimer += Time.deltaTime;
+                if (visualRebuildTimer >= VISUAL_REBUILD_INTERVAL)
+                {
+                    InstancedCropRenderer.Instance.RebuildMatricesFromState(activeCrops);
+                    visualRebuildTimer = 0f;
+                }
             }
             if (needsGroundUpdate) 
             {
                 InstancedCropRenderer.Instance.RebuildGroundMatrices(activeCrops); 
+            }
+        }
+        private void RecalculateWeedInfluence()
+        {
+            affectedByWeeds.Clear();
+
+            foreach (var kvp in activeCrops)
+            {
+                if (kvp.Value.state == CellState.Weedy)
+                {
+                    Vector2Int weedCell = kvp.Key;
+                    for (int x = weedCell.x - 2; x <= weedCell.x + 2; x++)
+                    {
+                        for (int z = weedCell.y - 2; z <= weedCell.y + 2; z++)
+                        {
+                            affectedByWeeds.Add(new Vector2Int(x, z));
+                        }
+                    }
+                }
             }
         }
 
@@ -319,6 +337,7 @@ namespace Kyle
 
                         InstancedCropRenderer.Instance.RebuildMatricesFromState(activeCrops);
                         InstancedCropRenderer.Instance.RebuildGroundMatrices(activeCrops);
+                        RecalculateWeedInfluence();
                     }
                     break;
 
@@ -419,6 +438,7 @@ namespace Kyle
 
                 InstancedCropRenderer.Instance.PlantCellCrops(target, 15);
                 InstancedCropRenderer.Instance.RebuildMatricesFromState(activeCrops);
+                RecalculateWeedInfluence();
             }
         }
 
@@ -495,6 +515,7 @@ namespace Kyle
                         crop.growth = 0f;
                         crop.water = 0f;
                         crop.fertilization = 0f;
+                        RecalculateWeedInfluence();
                     }
                 }
 
@@ -571,6 +592,7 @@ namespace Kyle
             if (weedsCleared)
             {
                 InstancedCropRenderer.Instance.RebuildMatricesFromState(activeCrops);
+                RecalculateWeedInfluence();
                 InventoryManager.Instance?.UpdateNums();
                 AudioSource.PlayClipAtPoint(collectSound, transform.position, 1.0f);
             }
