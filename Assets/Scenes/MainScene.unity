@@ -2951,15 +2951,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6243396391316696350, guid: d13f052ec6f5c224cac52e420547fb3a, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6243396391316696350, guid: d13f052ec6f5c224cac52e420547fb3a, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6648038789254524705, guid: d13f052ec6f5c224cac52e420547fb3a, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7230740475443456002, guid: d13f052ec6f5c224cac52e420547fb3a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0072
       objectReference: {fileID: 0}
     - target: {fileID: 7262596119165151341, guid: d13f052ec6f5c224cac52e420547fb3a, type: 3}
       propertyPath: m_Name

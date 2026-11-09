@@ -53,7 +53,7 @@ namespace Kyle
             if (!isHeld) { return; }
 
             FieldCellCollider cellCollider = other.GetComponent<FieldCellCollider>();
-            if (cellCollider != null && toolAction == FarmingTool.Harvest || toolAction == FarmingTool.Hoe)
+            if (cellCollider != null && (toolAction == FarmingTool.Harvest || toolAction == FarmingTool.Hoe))
             {
                 FieldActionManager.Instance.TrySwipeHarvest(cellCollider.CellCoordinates, toolAction);
             }

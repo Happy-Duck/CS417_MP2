@@ -66090,6 +66090,7 @@ MonoBehaviour:
   floatingCanvas: {fileID: 3151737306457661789}
   statusText: {fileID: 3128910517724961795}
   progressSlider: {fileID: 4494165765863602795}
+  shakeIntensity: 15
   itemResource: WheatSeed
 --- !u!4 &3065222654121604260 stripped
 Transform:
@@ -66508,6 +66509,7 @@ MonoBehaviour:
   floatingCanvas: {fileID: 3349758596052476258}
   statusText: {fileID: 2958841480432074900}
   progressSlider: {fileID: 0}
+  shakeIntensity: 15
   prefabToSpawn: {fileID: 6720767181844729181, guid: 04f3ea4bca81de34faa713168c42acbb, type: 3}
   spawnPoint: {fileID: 4381312372800425694}
   spawnPopupMessage: Place the item on an empty cell!
@@ -66888,6 +66890,7 @@ MonoBehaviour:
   floatingCanvas: {fileID: 3151737306457661789}
   statusText: {fileID: 3128910517724961795}
   progressSlider: {fileID: 4494165765863602795}
+  shakeIntensity: 15
   itemResource: CornSeed
 --- !u!65 &9132724104150876162 stripped
 BoxCollider:
@@ -67146,6 +67149,7 @@ MonoBehaviour:
   floatingCanvas: {fileID: 7042197531219472847}
   statusText: {fileID: 1993613317464132671}
   progressSlider: {fileID: 0}
+  shakeIntensity: 15
   prefabToSpawn: {fileID: 7919563776726367154, guid: 8e7abf6be0c292f4fb7f5fc825a54b64, type: 3}
   spawnPoint: {fileID: 2325464876910969950}
   spawnPopupMessage: Place the item on an empty cell!
@@ -68513,6 +68517,7 @@ MonoBehaviour:
   floatingCanvas: {fileID: 3151737306457661789}
   statusText: {fileID: 3128910517724961795}
   progressSlider: {fileID: 4494165765863602795}
+  shakeIntensity: 15
   itemResource: Fertilizer
 --- !u!1001 &4979374692425980105
 PrefabInstance:
@@ -69843,6 +69848,7 @@ MonoBehaviour:
   floatingCanvas: {fileID: 6247469626095003506}
   statusText: {fileID: 2928285020033484140}
   progressSlider: {fileID: 0}
+  shakeIntensity: 15
   upgradeKey: TractorUpgrade
   onUpgradePurchased:
     m_PersistentCalls:
@@ -70363,6 +70369,7 @@ MonoBehaviour:
   floatingCanvas: {fileID: 5850231265830569545}
   statusText: {fileID: 2376094466546351540}
   progressSlider: {fileID: 0}
+  shakeIntensity: 15
   upgradeKey: PlaneUpgrade
   onUpgradePurchased:
     m_PersistentCalls:
